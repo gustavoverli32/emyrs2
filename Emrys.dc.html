@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#050810">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#050810"></rect>
+    <polygon points="50,20 78,34 78,66 50,80 22,66 22,34" fill="none" stroke="#F4F6FA" stroke-width="4"></polygon>
+    <polygon points="50,36 65,44 65,60 50,68" fill="#55DDF5"></polygon>
+  </svg>
+</template>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-4512fc18-9a13-493d-b477-ef741984ace7/styles.css">
+<script src="_ds/modernist-4512fc18-9a13-493d-b477-ef741984ace7/_ds_bundle.js"></script>
+<style>
+:root{
+  --color-bg:#10141b; --color-surface:#1a1f28; --color-text:#EDE9E0;
+  --color-accent:#B08D57; --color-accent-2:#4A6B78;
+  --color-divider: rgba(237,233,224,.14);
+  --color-neutral-100:#161b23; --color-neutral-200:#1d232c; --color-neutral-300:#272e38;
+  --color-neutral-400:#3a4149; --color-neutral-500:#5b6169; --color-neutral-600:#7d838a;
+  --color-neutral-700:#a3a8ad; --color-neutral-800:#cfd1d3; --color-neutral-900:#EDE9E0;
+  --color-accent-100:#241f14; --color-accent-200:#332a19; --color-accent-300:#4d3d1f;
+  --color-accent-400:#7a5d2c; --color-accent-500:#B08D57; --color-accent-600:#c4a475;
+  --color-accent-700:#d8bd97; --color-accent-800:#ead9bd; --color-accent-900:#f6ede0;
+  --color-accent-2-100:#111c20; --color-accent-2-200:#16262c; --color-accent-2-300:#20363e;
+  --color-accent-2-400:#37525c; --color-accent-2-500:#4A6B78; --color-accent-2-600:#749099;
+  --color-accent-2-700:#a1b6bd; --color-accent-2-800:#cfdadd; --color-accent-2-900:#edf2f3;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4), inset 0 0 0 1px rgba(237,233,224,.05);
+  --shadow-md:0 6px 20px rgba(0,0,0,.45), inset 0 0 0 1px rgba(237,233,224,.05);
+  --shadow-lg:0 20px 50px rgba(0,0,0,.55), inset 0 0 0 1px rgba(237,233,224,.07);
+}
+@keyframes emrys-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes emrys-dash{to{stroke-dashoffset:-40}}
+@keyframes emrys-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+body{overflow-x:hidden;background:var(--color-bg)}
+a{color:var(--color-accent);text-decoration:none}
+a:hover{color:var(--color-accent-600)}
+</style>
+</helmet>
+<nav class="nav" style="position:sticky;top:0;z-index:50;background:var(--color-bg);flex-wrap:wrap;row-gap:8px">
+  <a href="#hero" onClick="{{ goToHero }}" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit">
+    <svg width="26" height="26" viewBox="0 0 100 100"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="var(--color-text)" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="var(--color-accent)"></polygon></svg>
+    <span class="nav-brand">EMRYS</span>
+  </a>
+  <a href="#agentes" onClick="{{ goToAgentes }}">Agentes</a>
+  <a href="#comofunciona" onClick="{{ goToComo }}">Como funciona</a>
+  <a href="#diferenciais" onClick="{{ goToDiferenciais }}">Diferenciais</a>
+  <a href="#contato" onClick="{{ goToContato }}">Contato</a>
+  <a class="btn btn-primary" href="#contato" onClick="{{ goToContato }}" style="white-space:nowrap">Solicitar demonstração</a>
+</nav>
+
+<section id="hero" style="min-height:92vh;display:flex;align-items:center;padding:90px 24px 70px;position:relative">
+  <div style="max-width:1180px;margin:0 auto;width:100%;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);gap:56px;align-items:center">
+    <div style="position:relative;z-index:1;min-width:0">
+      <span class="tag tag-outline" style="margin-bottom:20px">Inteligência Artificial para gestão</span>
+      <h1 style="font-size:clamp(32px,4.4vw,54px); max-width: min(620px,100%); margin-top: 14px; width: min(600px,100%); height: auto">Sua empresa não precisa de mais um sistema.<br><span style="color:var(--color-accent)">Precisa de uma Inteligência Artificial trabalhando por ela.</span></h1>
+      <p style="font-size:18px;max-width:540px;opacity:.78">A Emrys cria plataformas personalizadas que conectam as áreas da sua empresa, aprendem com seus dados e transformam informações em decisões — para aumentar lucros, reduzir custos e antecipar riscos.</p>
+      <p style="font-size:14px;font-family:var(--font-heading);font-weight:800;letter-spacing:.02em;margin-top:6px">Plataforma personalizada. Inteligência contínua. Decisões melhores.</p>
+      <div style="display:flex;gap:14px;margin-top:26px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="#contato" onClick="{{ goToContato }}" style="padding:14px 26px;font-size:15px">Solicitar diagnóstico</a>
+        <a class="btn btn-secondary" href="#agentes" onClick="{{ goToAgentes }}" style="padding:14px 26px;font-size:15px">Conhecer a plataforma</a>
+      </div>
+    </div>
+    <div style="position:relative;height:360px;min-width:0;max-width:420px;margin-left:auto;width:100%">
+      <div style="position:absolute;inset:0;opacity:.7">
+        {{ heroLines }}
+        <sc-for list="{{ heroNodes }}" as="n" hint-placeholder-count="6">
+          <div style="{{ n.style }}">{{ n.iconEl }}</div>
+        </sc-for>
+        <div style="position:absolute;left:141px;top:141px;width:78px;height:78px;border-radius:50%;background:var(--color-accent);display:flex;align-items:center;justify-content:center;animation:emrys-pulse 3.5s ease-in-out infinite">{{ iconBrain }}</div>
+      </div>
+      <div class="card elev-lg" style="position:absolute;right:0;bottom:-6px;z-index:1;padding:22px;width:min(340px,100%);background:var(--color-bg);border:1px solid var(--color-divider);animation:emrys-float 6s ease-in-out infinite">
+        <div class="card-kicker">PAINEL EMRYS · DEMONSTRAÇÃO</div>
+        <div class="card-title" style="margin-bottom:4px">Bom dia, Gustavo.</div>
+        <p class="card-body" style="margin-bottom:14px">Encontramos 8 oportunidades hoje.</p>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span class="text-muted">Economia potencial</span><span class="tag tag-accent">R$ 3.240</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span class="text-muted">Estoque parado</span><span class="tag tag-accent">R$ 27.800</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span class="text-muted">Fluxo de caixa (90 dias)</span><span class="tag tag-neutral">Saudável</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr" style="max-width:1180px;margin:0 auto">
+
+<section style="padding:70px 24px;background:var(--color-surface)">
+  <div style="max-width:840px;margin:0 auto">
+    <h2 style="font-size:30px">Os sistemas tradicionais mostram o que aconteceu.<br><span style="color:var(--color-accent)">A Emrys mostra o que fazer.</span></h2>
+    <p style="font-size:16px;opacity:.78;max-width:640px">A maioria dos sistemas apenas armazena dados. A Emrys analisa, aprende, prevê e recomenda ações.</p>
+  </div>
+</section>
+
+<hr class="hr" style="max-width:1180px;margin:0 auto">
+
+<section id="sobre" ref="{{ sobreRef }}" style="padding:100px 24px">
+  <div style="{{ sobreStyle }}">
+    <div>
+      <h6 style="color:var(--color-accent)">Sobre a Emrys</h6>
+      <h2 style="max-width:420px">Não criamos ERPs. Criamos empresas mais inteligentes.</h2>
+    </div>
+    <div>
+      <p style="font-size:19px;line-height:1.5">Os sistemas atuais apenas registram informações.</p>
+      <p style="font-size:19px;line-height:1.5;font-family:var(--font-heading);font-weight:800">A Emrys analisa. Aprende. Prevê. Recomenda.</p>
+      <p style="font-size:17px;opacity:.78;max-width:560px;margin-top:16px">Enquanto você administra seu negócio, nossa Inteligência Artificial trabalha continuamente encontrando oportunidades para aumentar seu lucro, reduzir custos e minimizar riscos.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="hr" style="max-width:1180px;margin:0 auto">
+
+<section id="problema" ref="{{ problemaRef }}" style="padding:100px 24px;background:var(--color-surface)">
+  <div style="max-width:1180px;margin:0 auto">
+    <div style="max-width:640px;margin-bottom:44px">
+      <h6 style="color:var(--color-accent)">O cenário atual</h6>
+      <h2>Tudo separado. Nenhum sistema realmente pensa.</h2>
+      <p style="font-size:16px;opacity:.75">Planilhas, ERP, WhatsApp, banco, contador, notas fiscais — cada ferramenta guarda um pedaço da sua empresa, sozinha.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px">
+      <sc-for list="{{ problemas }}" as="p" hint-placeholder-count="6">
+        <div class="card elev-sm" style="{{ p.style }};align-items:center;text-align:center;padding:24px 12px">
+          <div style="color:var(--color-neutral-700)">{{ p.iconEl }}</div>
+          <div class="card-title" style="font-size:14px">{{ p.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="solucao" ref="{{ solucaoRef }}" style="padding:100px 24px">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+    <div style="{{ solucaoStyle }}">
+      <h6 style="color:var(--color-accent)">Nossa solução</h6>
+      <h2 style="max-width:460px">Tudo converge para um único ecossistema chamado Emrys.</h2>
+      <p style="font-size:16px;opacity:.78;max-width:460px">Clientes, financeiro, compras, estoque, funcionários, notas fiscais, fluxo de caixa, CRM e vendas — tudo entra na plataforma e alimenta a Emrys AI.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+        <span class="tag tag-accent">Recomendações automáticas</span>
+        <span class="tag tag-accent">Previsões em tempo real</span>
+      </div>
+    </div>
+    <div style="position:relative;height:420px">
+      {{ fluxoLines }}
+      <sc-for list="{{ fluxoNodes }}" as="f" hint-placeholder-count="9">
+        <div style="{{ f.style }}">
+          <span class="tag tag-neutral" style="width:100%;justify-content:center">{{ f.label }}</span>
+        </div>
+      </sc-for>
+      <div style="position:absolute;left:160px;top:160px;width:100px;height:100px;border-radius:50%;background:var(--color-accent);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;animation:emrys-pulse 3.5s ease-in-out infinite">
+        {{ iconBrain }}
+        <span style="color:var(--color-bg);font-size:11px;font-family:var(--font-heading);font-weight:800">EMRYS AI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr" style="max-width:1180px;margin:0 auto">
+
+<section id="agentes" ref="{{ agentesRef }}" style="padding:100px 24px;background:var(--color-surface)">
+  <div style="max-width:1180px;margin:0 auto">
+    <div style="max-width:640px;margin-bottom:44px">
+      <h6 style="color:var(--color-accent)">Os agentes</h6>
+      <h2>Uma equipe executiva de IA, trabalhando por você.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
+      <sc-for list="{{ agents }}" as="a" hint-placeholder-count="5">
+        <div class="card elev-sm" style="{{ a.style }};padding:26px" style-hover="{{ a.style }};padding:26px;transform:translateY(-6px);box-shadow:var(--shadow-lg)">
+          <div style="color:var(--color-accent);margin-bottom:6px">{{ a.iconEl }}</div>
+          <div class="card-title">{{ a.name }}</div>
+          <p class="card-body">{{ a.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section ref="{{ feedRef }}" style="padding:100px 24px">
+  <div style="{{ feedStyle }}">
+    <div style="max-width:640px;margin-bottom:8px">
+      <h6 style="color:var(--color-accent)">Enquanto você trabalha</h6>
+      <h2>A Emrys continua analisando.</h2>
+    </div>
+    <span class="tag tag-outline" style="margin-bottom:20px">Dados demonstrativos para apresentação da plataforma</span>
+    <div style="display:flex;flex-direction:column;gap:0;max-width:720px">
+      <sc-for list="{{ feed }}" as="f" hint-placeholder-count="6">
+        <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--color-divider)">
+          <span style="font-family:var(--font-heading);font-weight:800;font-size:13px;color:var(--color-accent);flex:none;width:52px">{{ f.time }}</span>
+          <span style="font-size:14px;opacity:.85">{{ f.msg }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<hr class="hr" style="max-width:1180px;margin:0 auto">
+
+<section id="plataforma" ref="{{ plataformaRef }}" style="padding:100px 24px">
+  <div style="{{ plataformaStyle }}">
+    <div style="max-width:640px;margin-bottom:36px">
+      <h6 style="color:var(--color-accent)">Plataforma personalizada</h6>
+      <h2>Cada empresa possui desafios únicos. Por isso, nossa plataforma também é.</h2>
+      <p style="font-size:16px;opacity:.78">Você utiliza apenas os módulos que realmente precisa. Nada além disso.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px">
+      <sc-for list="{{ businesses }}" as="b" hint-placeholder-count="5">
+        <div style="{{ b.tabStyle }}" onClick="{{ b.onClick }}">
+          {{ b.iconEl }}
+          <span style="font-size:14px;font-family:var(--font-heading);font-weight:800">{{ b.name }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div class="card elev-md" style="padding:28px;display:flex;gap:20px;align-items:center;max-width:640px">
+      <div style="color:var(--color-accent);flex:none">{{ activeBizObj.iconEl }}</div>
+      <div>
+        <div class="card-title" style="margin-bottom:6px">{{ activeBizObj.name }}</div>
+        <p class="card-body">{{ activeBizObj.desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr" style="max-width:1180px;margin:0 auto">
+
+<section id="comofunciona" ref="{{ comoRef }}" style="padding:100px 24px;background:var(--color-surface)">
+  <div style="max-width:1180px;margin:0 auto">
+    <h6 style="color:var(--color-accent)">Como funciona</h6>
+    <h2 style="margin-bottom:40px">Do primeiro contato à sua IA em produção.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="5">
+        <div style="{{ st.style }}">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--color-accent);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;font-size:17px;margin-bottom:12px">{{ st.n }}</div>
+          <div style="font-family:var(--font-heading);font-weight:800;font-size:16px">{{ st.title }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="dashboard" ref="{{ dashboardRef }}" style="padding:100px 24px">
+  <div style="{{ dashboardStyle }}">
+    <div style="max-width:640px;margin-bottom:36px">
+      <h6 style="color:var(--color-accent)">Demonstração</h6>
+      <h2>Bom dia, Gustavo. Hoje encontramos 8 oportunidades.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+      <div class="card elev-sm" style="padding:22px">
+        <div class="card-kicker">Economia tributária</div>
+        <div style="font-family:var(--font-heading);font-weight:800;font-size:28px">{{ econVal }}</div>
+      </div>
+      <div class="card elev-sm" style="padding:22px">
+        <div class="card-kicker">Lucro potencial</div>
+        <div style="font-family:var(--font-heading);font-weight:800;font-size:28px">{{ lucroVal }}</div>
+      </div>
+      <div class="card elev-sm" style="padding:22px">
+        <div class="card-kicker">Estoque parado</div>
+        <div style="font-family:var(--font-heading);font-weight:800;font-size:28px">{{ estoqueVal }}</div>
+      </div>
+      <div class="card elev-sm" style="padding:22px">
+        <div class="card-kicker">Fluxo de caixa saudável</div>
+        <div style="font-family:var(--font-heading);font-weight:800;font-size:28px">{{ fluxoVal }}</div>
+      </div>
+      <div class="card elev-sm" style="padding:22px">
+        <div class="card-kicker">Risco de inadimplência</div>
+        <div style="font-family:var(--font-heading);font-weight:800;font-size:28px">Baixo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr" style="max-width:1180px;margin:0 auto">
+
+<section id="diferenciais" ref="{{ diferenciaisRef }}" style="padding:100px 24px;background:var(--color-surface)">
+  <div style="max-width:1180px;margin:0 auto">
+    <h6 style="color:var(--color-accent)">Diferenciais</h6>
+    <h2 style="margin-bottom:36px">Feita para durar, feita para você.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+      <sc-for list="{{ diferenciais }}" as="d" hint-placeholder-count="8">
+        <div class="card elev-sm" style="{{ d.style }};flex-direction:row;align-items:center;gap:12px;padding:18px" style-hover="{{ d.style }};flex-direction:row;align-items:center;gap:12px;padding:18px;transform:translateY(-4px);box-shadow:var(--shadow-md)">
+          <div style="color:var(--color-accent)">{{ d.iconEl }}</div>
+          <span style="font-family:var(--font-heading);font-weight:800;font-size:14px">{{ d.name }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section ref="{{ antesDepoisRef }}" style="padding:100px 24px;background:var(--color-surface)">
+  <div style="{{ antesDepoisStyle }};max-width:1180px">
+    <h6 style="color:var(--color-accent)">Antes e depois</h6>
+    <h2 style="margin-bottom:32px">Da planilha à inteligência contínua.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <div class="card elev-sm" style="padding:26px">
+        <div class="card-kicker" style="color:var(--color-neutral-600)">Antes da Emrys</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
+          <sc-for list="{{ antes }}" as="a" hint-placeholder-count="6"><div style="font-size:14px;opacity:.75;display:flex;gap:8px"><span>{{ iconX }}</span>{{ a }}</div></sc-for>
+        </div>
+      </div>
+      <div class="card elev-md" style="padding:26px;border:1px solid var(--color-accent)">
+        <div class="card-kicker">Depois da Emrys</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
+          <sc-for list="{{ depois }}" as="d" hint-placeholder-count="6"><div style="font-size:14px;font-family:var(--font-heading);font-weight:800;display:flex;gap:8px"><span>{{ iconCheck }}</span>{{ d }}</div></sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="comparativo" ref="{{ comparativoRef }}" style="padding:100px 24px">
+  <div style="{{ comparativoStyle }}">
+    <h6 style="color:var(--color-accent)">Comparativo</h6>
+    <h2 style="margin-bottom:28px">ERP tradicional vs. Emrys.</h2>
+    <table class="table">
+      <thead><tr><th>ERP tradicional</th><th>Emrys</th></tr></thead>
+      <tbody>
+        <sc-for list="{{ comparativo }}" as="row" hint-placeholder-count="5">
+          <tr>
+            <td style="display:flex;align-items:center;gap:8px;opacity:.7">{{ iconX }}{{ row.erp }}</td>
+            <td style="display:flex;align-items:center;gap:8px;font-family:var(--font-heading);font-weight:800">{{ iconCheck }}{{ row.emrys }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="hr" style="max-width:1180px;margin:0 auto">
+
+<section ref="{{ beneficiosRef }}" style="padding:100px 24px;background:var(--color-surface)">
+  <div style="{{ beneficiosStyle }}">
+    <h6 style="color:var(--color-accent)">Benefícios</h6>
+    <h2 style="margin-bottom:36px">O que muda no dia a dia.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+      <sc-for list="{{ beneficios }}" as="b" hint-placeholder-count="8">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="color:var(--color-accent)">{{ b.iconEl }}</span>
+          <span style="font-size:14px">{{ b.name }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section ref="{{ segurancaRef }}" style="padding:100px 24px">
+  <div style="{{ segurancaStyle }};max-width:1180px;display:grid;grid-template-columns:1fr 1fr;gap:40px">
+    <div>
+      <h6 style="color:var(--color-accent)">Segurança e privacidade</h6>
+      <h2 style="max-width:420px">Construída com controle de acesso desde o início.</h2>
+      <p style="font-size:15px;opacity:.78;max-width:460px">A arquitetura da Emrys é planejada com princípios de segurança, privacidade e controle de acesso desde o início — autenticação, permissões por usuário, criptografia e conformidade com a LGPD.</p>
+      <a href="#" style="font-size:14px">Política de Privacidade →</a>
+    </div>
+    <div>
+      <h6 style="color:var(--color-accent)">Integrações</h6>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+        <sc-for list="{{ integracoes }}" as="i" hint-placeholder-count="9">
+          <span class="tag" style="border:1px solid var(--color-divider)">{{ i }}</span>
+        </sc-for>
+      </div>
+      <p class="text-muted" style="font-size:12px;margin-top:12px">Integrações disponíveis, planejadas ou sob análise conforme o segmento e as ferramentas já usadas pela sua empresa.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="hr" style="max-width:1180px;margin:0 auto">
+
+<section ref="{{ missaoRef }}" style="padding:100px 24px;background:var(--color-surface)">
+  <div style="{{ missaoStyle }};max-width:1180px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px">
+    <div><h6 style="color:var(--color-accent)">Missão</h6><p style="font-size:15px">Democratizar o acesso à inteligência empresarial para pequenas e médias empresas.</p></div>
+    <div><h6 style="color:var(--color-accent)">Visão</h6><p style="font-size:15px">Fazer com que toda empresa possa contar com uma equipe executiva de Inteligência Artificial.</p></div>
+    <div><h6 style="color:var(--color-accent)">Propósito</h6><p style="font-size:15px">Transformar dados em decisões que fortaleçam negócios.</p></div>
+  </div>
+</section>
+
+<hr class="hr" style="max-width:1180px;margin:0 auto">
+
+<section ref="{{ faqRef }}" style="padding:100px 24px">
+  <div style="{{ faqStyle }};max-width:800px">
+    <h6 style="color:var(--color-accent)">Perguntas frequentes</h6>
+    <h2 style="margin-bottom:28px">Ainda com dúvidas?</h2>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ faqs }}" as="fq" hint-placeholder-count="8">
+        <div style="border-bottom:1px solid var(--color-divider)">
+          <div onClick="{{ fq.onToggle }}" style="display:flex;justify-content:space-between;align-items:center;padding:16px 0;cursor:pointer;font-family:var(--font-heading);font-weight:800;font-size:15px">
+            {{ fq.q }}<span>{{ fq.icon }}</span>
+          </div>
+          <sc-if value="{{ fq.open }}" hint-placeholder-val="{{ false }}">
+            <p style="font-size:14px;opacity:.78;padding-bottom:16px;margin:0">{{ fq.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ showTestimonial }}" hint-placeholder-val="{{ true }}">
+<hr class="hr" style="max-width:1180px;margin:0 auto">
+<section id="depoimento" ref="{{ depoimentoRef }}" style="padding:100px 24px;background:var(--color-surface)">
+  <div style="{{ depoimentoStyle }}">
+    <span class="tag tag-outline" style="margin-bottom:20px">Conceito ilustrativo</span>
+    <p style="font-size:26px;font-family:var(--font-heading);font-weight:800;line-height:1.35;margin-top:16px">"A Emrys representa exatamente o que sempre imaginei. Um sistema que finalmente entende meu negócio."</p>
+  </div>
+</section>
+</sc-if>
+
+<section id="cta" ref="{{ ctaRef }}" style="padding:110px 24px;background:var(--color-accent);color:var(--color-bg)">
+  <div style="{{ ctaStyle }}">
+    <h2 style="color:var(--color-bg);font-size:38px">Sua empresa precisa de mais um sistema ou de uma inteligência trabalhando por ela?</h2>
+    <p style="color:var(--color-bg);opacity:.85;font-size:16px;max-width:600px">Conte como sua empresa funciona. A Emrys analisa suas necessidades e apresenta uma solução personalizada para seus principais desafios.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:20px">
+      <a class="btn" href="#contato" onClick="{{ goToContato }}" style="background:var(--color-bg);color:var(--color-accent-700);padding:16px 30px;font-size:16px">Solicitar diagnóstico</a>
+      <a class="btn btn-secondary" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="border-color:var(--color-bg);color:var(--color-bg);padding:16px 30px;font-size:16px">Falar com um especialista</a>
+    </div>
+    <p style="color:var(--color-bg);opacity:.7;font-size:13px;margin-top:14px">Sem compromisso. Sem soluções genéricas.</p>
+  </div>
+</section>
+
+<section id="contato" ref="{{ contatoRef }}" style="padding:100px 24px">
+  <div style="{{ contatoStyle }}">
+    <h6 style="color:var(--color-accent)">Fale com a gente</h6>
+    <h2 style="margin-bottom:28px">Quero conhecer a Emrys.</h2>
+    <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+      <div class="card elev-md" style="padding:30px">
+        <div class="card-title" style="margin-bottom:6px">Recebemos seu contato.</div>
+        <p class="card-body">Nossa equipe vai analisar o seu negócio e retornar em breve.</p>
+      </div>
+    </sc-if>
+    <sc-if value="{{ formVisible }}" hint-placeholder-val="{{ true }}">
+      <form onSubmit="{{ submitForm }}" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="field">
+          <label>Nome</label>
+          <input class="input" value="{{ form.nome }}" onChange="{{ handleNome }}">
+          <sc-if value="{{ errors.nome }}" hint-placeholder-val="{{ false }}"><span style="color:var(--color-accent-700);font-size:12px">{{ errors.nome }}</span></sc-if>
+        </div>
+        <div class="field">
+          <label>Empresa</label>
+          <input class="input" value="{{ form.empresa }}" onChange="{{ handleEmpresa }}">
+          <sc-if value="{{ errors.empresa }}" hint-placeholder-val="{{ false }}"><span style="color:var(--color-accent-700);font-size:12px">{{ errors.empresa }}</span></sc-if>
+        </div>
+        <div class="field">
+          <label>Segmento</label>
+          <input class="input" value="{{ form.segmento }}" onChange="{{ handleSegmento }}" placeholder="Ex: comércio, indústria, serviços">
+        </div>
+        <div class="field">
+          <label>Telefone</label>
+          <input class="input" value="{{ form.telefone }}" onChange="{{ handleTelefone }}">
+          <sc-if value="{{ errors.telefone }}" hint-placeholder-val="{{ false }}"><span style="color:var(--color-accent-700);font-size:12px">{{ errors.telefone }}</span></sc-if>
+        </div>
+        <div class="field">
+          <label>E-mail</label>
+          <input class="input" value="{{ form.email }}" onChange="{{ handleEmail }}">
+          <sc-if value="{{ errors.email }}" hint-placeholder-val="{{ false }}"><span style="color:var(--color-accent-700);font-size:12px">{{ errors.email }}</span></sc-if>
+        </div>
+        <div class="field">
+          <label>Número de funcionários</label>
+          <select class="input" value="{{ form.funcionarios }}" onChange="{{ handleFuncionarios }}">
+            <option value="">Selecione</option>
+            <option value="1-5">1 a 5</option>
+            <option value="6-20">6 a 20</option>
+            <option value="21-50">21 a 50</option>
+            <option value="51+">Mais de 50</option>
+          </select>
+        </div>
+        <div class="field" style="grid-column:1/-1">
+          <label>Faturamento aproximado</label>
+          <select class="input" value="{{ form.faturamento }}" onChange="{{ handleFaturamento }}">
+            <option value="">Selecione</option>
+            <option value="ate-50k">Até R$ 50 mil/mês</option>
+            <option value="50-200k">R$ 50 mil a R$ 200 mil/mês</option>
+            <option value="200k+">Acima de R$ 200 mil/mês</option>
+          </select>
+        </div>
+        <div class="field" style="grid-column:1/-1">
+          <label>Quais áreas deseja melhorar</label>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <sc-for list="{{ areas }}" as="ar" hint-placeholder-count="6">
+              <div class="tag" onClick="{{ ar.onToggle }}" style="cursor:pointer;border:1px solid var(--color-divider)">{{ ar.name }}</div>
+            </sc-for>
+          </div>
+        </div>
+        <div class="field" style="grid-column:1/-1">
+          <label>Conte um pouco sobre sua empresa</label>
+          <textarea class="input" value="{{ form.mensagem }}" onChange="{{ handleMensagem }}"></textarea>
+        </div>
+        <div class="field" style="grid-column:1/-1;display:flex;align-items:flex-start;gap:8px">
+          <input type="checkbox" id="consent" checked="{{ form.consent }}" onChange="{{ handleConsent }}" style="margin-top:3px">
+          <label for="consent" style="font-size:12px;font-weight:400">Concordo com o uso dos meus dados para retorno comercial, conforme a Política de Privacidade.</label>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit" style="grid-column:1/-1;justify-content:center">Quero conhecer a Emrys</button>
+        <a class="btn btn-secondary btn-block" href="{{ whatsappLink }}" target="_blank" rel="noopener" style="grid-column:1/-1;justify-content:center">Falar no WhatsApp</a>
+      </form>
+    </sc-if>
+  </div>
+</section>
+
+<footer style="padding:60px 24px 30px;border-top:2px solid var(--color-divider)">
+  <div style="max-width:1180px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <svg width="24" height="24" viewBox="0 0 100 100"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="var(--color-text)" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="var(--color-accent)"></polygon></svg>
+          <span class="nav-brand">EMRYS</span>
+        </div>
+        <p class="text-muted" style="max-width:320px;font-size:14px">Sistemas inteligentes para pequenas e médias empresas que querem decisões, não apenas relatórios.</p>
+        <div style="display:flex;gap:10px;margin-top:16px">
+          <span style="color:var(--color-text)">{{ iconLinkedin }}</span>
+          <span style="color:var(--color-text)">{{ iconInstagram }}</span>
+        </div>
+      </div>
+      <div>
+        <h6>Contato</h6>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:10px;font-size:14px"><span style="color:var(--color-accent)">{{ iconPhone }}</span>WhatsApp {{ whatsappDisplay }}</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:10px;font-size:14px"><span style="color:var(--color-accent)">{{ iconMail }}</span>contato@emrys.ai</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:10px;font-size:14px"><span style="color:var(--color-accent)">{{ iconPin }}</span>Rio das Ostras, RJ</div>
+      </div>
+      <div>
+        <h6>Links rápidos</h6>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;font-size:14px">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">LGPD</a>
+        </div>
+      </div>
+    </div>
+    <hr class="hr">
+    <p class="text-muted" style="font-size:12px">© 2026 Emrys. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;reduceMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showTestimonial&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const ICON_DEFS = {
+  chart: [['path',{d:'M3 21V9'}],['path',{d:'M9 21V13'}],['path',{d:'M15 21V6'}],['path',{d:'M21 21V3'}]],
+  receipt: [['path',{d:'M6 2h12v20l-3-2-3 2-3-2-3 2z'}],['path',{d:'M9 7h6M9 11h6'}]],
+  users: [['circle',{cx:9,cy:8,r:3}],['path',{d:'M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6'}],['circle',{cx:17,cy:9,r:2.3}],['path',{d:'M21 20c0-2.6-1.7-4.8-4-5.6'}]],
+  'shield-alert': [['path',{d:'M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z'}],['path',{d:'M12 8v4'}],['circle',{cx:12,cy:15,r:0.6}]],
+  'trending-up': [['path',{d:'M3 17l6-6 4 4 8-9'}],['path',{d:'M15 5h6v6'}]],
+  layers: [['path',{d:'M12 3l9 5-9 5-9-5z'}],['path',{d:'M3 13l9 5 9-5'}]],
+  cpu: [['rect',{x:6,y:6,width:12,height:12}],['path',{d:'M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3'}]],
+  maximize: [['path',{d:'M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5'}]],
+  shield: [['path',{d:'M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z'}]],
+  cloud: [['path',{d:'M7 18a4 4 0 010-8 5 5 0 019.6-1.5A3.5 3.5 0 0118 18H7z'}]],
+  'refresh-cw': [['path',{d:'M21 12a9 9 0 01-15 6.5M3 12a9 9 0 0115-6.5'}],['path',{d:'M21 3v6h-6M3 21v-6h6'}]],
+  headphones: [['path',{d:'M4 15v-3a8 8 0 0116 0v3'}],['rect',{x:2,y:15,width:5,height:6}],['rect',{x:17,y:15,width:5,height:6}]],
+  wrench: [['path',{d:'M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.3 2.3-2-2z'}]],
+  stethoscope: [['path',{d:'M6 3v6a4 4 0 008 0V3'}],['path',{d:'M10 13v2a5 5 0 0010 0v-2'}],['circle',{cx:20,cy:11,r:1.3}]],
+  'shopping-bag': [['path',{d:'M6 8h12l-1 12H7z'}],['path',{d:'M9 8V6a3 3 0 016 0v2'}]],
+  utensils: [['path',{d:'M6 2v8a2 2 0 002 2M9 2v20M6 2v8M14 2s-1 4-1 7 1 4 3 4v9'}]],
+  factory: [['path',{d:'M3 21V10l5 3v-3l5 3V8l5 3v10z'}]],
+  grid: [['rect',{x:3,y:3,width:7,height:7}],['rect',{x:14,y:3,width:7,height:7}],['rect',{x:3,y:14,width:7,height:7}],['rect',{x:14,y:14,width:7,height:7}]],
+  building: [['rect',{x:4,y:2,width:16,height:20}],['path',{d:'M9 6h2M13 6h2M9 10h2M13 10h2M9 14h2M13 14h2'}]],
+  message: [['path',{d:'M4 5h16v11H8l-4 4z'}]],
+  banknote: [['rect',{x:2,y:6,width:20,height:12}],['circle',{cx:12,cy:12,r:3}]],
+  calculator: [['rect',{x:4,y:2,width:16,height:20}],['path',{d:'M8 6h8M8 11h2M12 11h2M16 11h2M8 15h2M12 15h2M16 15h2'}]],
+  file: [['path',{d:'M6 2h9l5 5v15H6z'}],['path',{d:'M15 2v5h5'}]],
+  check: [['path',{d:'M4 12l6 6L20 6'}]],
+  x: [['path',{d:'M5 5l14 14M19 5L5 19'}]],
+  plus: [['path',{d:'M12 5v14M5 12h14'}]],
+  brain: [['path',{d:'M9 3a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 003 3M15 3a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-3 3M9 3v16M15 3v16'}]],
+  mail: [['rect',{x:3,y:5,width:18,height:14}],['path',{d:'M3 6l9 7 9-7'}]],
+  phone: [['path',{d:'M5 4h4l2 5-2.5 2A11 11 0 0014 16.5L16 14l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z'}]],
+  pin: [['path',{d:'M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z'}],['circle',{cx:12,cy:9,r:2.3}]],
+  linkedin: [['rect',{x:2,y:2,width:20,height:20}],['path',{d:'M7 10v7M7 7v.01'}],['path',{d:'M11 17v-4a2 2 0 014 0v4M11 10v7'}]],
+  instagram: [['rect',{x:2,y:2,width:20,height:20}],['circle',{cx:12,cy:12,r:4}],['circle',{cx:17.5,cy:6.5,r:0.8}]],
+};
+
+const AGENTS = [
+  {name:'Diretor Financeiro IA', icon:'chart', desc:'Analisa fluxo de caixa, margens, capital de giro e rentabilidade.'},
+  {name:'Contador IA', icon:'receipt', desc:'Analisa tributação, notas fiscais, impostos e economias tributárias. Apoia o trabalho contábil, mas não substitui profissionais legalmente habilitados.'},
+  {name:'Administrador IA', icon:'users', desc:'Analisa produtividade, equipe, processos e eficiência.'},
+  {name:'Gestor de Risco IA', icon:'shield-alert', desc:'Prevê inadimplência, problemas financeiros, estoque parado e fluxo futuro.'},
+  {name:'Consultor de Crescimento IA', icon:'trending-up', desc:'Sugere estratégias para aumentar faturamento, melhorar margem, expandir vendas e aumentar retenção.'},
+];
+const DIFERENCIAIS = [
+  {name:'Personalização total', icon:'layers'},
+  {name:'Inteligência Artificial', icon:'cpu'},
+  {name:'Implantação consultiva', icon:'users'},
+  {name:'Escalabilidade', icon:'maximize'},
+  {name:'Segurança', icon:'shield'},
+  {name:'Cloud', icon:'cloud'},
+  {name:'Atualizações constantes', icon:'refresh-cw'},
+  {name:'Atendimento próximo', icon:'headphones'},
+];
+const BUSINESSES = [
+  {name:'Oficina Mecânica', icon:'wrench', desc:'Ordens de serviço, peças em estoque e agenda de mecânicos em um painel só.'},
+  {name:'Clínica', icon:'stethoscope', desc:'Agenda de consultas, prontuários e faturamento de convênios integrados.'},
+  {name:'Loja', icon:'shopping-bag', desc:'Vendas, estoque e giro de produtos com recomendações de reposição automática.'},
+  {name:'Restaurante', icon:'utensils', desc:'Comandas, ficha técnica e margem por prato calculada automaticamente.'},
+  {name:'Indústria', icon:'factory', desc:'Produção, insumos e custo por lote com previsão de demanda.'},
+];
+const STEPS = [
+  {n:'1', title:'Entendemos seu negócio.'},
+  {n:'2', title:'Construímos sua plataforma personalizada.'},
+  {n:'3', title:'Integramos seus dados.'},
+  {n:'4', title:'Nossa IA aprende.'},
+  {n:'5', title:'Sua empresa recebe recomendações automáticas.'},
+];
+const PROBLEMAS = [
+  {name:'Planilhas', icon:'grid'},
+  {name:'ERP', icon:'building'},
+  {name:'WhatsApp', icon:'message'},
+  {name:'Banco', icon:'banknote'},
+  {name:'Contador', icon:'calculator'},
+  {name:'Notas fiscais', icon:'file'},
+];
+const FLUXO = ['Clientes','Financeiro','Compras','Estoque','Funcionários','Notas fiscais','Fluxo de caixa','CRM','Vendas'];
+const COMPARATIVO = [
+  ['ERP registra dados.','Emrys gera decisões.'],
+  ['ERP possui centenas de funções inúteis.','Emrys é personalizado.'],
+  ['ERP gera relatórios.','Emrys recomenda ações.'],
+  ['ERP depende do usuário.','Emrys trabalha automaticamente.'],
+  ['ERP mostra o passado.','Emrys prevê o futuro.'],
+];
+const AREAS = ['Financeiro','Administrativo','Estoque','Vendas','Fiscal','RH'];
+const HERO_ICONS = ['chart','banknote','grid','building','message','users'];
+const EMRYS_CONFIG = { whatsappNumber:'', contactEmail:'contato@emrys.ai' };
+const FEED = [
+  {time:'09:12', msg:'Detectamos R$ 18.700 em estoque sem movimentação.'},
+  {time:'10:35', msg:'Três produtos estão sendo vendidos abaixo da margem recomendada.'},
+  {time:'11:18', msg:'O fluxo de caixa pode ficar negativo dentro de 42 dias.'},
+  {time:'13:06', msg:'Um fornecedor aumentou os preços acima da média.'},
+  {time:'14:44', msg:'Existe potencial de aumentar o lucro mensal em 11%.'},
+  {time:'16:20', msg:'Dois clientes apresentam maior risco de atraso.'},
+];
+const ANTES = ['Planilhas espalhadas','Sistemas que não conversam','Decisões baseadas em intuição','Retrabalho constante','Informações atrasadas','Relatórios difíceis de interpretar'];
+const DEPOIS = ['Tudo centralizado','Dados organizados','Recomendações automáticas','Alertas inteligentes','Projeções em tempo real','Decisões mais rápidas'];
+const BENEFICIOS = [
+  {name:'Decisões mais rápidas', icon:'trending-up'},
+  {name:'Redução de desperdícios', icon:'shield'},
+  {name:'Melhor controle financeiro', icon:'chart'},
+  {name:'Mais produtividade', icon:'users'},
+  {name:'Mais previsibilidade', icon:'refresh-cw'},
+  {name:'Menos riscos', icon:'shield-alert'},
+  {name:'Dados centralizados', icon:'layers'},
+  {name:'Crescimento sustentável', icon:'cpu'},
+];
+const INTEGRACOES = ['Bancos','Pix','Emissão fiscal','Meios de pagamento','WhatsApp','E-mail','Plataformas de venda','Sistemas contábeis','Planilhas'];
+const FAQS = [
+  {q:'A Emrys é um ERP?', a:'Não no sentido tradicional. A Emrys é uma plataforma de Inteligência Artificial que aprende com os dados da sua empresa e recomenda ações, não apenas registra informações.'},
+  {q:'A plataforma é igual para todas as empresas?', a:'Não. Cada cliente recebe módulos adaptados ao seu segmento e aos seus processos — você usa apenas o que precisa.'},
+  {q:'A Emrys substitui contador ou administrador?', a:'Não. A Emrys apoia o trabalho desses profissionais, mas não os substitui legalmente.'},
+  {q:'Quais dados são necessários?', a:'Depende dos módulos contratados — geralmente financeiro, vendas, estoque e cadastro de clientes/fornecedores.'},
+  {q:'Quanto custa?', a:'O investimento depende dos módulos, integrações, complexidade e nível de personalização. Solicite um diagnóstico para receber uma proposta.'},
+  {q:'Quanto tempo leva para implantar?', a:'Varia conforme o tamanho da empresa e a quantidade de módulos — definimos o prazo durante o diagnóstico.'},
+  {q:'Meus dados estarão seguros?', a:'A arquitetura da Emrys é planejada com princípios de segurança, privacidade e controle de acesso desde o início, em conformidade com a LGPD.'},
+  {q:'Posso começar com poucos módulos e evoluir depois?', a:'Sim. A plataforma começa com o que sua empresa precisa e evolui conforme o negócio cresce.'},
+];
+
+function fmtBRL(n){ return 'R$ ' + n.toLocaleString('pt-BR'); }
+
+class Component extends DCLogic {
+  state = {
+    visible: {hero:true},
+    dashNums: {econ:0,lucro:0,estoque:0,fluxo:0},
+    dashAnimated:false,
+    activeBiz:0,
+    form:{nome:'',empresa:'',segmento:'',telefone:'',email:'',funcionarios:'',faturamento:'',areas:[],mensagem:'',consent:false},
+    errors:{},
+    submitted:false,
+    faqOpen:{},
+  };
+
+  componentDidMount(){
+    this._onScroll = () => {
+      if(this._scrollRaf) return;
+      this._scrollRaf = requestAnimationFrame(() => { this._scrollRaf = null; this.checkVisibility(); });
+    };
+    window.addEventListener('scroll', this._onScroll, {capture:true, passive:true});
+    window.addEventListener('resize', this._onScroll, {passive:true});
+    requestAnimationFrame(() => requestAnimationFrame(() => this.checkVisibility()));
+  }
+  componentWillUnmount(){
+    window.removeEventListener('scroll', this._onScroll, {capture:true});
+    window.removeEventListener('resize', this._onScroll);
+    if(this._scrollRaf) cancelAnimationFrame(this._scrollRaf);
+    if(this._raf) cancelAnimationFrame(this._raf);
+  }
+  checkVisibility(){
+    if(!this._sectionEls) return;
+    const vh = window.innerHeight || 800;
+    let changed = null;
+    Object.keys(this._sectionEls).forEach((key) => {
+      if(this.state.visible[key]) return;
+      const el = this._sectionEls[key];
+      if(!el) return;
+      const top = el.getBoundingClientRect().top;
+      if(top < vh * 0.9){
+        changed = changed || {};
+        changed[key] = true;
+      }
+    });
+    if(changed){
+      this.setState((s)=>({visible: Object.assign({}, s.visible, changed)}));
+      if(changed.dashboard) this.animateDashboard();
+    }
+  }
+  mkRef(key){
+    if(!this._refs) this._refs = {};
+    if(!this._sectionEls) this._sectionEls = {};
+    if(!this._refs[key]){
+      this._refs[key] = (el) => { if(el){ this._sectionEls[key] = el; } };
+    }
+    return this._refs[key];
+  }
+  revealStyle(key, idx, extra){
+    idx = idx || 0;
+    const v = !!this.state.visible[key];
+    const reduce = !!this.props.reduceMotion;
+    const base = { opacity: v?1:0, transition: reduce ? 'opacity .3s ease' : 'opacity .6s ease, transform .6s ease', transitionDelay: (idx*90)+'ms' };
+    if(!reduce) base.transform = v ? 'translateY(0)' : 'translateY(26px)';
+    return Object.assign(base, extra||{});
+  }
+  animateDashboard(){
+    if(this.state.dashAnimated) return;
+    this.setState({dashAnimated:true});
+    const targets = {econ:2400, lucro:18, estoque:32000, fluxo:94};
+    const start = performance.now();
+    const duration = 1300;
+    const tick = (t) => {
+      const p = Math.min(1, (t-start)/duration);
+      const e = 1-Math.pow(1-p,3);
+      this.setState({dashNums:{
+        econ: Math.round(targets.econ*e),
+        lucro: Math.round(targets.lucro*e),
+        estoque: Math.round(targets.estoque*e),
+        fluxo: Math.round(targets.fluxo*e),
+      }});
+      if(p<1) this._raf = requestAnimationFrame(tick);
+    };
+    this._raf = requestAnimationFrame(tick);
+  }
+  scrollToId(e, id){
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if(el){
+      const top = el.getBoundingClientRect().top + window.scrollY - 74;
+      window.scrollTo({top, behavior:'smooth'});
+    }
+  }
+  goToHero = (e) => this.scrollToId(e,'hero');
+  goToAgentes = (e) => this.scrollToId(e,'agentes');
+  goToComo = (e) => this.scrollToId(e,'comofunciona');
+  goToDiferenciais = (e) => this.scrollToId(e,'diferenciais');
+  goToContato = (e) => this.scrollToId(e,'contato');
+  setActiveBiz(i){ return () => this.setState({activeBiz:i}); }
+  handleField(name){
+    return (e) => { const val = e.target.value; this.setState((s)=>({form: Object.assign({}, s.form, {[name]:val})})); };
+  }
+  handleConsent = (e) => { const val = e.target.checked; this.setState((s)=>({form: Object.assign({}, s.form, {consent:val})})); };
+  toggleFaq(i){ return () => this.setState((s)=>({faqOpen: Object.assign({}, s.faqOpen, {[i]: !s.faqOpen[i]})})); }
+  toggleArea(a){
+    return () => {
+      this.setState((s)=>{
+        const has = s.form.areas.indexOf(a) !== -1;
+        const areas = has ? s.form.areas.filter((x)=>x!==a) : s.form.areas.concat([a]);
+        return {form: Object.assign({}, s.form, {areas})};
+      });
+    };
+  }
+  validate(f){
+    const errors = {};
+    if(!f.nome.trim()) errors.nome = 'Informe seu nome.';
+    if(!f.empresa.trim()) errors.empresa = 'Informe o nome da empresa.';
+    if(!f.email.trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email)) errors.email = 'Informe um e-mail válido.';
+    if(!f.telefone.trim()) errors.telefone = 'Informe um telefone.';
+    if(!f.consent) errors.consent = 'É necessário aceitar o uso dos dados.';
+    return errors;
+  }
+  submitForm = (e) => {
+    e.preventDefault();
+    const errors = this.validate(this.state.form);
+    this.setState({errors});
+    if(Object.keys(errors).length===0){ this.setState({submitted:true}); }
+  };
+  iconEl(name, size, color){
+    const list = ICON_DEFS[name] || [];
+    return React.createElement('svg', {width:size||22, height:size||22, viewBox:'0 0 24 24', fill:'none', stroke: color||'currentColor', strokeWidth:1.8, strokeLinecap:'round', strokeLinejoin:'round'},
+      list.map((it, i) => React.createElement(it[0], Object.assign({key:i}, it[1]))));
+  }
+  polarPos(cx, cy, r, angleDeg){
+    const a = angleDeg * Math.PI/180;
+    return {x: cx + r*Math.cos(a), y: cy + r*Math.sin(a)};
+  }
+  renderVals(){
+    const reduce = !!this.props.reduceMotion;
+    const showTestimonial = this.props.showTestimonial !== false;
+
+    const heroNodes = HERO_ICONS.map((icon, i) => {
+      const pos = this.polarPos(180, 180, 150, (i/HERO_ICONS.length)*360 - 90);
+      return { style:{position:'absolute', left:(pos.x-26)+'px', top:(pos.y-26)+'px', width:'52px', height:'52px', borderRadius:'50%', background:'var(--color-surface)', border:'1px solid var(--color-divider)', display:'flex', alignItems:'center', justifyContent:'center', color:'var(--color-neutral-700)', animation: reduce? undefined : 'emrys-float '+(4+i*0.4)+'s ease-in-out infinite'}, iconEl: this.iconEl(icon, 22) };
+    });
+    const heroLines = React.createElement('svg', {width:360, height:360, style:{position:'absolute', inset:0}},
+      HERO_ICONS.map((icon,i) => {
+        const p = this.polarPos(180,180,150,(i/HERO_ICONS.length)*360-90);
+        return React.createElement('line', {key:i, x1:180, y1:180, x2:p.x, y2:p.y, stroke:'var(--color-divider)', strokeWidth:1.5, strokeDasharray:'4 6'});
+      }));
+
+    const fluxoNodes = FLUXO.map((label, i) => {
+      const pos = this.polarPos(210, 210, 175, (i/FLUXO.length)*360 - 90);
+      return { label, style:{position:'absolute', left:(pos.x-56)+'px', top:(pos.y-16)+'px', width:'112px'} };
+    });
+    const fluxoLines = React.createElement('svg', {width:420, height:420, style:{position:'absolute', inset:0}},
+      FLUXO.map((_,i) => {
+        const p = this.polarPos(210,210,175,(i/FLUXO.length)*360-90);
+        return React.createElement('line', {key:i, x1:210, y1:210, x2:p.x, y2:p.y, stroke:'var(--color-divider)', strokeWidth:1.5, strokeDasharray: reduce? undefined :'5 5', style: reduce? undefined : {animation:'emrys-dash 2.4s linear infinite'}});
+      }));
+
+    const agents = AGENTS.map((a, i) => ({ name:a.name, desc:a.desc, iconEl: this.iconEl(a.icon,26), style: this.revealStyle('agentes', i) }));
+    const diferenciais = DIFERENCIAIS.map((d, i) => ({ name:d.name, iconEl: this.iconEl(d.icon,20), style: this.revealStyle('diferenciais', i) }));
+    const problemas = PROBLEMAS.map((p, i) => ({ name:p.name, iconEl: this.iconEl(p.icon,26), style: this.revealStyle('problema', i) }));
+    const steps = STEPS.map((st, i) => ({ n: st.n, title: st.title, style: this.revealStyle('comofunciona', i) }));
+    const comparativo = COMPARATIVO.map(([erp,emrys]) => ({erp, emrys}));
+    const businesses = BUSINESSES.map((b, i) => ({
+      name: b.name, iconEl: this.iconEl(b.icon, 16),
+      onClick: this.setActiveBiz(i),
+      tabStyle: { display:'flex', alignItems:'center', gap:'8px', padding:'10px 16px', cursor:'pointer', border: i===this.state.activeBiz ? '1px solid var(--color-accent)' : '1px solid var(--color-divider)', background: i===this.state.activeBiz ? 'var(--color-accent-100)' : 'transparent', color: i===this.state.activeBiz ? 'var(--color-accent)' : 'var(--color-text)' }
+    }));
+    const activeBiz = BUSINESSES[this.state.activeBiz];
+    const activeBizObj = { name: activeBiz.name, desc: activeBiz.desc, iconEl: this.iconEl(activeBiz.icon, 30) };
+    const areas = AREAS.map((a) => ({ name:a, onToggle: this.toggleArea(a) }));
+    const waMsg = encodeURIComponent('Olá! Conheci a Emrys pelo site e gostaria de entender como uma plataforma personalizada pode ajudar minha empresa.');
+    const whatsappLink = EMRYS_CONFIG.whatsappNumber ? ('https://wa.me/'+EMRYS_CONFIG.whatsappNumber+'?text='+waMsg) : '#contato';
+    const faqs = FAQS.map((f,i) => ({ q:f.q, a:f.a, open: !!this.state.faqOpen[i], onToggle: this.toggleFaq(i), icon: this.iconEl(this.state.faqOpen[i] ? 'x' : 'plus', 16) }));
+
+    return {
+      whatsappLink, whatsappDisplay: EMRYS_CONFIG.whatsappNumber || '[a confirmar]',
+      feedRef: this.mkRef('feed'), feedStyle: this.revealStyle('feed',0,{maxWidth:'1180px',margin:'0 auto'}), feed: FEED,
+      antesDepoisRef: this.mkRef('antesdepois'), antesDepoisStyle: this.revealStyle('antesdepois',0,{margin:'0 auto'}), antes: ANTES, depois: DEPOIS,
+      beneficiosRef: this.mkRef('beneficios'), beneficiosStyle: this.revealStyle('beneficios',0,{maxWidth:'1180px',margin:'0 auto'}), beneficios: BENEFICIOS.map((b)=>({name:b.name, iconEl:this.iconEl(b.icon,20)})),
+      segurancaRef: this.mkRef('seguranca'), segurancaStyle: this.revealStyle('seguranca',0,{}), integracoes: INTEGRACOES,
+      missaoRef: this.mkRef('missao'), missaoStyle: this.revealStyle('missao',0,{margin:'0 auto'}),
+      faqRef: this.mkRef('faq'), faqStyle: this.revealStyle('faq',0,{margin:'0 auto'}), faqs,
+      iconBrain: this.iconEl('brain', 32, 'var(--color-bg)'),
+      iconLinkedin: this.iconEl('linkedin', 18),
+      iconInstagram: this.iconEl('instagram', 18),
+      iconMail: this.iconEl('mail', 16),
+      iconPhone: this.iconEl('phone', 16),
+      iconPin: this.iconEl('pin', 16),
+      iconCheck: this.iconEl('check', 16, 'var(--color-accent)'),
+      iconX: this.iconEl('x', 16),
+      goToHero:this.goToHero, goToAgentes:this.goToAgentes, goToComo:this.goToComo, goToDiferenciais:this.goToDiferenciais, goToContato:this.goToContato,
+      heroNodes, heroLines,
+      sobreRef: this.mkRef('sobre'), sobreStyle: this.revealStyle('sobre',0,{maxWidth:'1180px',margin:'0 auto',display:'grid',gridTemplateColumns:'0.9fr 1.1fr',gap:'56px'}),
+      problemaRef: this.mkRef('problema'), problemas,
+      solucaoRef: this.mkRef('solucao'), solucaoStyle: this.revealStyle('solucao',0),
+      fluxoNodes, fluxoLines,
+      agentesRef: this.mkRef('agentes'), agents,
+      plataformaRef: this.mkRef('plataforma'), plataformaStyle: this.revealStyle('plataforma',0,{maxWidth:'1180px',margin:'0 auto'}),
+      businesses, activeBizObj,
+      comoRef: this.mkRef('comofunciona'), steps,
+      dashboardRef: this.mkRef('dashboard'), dashboardStyle: this.revealStyle('dashboard',0,{maxWidth:'1180px',margin:'0 auto'}),
+      econVal: fmtBRL(this.state.dashNums.econ),
+      lucroVal: '+'+this.state.dashNums.lucro+'%',
+      estoqueVal: fmtBRL(this.state.dashNums.estoque),
+      fluxoVal: this.state.dashNums.fluxo+'%',
+      diferenciaisRef: this.mkRef('diferenciais'), diferenciais,
+      comparativoRef: this.mkRef('comparativo'), comparativoStyle: this.revealStyle('comparativo',0,{maxWidth:'900px',margin:'0 auto'}), comparativo,
+      showTestimonial, depoimentoRef: this.mkRef('depoimento'), depoimentoStyle: this.revealStyle('depoimento',0,{maxWidth:'720px',margin:'0 auto',textAlign:'left'}),
+      ctaRef: this.mkRef('cta'), ctaStyle: this.revealStyle('cta',0,{maxWidth:'800px',margin:'0 auto',textAlign:'left'}),
+      contatoRef: this.mkRef('contato'), contatoStyle: this.revealStyle('contato',0,{maxWidth:'760px',margin:'0 auto'}),
+      form: this.state.form, errors: this.state.errors, submitted: this.state.submitted, formVisible: !this.state.submitted,
+      handleNome: this.handleField('nome'), handleEmpresa: this.handleField('empresa'), handleSegmento: this.handleField('segmento'),
+      handleTelefone: this.handleField('telefone'), handleEmail: this.handleField('email'),
+      handleFuncionarios: this.handleField('funcionarios'), handleFaturamento: this.handleField('faturamento'), handleMensagem: this.handleField('mensagem'),
+      submitForm: this.submitForm, areas,
+    };
+  }
+}
+</script>
+</body>
+</html>

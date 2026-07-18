@@ -97,7 +97,7 @@ button.btn{font:inherit}
 .tag-outline{border:1px solid var(--accent);color:var(--accent)}
 
 /* — cards — */
-.card{background:var(--surface);padding:22px;box-shadow:var(--shadow-sm);border:1px solid rgba(237,233,224,.16)}
+.card{background:var(--surface);padding:22px;box-shadow:var(--shadow-sm)}
 .card-kicker{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
 .card-title{font-family:var(--font-heading);font-weight:800;font-size:17px;margin-bottom:6px}
 .card-body{font-size:13px;opacity:.8;margin:0}
