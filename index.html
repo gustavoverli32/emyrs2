@@ -3,500 +3,577 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emrys — Inteligência Artificial para gestão empresarial</title>
-<meta name="description" content="A Emrys cria plataformas personalizadas de gestão com Inteligência Artificial para pequenas e médias empresas: dados conectados, aprendizado contínuo e recomendações automáticas.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline'; img-src 'self' https: data:; style-src 'self' https: 'unsafe-inline'; font-src 'self' https: data:;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Emrys — Inteligência Artificial para Gestão Empresarial</title>
+<meta name="description" content="Plataforma de Inteligência Artificial para PMEs: conecte dados, antecipe cenários e receba recomendações automáticas em tempo real.">
 <link rel="canonical" href="https://gustavoverli32.github.io/emyrs2/index.html">
-<meta property="og:title" content="Emrys — Inteligência Artificial para gestão empresarial">
+<meta property="og:title" content="Emrys — Inteligência Artificial para Gestão Empresarial">
 <meta property="og:description" content="Sua empresa não precisa de mais um sistema. Precisa de uma Inteligência Artificial trabalhando por ela.">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+
+<!-- Preload Fonts -->
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap" as="style">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap">
 <link rel="stylesheet" href="css/styles.css">
+
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Emrys","description":"Plataformas personalizadas de gestão com Inteligência Artificial para pequenas e médias empresas.","address":{"@type":"PostalAddress","addressLocality":"Rio das Ostras","addressRegion":"RJ","addressCountry":"BR"}}
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Emrys",
+  "url": "https://gustavoverli32.github.io/emyrs2/",
+  "description": "Plataformas personalizadas de gestão com Inteligência Artificial para pequenas e médias empresas.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rio das Ostras",
+    "addressRegion": "RJ",
+    "addressCountry": "BR"
+  }
+}
 </script>
 </head>
 <body>
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
 
 <header>
-<nav class="nav" aria-label="Navegação principal">
-  <a class="nav-brand" href="index.html">
-    <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="currentColor" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="#B08D57"></polygon></svg>
-    EMRYS
-  </a>
-  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <nav class="nav" aria-label="Navegação principal">
+    <a class="nav-brand" href="index.html">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="currentColor" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="#FFA260"></polygon></svg>
+      EMRYS
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" aria-current="page">Início</a>
+      <a href="plataforma.html">Plataforma</a>
+      <a href="solucoes.html">Soluções</a>
+      <a href="segmentos.html">Segmentos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        Menu
+      </button>
+    </div>
+  </nav>
   <div class="nav-backdrop" id="nav-backdrop"></div>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html" aria-current="page">Início</a>
-    <a href="plataforma.html">Plataforma</a>
-    <a href="solucoes.html">Soluções</a>
-    <a href="segmentos.html">Segmentos</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="contato.html">Contato</a>
-    <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico</a>
-  </div>
-</nav>
 </header>
 
 <main id="main">
 
-<section class="hero">
-  <div class="hero-grid">
+<!-- HERO SECTION: IMPACTANTE E DIRETA -->
+<section class="hero glow-top grid-bg">
+  <div class="container hero-grid">
     <div>
-      <span class="tag tag-outline">Inteligência Artificial para gestão</span>
-      <h1 style="margin-top:14px">Sua empresa não precisa de mais um sistema.<br><span style="color:var(--accent)">Precisa de uma Inteligência Artificial trabalhando por ela.</span></h1>
-      <p style="font-size:18px;max-width:540px;opacity:.85">A Emrys cria plataformas personalizadas que conectam as áreas da sua empresa, aprendem com seus dados e transformam informações em decisões — para identificar oportunidades de crescimento, redução de custos e gestão de riscos.</p>
-      <p style="font-size:14px;font-family:var(--font-heading);font-weight:800">Plataforma personalizada. Inteligência contínua. Decisões melhores.</p>
-      <div style="display:flex;gap:14px;margin-top:22px;flex-wrap:wrap">
-        <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico</a>
-        <a class="btn btn-secondary" href="plataforma.html">Conhecer a plataforma</a>
+      <div class="eyebrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        IA para Gestão de PMEs
+      </div>
+      <h1>
+        <span class="t-sans">Sua empresa não precisa de mais um sistema.</span>
+        <em class="t-serif">Precisa de uma Inteligência Artificial trabalhando por ela.</em>
+      </h1>
+      <p class="lead">A Emrys conecta todas as áreas do seu negócio, aprende com seus dados e recomenda decisões automáticas para aumentar o lucro e reduzir custos.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico gratuito</a>
+        <a class="btn btn-secondary" href="plataforma.html">Ver plataforma →</a>
       </div>
     </div>
+
+    <!-- DEMO INTERATIVA DE PAINEL -->
     <div class="hero-illustration">
-      <div class="hero-node" style="left:0;top:20px" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9"></path><path d="M9 21V13"></path><path d="M15 21V6"></path><path d="M21 21V3"></path></svg></div>
-      <div class="hero-node" style="right:0;top:0" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20"></rect><path d="M9 6h2M13 6h2M9 10h2M13 10h2M9 14h2M13 14h2"></path></svg></div>
-      <div class="hero-node" style="right:-10px;top:50%" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><circle cx="17" cy="9" r="2.3"></circle><path d="M21 20c0-2.6-1.7-4.8-4-5.6"></path></svg></div>
-      <div class="hero-node" style="left:10px;bottom:10px" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"></path><path d="M15 2v5h5"></path></svg></div>
-      <div class="hero-brain" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 003 3M15 3a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-3 3M9 3v16M15 3v16"></path></svg></div>
-      <div class="card elev-lg hero-panel">
-        <div class="card-kicker">PAINEL EMRYS · DEMONSTRAÇÃO</div>
-        <div class="card-title">Bom dia, Gustavo.</div>
-        <p class="card-body" style="margin-bottom:12px">Encontramos 8 oportunidades hoje.</p>
-        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px"><span class="text-muted">Economia potencial</span><span class="tag tag-accent">R$ 3.240</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px"><span class="text-muted">Estoque parado</span><span class="tag tag-accent">R$ 27.800</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:13px"><span class="text-muted">Fluxo de caixa (90 dias)</span><span class="tag tag-neutral">Saudável</span></div>
+      <div class="hero-brain" aria-hidden="true">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><path d="M9 3a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 003 3M15 3a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-3 3M9 3v16M15 3v16"></path></svg>
       </div>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<section class="section-surface">
-  <div class="container" style="max-width:840px">
-    <h2>Os sistemas tradicionais mostram o que aconteceu.<br><span style="color:var(--accent)">A Emrys ajuda a entender o que fazer a seguir.</span></h2>
-    <p style="max-width:620px;opacity:.8">A maioria dos sistemas apenas armazena dados. A Emrys analisa padrões, ajuda a antecipar cenários e recomenda ações.</p>
-  </div>
-</section>
-
-<hr class="hr">
-
-<section id="sobre-resumo" data-reveal>
-  <div class="container grid grid-2">
-    <div>
-      <h6>Sobre a Emrys</h6>
-      <h2 style="max-width:420px">Não criamos ERPs. Criamos empresas mais inteligentes.</h2>
-    </div>
-    <div>
-      <p style="font-size:18px">Os sistemas atuais apenas registram informações.</p>
-      <p style="font-size:18px;font-family:var(--font-heading);font-weight:800">A Emrys analisa. Aprende. Prevê. Recomenda.</p>
-      <p style="opacity:.8;max-width:520px">Enquanto você administra seu negócio, nossa Inteligência Artificial trabalha continuamente encontrando oportunidades para aumentar seu lucro, reduzir custos e minimizar riscos.</p>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<section class="section-surface" data-reveal>
-  <div class="container">
-    <div class="section-lead">
-      <h6>O cenário atual</h6>
-      <h2>Administrar uma empresa ainda é mais difícil do que deveria.</h2>
-      <p class="text-muted">Planilhas, ERP, WhatsApp, banco, contador, notas fiscais — cada ferramenta guarda um pedaço da sua empresa, sozinha.</p>
-    </div>
-    <div class="grid grid-auto">
-      <div class="card" style="align-items:center;text-align:center;gap:8px"><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style=""><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg></div><div class="card-title" style="font-size:14px">Planilhas</div></div>
-      <div class="card" style="align-items:center;text-align:center;gap:8px"><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style=""><rect x="4" y="2" width="16" height="20"></rect><path d="M9 6h2M13 6h2M9 10h2M13 10h2M9 14h2M13 14h2"></path></svg></div><div class="card-title" style="font-size:14px">ERP</div></div>
-      <div class="card" style="align-items:center;text-align:center;gap:8px"><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style=""><path d="M4 5h16v11H8l-4 4z"></path></svg></div><div class="card-title" style="font-size:14px">WhatsApp</div></div>
-      <div class="card" style="align-items:center;text-align:center;gap:8px"><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style=""><rect x="2" y="6" width="20" height="12"></rect><circle cx="12" cy="12" r="3"></circle></svg></div><div class="card-title" style="font-size:14px">Banco</div></div>
-      <div class="card" style="align-items:center;text-align:center;gap:8px"><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style=""><rect x="4" y="2" width="16" height="20"></rect><path d="M8 6h8M8 11h2M12 11h2M16 11h2M8 15h2M12 15h2M16 15h2"></path></svg></div><div class="card-title" style="font-size:14px">Contador</div></div>
-      <div class="card" style="align-items:center;text-align:center;gap:8px"><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style=""><path d="M6 2h9l5 5v15H6z"></path><path d="M15 2v5h5"></path></svg></div><div class="card-title" style="font-size:14px">Notas fiscais</div></div>
-    </div>
-  </div>
-</section>
-
-<section data-reveal>
-  <div class="container grid grid-2" style="align-items:center">
-    <div>
-      <h6>Nossa solução</h6>
-      <h2 style="max-width:440px">Todos os dados da sua empresa. Uma única inteligência.</h2>
-      <p class="text-muted" style="max-width:460px">Clientes, financeiro, compras, estoque, funcionários, notas fiscais, fluxo de caixa, CRM e vendas — tudo entra na plataforma e alimenta a Emrys AI.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-        <span class="tag tag-accent">Recomendações automáticas</span>
-        <span class="tag tag-accent">Previsões em tempo real</span>
-      </div>
-    </div>
-    <div class="card elev-md eco-diagram" style="padding:36px;position:relative;overflow:visible">
-      <div style="position:relative;width:100%;max-width:380px;aspect-ratio:1;margin:0 auto">
-        <svg viewBox="0 0 380 380" style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
-          <defs>
-            <radialGradient id="ecoGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.22"></stop>
-              <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"></stop>
-            </radialGradient>
-          </defs>
-          <circle cx="190" cy="190" r="170" fill="url(#ecoGlow)"></circle>
-          <circle cx="190" cy="190" r="110" class="eco-ring eco-ring-a"></circle>
-          <circle cx="190" cy="190" r="150" class="eco-ring eco-ring-b"></circle>
-          <line x1="190" y1="190" x2="190" y2="40" class="eco-line" style="animation-delay:0s"></line>
-          <line x1="190" y1="190" x2="286.4" y2="75.1" class="eco-line" style="animation-delay:.2s"></line>
-          <line x1="190" y1="190" x2="337.7" y2="164" class="eco-line" style="animation-delay:.4s"></line>
-          <line x1="190" y1="190" x2="319.9" y2="265" class="eco-line" style="animation-delay:.6s"></line>
-          <line x1="190" y1="190" x2="241.3" y2="330.9" class="eco-line" style="animation-delay:.8s"></line>
-          <line x1="190" y1="190" x2="138.7" y2="330.9" class="eco-line" style="animation-delay:1s"></line>
-          <line x1="190" y1="190" x2="60.1" y2="265" class="eco-line" style="animation-delay:1.2s"></line>
-          <line x1="190" y1="190" x2="42.3" y2="164" class="eco-line" style="animation-delay:1.4s"></line>
-          <line x1="190" y1="190" x2="93.6" y2="75.1" class="eco-line" style="animation-delay:1.6s"></line>
-          <circle cx="190" cy="40" r="3" class="eco-dot"></circle>
-          <circle cx="286.4" cy="75.1" r="3" class="eco-dot"></circle>
-          <circle cx="337.7" cy="164" r="3" class="eco-dot"></circle>
-          <circle cx="319.9" cy="265" r="3" class="eco-dot"></circle>
-          <circle cx="241.3" cy="330.9" r="3" class="eco-dot"></circle>
-          <circle cx="138.7" cy="330.9" r="3" class="eco-dot"></circle>
-          <circle cx="60.1" cy="265" r="3" class="eco-dot"></circle>
-          <circle cx="42.3" cy="164" r="3" class="eco-dot"></circle>
-          <circle cx="93.6" cy="75.1" r="3" class="eco-dot"></circle>
-        </svg>
-        <span class="eco-node" style="left:50.00%;top:10.53%">Clientes</span>
-        <span class="eco-node" style="left:75.37%;top:19.76%">Financeiro</span>
-        <span class="eco-node" style="left:88.87%;top:43.16%">Compras</span>
-        <span class="eco-node" style="left:84.18%;top:69.74%">Estoque</span>
-        <span class="eco-node" style="left:76.00%;top:94.00%">Funcionários</span>
-        <span class="eco-node" style="left:24.00%;top:94.00%">Notas fiscais</span>
-        <span class="eco-node" style="left:15.82%;top:69.74%">Fluxo de caixa</span>
-        <span class="eco-node" style="left:11.13%;top:43.16%">CRM</span>
-        <span class="eco-node" style="left:24.63%;top:19.76%">Vendas</span>
-        <div class="eco-brain">EMRYS AI</div>
-      </div>
-      <div class="eco-fallback">
-        <div class="eco-brain-static">EMRYS AI</div>
-        <div class="eco-tags">
-          <span class="tag tag-neutral">Clientes</span><span class="tag tag-neutral">Financeiro</span><span class="tag tag-neutral">Compras</span>
-          <span class="tag tag-neutral">Estoque</span><span class="tag tag-neutral">Funcionários</span><span class="tag tag-neutral">Notas fiscais</span>
-          <span class="tag tag-neutral">Fluxo de caixa</span><span class="tag tag-neutral">CRM</span><span class="tag tag-neutral">Vendas</span>
+      <div class="card-glass hero-panel">
+        <div class="card-kicker">EMRYS AI · OPERAÇÃO EM TEMPO REAL</div>
+        <div class="card-title" style="font-size:20px;margin-bottom:8px">Bom dia, Gustavo.</div>
+        <p class="card-body" style="font-size:14px;margin-bottom:16px">Encontramos 8 oportunidades de melhoria hoje.</p>
+        <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:10px">
+          <span class="text-dim">Economia potencial</span>
+          <span style="color:var(--accent);font-weight:700">R$ 3.240</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:10px">
+          <span class="text-dim">Estoque sem giro</span>
+          <span style="color:var(--accent);font-weight:700">R$ 27.800</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:14px">
+          <span class="text-dim">Fluxo de caixa (90 dias)</span>
+          <span style="color:var(--blue);font-weight:700">Saudável</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<hr class="hr">
+<!-- FAIXA DE MÉTRICAS (STRIP OBJETIVA) -->
+<section class="metrics-banner" data-count-group>
+  <div class="container">
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-num" data-count="5">0</div>
+        <div class="metric-label">Agentes de IA executivos</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num" data-count="9">0</div>
+        <div class="metric-label">Fontes de dados integradas</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">24<span>/7</span></div>
+        <div class="metric-label">Análise contínua e autônoma</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num" data-count="100" data-suffix="%">0%</div>
+        <div class="metric-label">Plataforma sob medida</div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<hr class="hr-glow">
+
+<!-- SEÇÃO INTERATIVA: EQUIPE EXECUTIVA DE IA (TABS HIGH-TECH) -->
 <section id="agentes" class="section-surface" data-reveal>
   <div class="container">
-    <div class="section-lead">
-      <h6>Conheça sua nova equipe</h6>
-      <h2>Uma equipe executiva de IA, trabalhando por você.</h2>
-      <p class="text-muted">Especialistas digitais que analisam sua empresa continuamente e ajudam você a tomar decisões melhores.</p>
+    <div class="section-header text-center">
+      <div class="eyebrow">Inteligência Autônoma</div>
+      <h2>
+        <span class="t-sans">Uma equipe executiva de IA,</span>
+        <em class="t-serif">trabalhando por você.</em>
+      </h2>
+      <p class="lead">Selecione um agente abaixo para ver como ele analisa sua empresa em tempo real:</p>
     </div>
-    <div class="grid grid-auto">
-      <div class="card"><div class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M3 21V9"></path><path d="M9 21V13"></path><path d="M15 21V6"></path><path d="M21 21V3"></path></svg></div><div class="card-title">Diretor Financeiro IA</div><p class="card-body">Analisa fluxo de caixa, margens, capital de giro e rentabilidade.</p></div>
-      <div class="card"><div class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"></path><path d="M9 7h6M9 11h6"></path></svg></div><div class="card-title">Contador IA</div><p class="card-body">Analisa tributação, notas fiscais, impostos e economias tributárias. Apoia o trabalho contábil, mas não substitui profissionais legalmente habilitados.</p></div>
-      <div class="card"><div class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><circle cx="17" cy="9" r="2.3"></circle><path d="M21 20c0-2.6-1.7-4.8-4-5.6"></path></svg></div><div class="card-title">Administrador IA</div><p class="card-body">Analisa produtividade, equipe, processos e eficiência.</p></div>
-      <div class="card"><div class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"></path><path d="M12 8v4"></path><circle cx="12" cy="15" r="0.6"></circle></svg></div><div class="card-title">Gestor de Risco IA</div><p class="card-body">Prevê inadimplência, problemas financeiros, estoque parado e fluxo futuro.</p></div>
-      <div class="card"><div class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M3 17l6-6 4 4 8-9"></path><path d="M15 5h6v6"></path></svg></div><div class="card-title">Consultor de Crescimento IA</div><p class="card-body">Sugere estratégias para aumentar faturamento, melhorar margem, expandir vendas e aumentar retenção.</p></div>
+
+    <!-- TABS DOS AGENTES -->
+    <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:36px" role="tablist">
+      <button class="chip active" data-agent-tab="financeiro" aria-pressed="true">Diretor Financeiro IA</button>
+      <button class="chip" data-agent-tab="contador" aria-pressed="false">Contador IA</button>
+      <button class="chip" data-agent-tab="admin" aria-pressed="false">Administrador IA</button>
+      <button class="chip" data-agent-tab="risco" aria-pressed="false">Gestor de Risco IA</button>
+      <button class="chip" data-agent-tab="crescimento" aria-pressed="false">Consultor de Crescimento IA</button>
     </div>
-  </div>
-</section>
 
-<section id="feed" data-reveal>
-  <div class="container">
-    <div class="section-lead" style="margin-bottom:8px">
-      <h6>Enquanto você trabalha</h6>
-      <h2>A Emrys continua analisando.</h2>
-    </div>
-    <span class="tag tag-outline" style="margin-bottom:18px;display:inline-flex">Dados demonstrativos para apresentação da plataforma</span>
-    <div style="max-width:720px">
-      <div class="feed-item"><span class="feed-time">09:12</span><span>Detectamos R$ 18.700 em estoque sem movimentação.</span></div>
-      <div class="feed-item"><span class="feed-time">10:35</span><span>Três produtos estão sendo vendidos abaixo da margem recomendada.</span></div>
-      <div class="feed-item"><span class="feed-time">11:18</span><span>O fluxo de caixa pode ficar negativo dentro de 42 dias.</span></div>
-      <div class="feed-item"><span class="feed-time">13:06</span><span>Um fornecedor aumentou os preços acima da média.</span></div>
-      <div class="feed-item"><span class="feed-time">14:44</span><span>Existe potencial de aumentar o lucro mensal em 11%.</span></div>
-      <div class="feed-item" style="border-bottom:none"><span class="feed-time">16:20</span><span>Dois clientes apresentam maior risco de atraso.</span></div>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<section id="plataforma-personalizada" class="section-surface" data-reveal>
-  <div class="container">
-    <div class="section-lead">
-      <h6>Plataforma personalizada</h6>
-      <h2>Cada empresa é única. Seu sistema também deveria ser.</h2>
-      <p class="text-muted">Você utiliza apenas os módulos que realmente precisa. Nada além disso.</p>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px" role="tablist">
-      <button class="chip" data-biz-tab="oficina" aria-pressed="true">Oficina Mecânica</button>
-      <button class="chip" data-biz-tab="clinica" aria-pressed="false">Clínica</button>
-      <button class="chip" data-biz-tab="loja" aria-pressed="false">Loja</button>
-      <button class="chip" data-biz-tab="restaurante" aria-pressed="false">Restaurante</button>
-      <button class="chip" data-biz-tab="industria" aria-pressed="false">Indústria</button>
-    </div>
-    <div class="card elev-md" style="max-width:640px">
-      <div data-biz-panel="oficina" class="icon-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style=""><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.3 2.3-2-2z"></path></svg><p class="card-body">Ordens de serviço, peças em estoque e agenda de mecânicos em um painel só.</p></div>
-      <div data-biz-panel="clinica" class="icon-row" style="display:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style=""><path d="M6 3v6a4 4 0 008 0V3"></path><path d="M10 13v2a5 5 0 0010 0v-2"></path><circle cx="20" cy="11" r="1.3"></circle></svg><p class="card-body">Agenda de consultas, prontuários e faturamento de convênios integrados.</p></div>
-      <div data-biz-panel="loja" class="icon-row" style="display:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style=""><path d="M6 8h12l-1 12H7z"></path><path d="M9 8V6a3 3 0 016 0v2"></path></svg><p class="card-body">Vendas, estoque e giro de produtos com recomendações de reposição automática.</p></div>
-      <div data-biz-panel="restaurante" class="icon-row" style="display:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style=""><path d="M6 2v8a2 2 0 002 2M9 2v20M6 2v8M14 2s-1 4-1 7 1 4 3 4v9"></path></svg><p class="card-body">Comandas, ficha técnica e margem por prato calculada automaticamente.</p></div>
-      <div data-biz-panel="industria" class="icon-row" style="display:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style=""><path d="M3 21V10l5 3v-3l5 3V8l5 3v10z"></path></svg><p class="card-body">Produção, insumos e custo por lote com previsão de demanda.</p></div>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<section id="como-funciona" data-reveal>
-  <div class="container">
-    <h6>Como funciona</h6>
-    <h2 style="margin-bottom:32px">Do primeiro contato à sua IA em produção.</h2>
-    <div class="grid grid-auto">
-      <div><div style="width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;margin-bottom:10px">1</div><div style="font-family:var(--font-heading);font-weight:800">Entendemos seu negócio.</div></div>
-      <div><div style="width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;margin-bottom:10px">2</div><div style="font-family:var(--font-heading);font-weight:800">Construímos sua plataforma personalizada.</div></div>
-      <div><div style="width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;margin-bottom:10px">3</div><div style="font-family:var(--font-heading);font-weight:800">Integramos seus dados.</div></div>
-      <div><div style="width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;margin-bottom:10px">4</div><div style="font-family:var(--font-heading);font-weight:800">Nossa IA aprende.</div></div>
-      <div><div style="width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;margin-bottom:10px">5</div><div style="font-family:var(--font-heading);font-weight:800">Sua empresa recebe recomendações automáticas.</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="dashboard" class="section-surface" data-reveal>
-  <div class="container">
-    <div class="section-lead">
-      <h6>Demonstração</h6>
-      <h2>Bom dia, Gustavo. Hoje encontramos 8 oportunidades.</h2>
-    </div>
-    <div class="grid grid-auto">
-      <div class="card"><div class="card-kicker">Economia potencial</div><div style="font-family:var(--font-heading);font-weight:800;font-size:26px" data-count="3240" data-prefix="R$ ">R$ 0</div></div>
-      <div class="card"><div class="card-kicker">Estoque parado</div><div style="font-family:var(--font-heading);font-weight:800;font-size:26px" data-count="27800" data-prefix="R$ ">R$ 0</div></div>
-      <div class="card"><div class="card-kicker">Margem média</div><div style="font-family:var(--font-heading);font-weight:800;font-size:26px" data-count="18.7" data-decimals="1" data-suffix="%">0%</div></div>
-      <div class="card"><div class="card-kicker">Score empresarial</div><div style="font-family:var(--font-heading);font-weight:800;font-size:26px" data-count="87" data-suffix="/100">0/100</div></div>
-      <div class="card"><div class="card-kicker">Risco de inadimplência</div><div style="font-family:var(--font-heading);font-weight:800;font-size:26px">Moderado</div></div>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<section id="antes-depois" class="section-surface" data-reveal>
-  <div class="container">
-    <h6>Antes e depois</h6>
-    <h2 style="margin-bottom:28px">Da planilha à inteligência contínua.</h2>
-    <div class="grid grid-2">
-      <div class="card">
-        <div class="card-kicker" style="color:var(--text-muted)">Antes da Emrys</div>
-        <p style="font-size:14px;opacity:.75">Planilhas espalhadas · Sistemas que não conversam · Decisões baseadas em intuição · Retrabalho constante · Informações atrasadas · Relatórios difíceis de interpretar</p>
-      </div>
-      <div class="card" style="border:1px solid var(--accent)">
-        <div class="card-kicker">Depois da Emrys</div>
-        <p style="font-size:14px;font-family:var(--font-heading);font-weight:800">Tudo centralizado · Dados organizados · Recomendações automáticas · Alertas inteligentes · Projeções em tempo real · Decisões mais rápidas</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="comparativo" data-reveal>
-  <div class="container" style="max-width:900px">
-    <h6>Comparativo</h6>
-    <h2 style="margin-bottom:24px">ERP tradicional vs. Emrys.</h2>
-    <table class="table">
-      <thead><tr><th>ERP tradicional</th><th>Emrys</th></tr></thead>
-      <tbody>
-        <tr><td>Registra informações.</td><td>Apoia decisões.</td></tr>
-        <tr><td>Possui funções genéricas.</td><td>É personalizada.</td></tr>
-        <tr><td>Gera relatórios.</td><td>Recomenda ações.</td></tr>
-        <tr><td>Depende do usuário.</td><td>Monitora dados continuamente.</td></tr>
-        <tr><td>Mostra principalmente o passado.</td><td>Ajuda a antecipar cenários.</td></tr>
-      </tbody>
-    </table>
-    <div class="compare-cards">
-      <div class="card"><div class="card-kicker" style="color:var(--text-muted)">ERP tradicional</div><p class="card-body">Registra informações.</p><div class="card-kicker" style="margin-top:10px">Emrys</div><p class="card-body" style="font-family:var(--font-heading);font-weight:800">Apoia decisões.</p></div>
-      <div class="card"><div class="card-kicker" style="color:var(--text-muted)">ERP tradicional</div><p class="card-body">Possui funções genéricas.</p><div class="card-kicker" style="margin-top:10px">Emrys</div><p class="card-body" style="font-family:var(--font-heading);font-weight:800">É personalizada.</p></div>
-      <div class="card"><div class="card-kicker" style="color:var(--text-muted)">ERP tradicional</div><p class="card-body">Gera relatórios.</p><div class="card-kicker" style="margin-top:10px">Emrys</div><p class="card-body" style="font-family:var(--font-heading);font-weight:800">Recomenda ações.</p></div>
-      <div class="card"><div class="card-kicker" style="color:var(--text-muted)">ERP tradicional</div><p class="card-body">Depende do usuário.</p><div class="card-kicker" style="margin-top:10px">Emrys</div><p class="card-body" style="font-family:var(--font-heading);font-weight:800">Monitora dados continuamente.</p></div>
-      <div class="card"><div class="card-kicker" style="color:var(--text-muted)">ERP tradicional</div><p class="card-body">Mostra principalmente o passado.</p><div class="card-kicker" style="margin-top:10px">Emrys</div><p class="card-body" style="font-family:var(--font-heading);font-weight:800">Ajuda a antecipar cenários.</p></div>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<section id="beneficios" class="section-surface" data-reveal>
-  <div class="container">
-    <h6>Benefícios</h6>
-    <h2 style="margin-bottom:28px">O que muda no dia a dia.</h2>
-    <div class="grid grid-auto">
-      <div class="icon-row"><span class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M3 17l6-6 4 4 8-9"></path><path d="M15 5h6v6"></path></svg></span>Decisões mais rápidas</div>
-      <div class="icon-row"><span class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"></path></svg></span>Redução de desperdícios</div>
-      <div class="icon-row"><span class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M12 2v20M17 6.5a4 4 0 00-4-2.5H10a3.5 3.5 0 000 7h4a3.5 3.5 0 010 7h-3a4 4 0 01-4-2.5"></path></svg></span>Melhor controle financeiro</div>
-      <div class="icon-row"><span class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><circle cx="17" cy="9" r="2.3"></circle><path d="M21 20c0-2.6-1.7-4.8-4-5.6"></path></svg></span>Mais produtividade</div>
-      <div class="icon-row"><span class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M21 12a9 9 0 01-15 6.5M3 12a9 9 0 0115-6.5"></path><path d="M21 3v6h-6M3 21v-6h6"></path></svg></span>Mais previsibilidade</div>
-      <div class="icon-row"><span class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"></path><path d="M12 8v4"></path><circle cx="12" cy="15" r="0.6"></circle></svg></span>Menos riscos</div>
-      <div class="icon-row"><span class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M12 3l9 5-9 5-9-5z"></path><path d="M3 13l9 5 9-5"></path></svg></span>Dados centralizados</div>
-      <div class="icon-row"><span class="icon-accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><rect x="6" y="6" width="12" height="12"></rect><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"></path></svg></span>Crescimento sustentável</div>
-    </div>
-  </div>
-</section>
-
-<section id="seguranca" data-reveal>
-  <div class="container grid grid-2">
-    <div>
-      <h6>Segurança e privacidade</h6>
-      <h2 style="max-width:420px">Construída com controle de acesso desde o início.</h2>
-      <p class="text-muted" style="max-width:460px">A arquitetura da Emrys é planejada com princípios de segurança, privacidade e controle de acesso desde o início — autenticação, permissões por usuário, criptografia e conformidade com a LGPD.</p>
-      <a href="politica-de-privacidade.html">Política de Privacidade →</a>
-    </div>
-    <div>
-      <h6>Integrações</h6>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
-        <span class="tag tag-neutral">Bancos</span><span class="tag tag-neutral">Pix</span><span class="tag tag-neutral">Emissão fiscal</span>
-        <span class="tag tag-neutral">Meios de pagamento</span><span class="tag tag-neutral">WhatsApp</span><span class="tag tag-neutral">E-mail</span>
-        <span class="tag tag-neutral">Plataformas de venda</span><span class="tag tag-neutral">Sistemas contábeis</span><span class="tag tag-neutral">Planilhas</span>
-      </div>
-      <p class="text-muted" style="font-size:12px;margin-top:12px">Integrações disponíveis, planejadas ou sob análise conforme o segmento e as ferramentas já usadas pela sua empresa.</p>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<section id="missao" class="section-surface" data-reveal>
-  <div class="container grid grid-auto">
-    <div><h6>Missão</h6><p>Democratizar o acesso à inteligência empresarial para pequenas e médias empresas.</p></div>
-    <div><h6>Visão</h6><p>Fazer com que toda empresa possa contar com uma equipe executiva de Inteligência Artificial.</p></div>
-    <div><h6>Propósito</h6><p>Transformar dados em decisões que fortaleçam negócios.</p></div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<section id="faq" data-reveal>
-  <div class="container" style="max-width:800px">
-    <h6>Perguntas frequentes</h6>
-    <h2 style="margin-bottom:24px">Ainda com dúvidas?</h2>
-    <div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">A Emrys é um ERP?<span class="faq-icon">+</span></button>
-        <p class="faq-a">Não no sentido tradicional. A Emrys é uma plataforma de Inteligência Artificial que aprende com os dados da sua empresa e recomenda ações, não apenas registra informações.</p>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">A plataforma é igual para todas as empresas?<span class="faq-icon">+</span></button>
-        <p class="faq-a">Não. Cada cliente recebe módulos adaptados ao seu segmento e aos seus processos — você usa apenas o que precisa.</p>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">A Emrys substitui contador ou administrador?<span class="faq-icon">+</span></button>
-        <p class="faq-a">Não. A Emrys apoia o trabalho desses profissionais, mas não os substitui legalmente.</p>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Quanto custa?<span class="faq-icon">+</span></button>
-        <p class="faq-a">O investimento depende dos módulos, integrações, complexidade e nível de personalização. Solicite um diagnóstico para receber uma proposta.</p>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Meus dados estarão seguros?<span class="faq-icon">+</span></button>
-        <p class="faq-a">A arquitetura da Emrys é planejada com princípios de segurança, privacidade e controle de acesso desde o início, em conformidade com a LGPD.</p>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Posso começar com poucos módulos e evoluir depois?<span class="faq-icon">+</span></button>
-        <p class="faq-a">Sim. A plataforma começa com o que sua empresa precisa e evolui conforme o negócio cresce.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<section id="depoimento" class="section-surface" data-reveal>
-  <div class="container" style="max-width:720px">
-    <span class="tag tag-outline">Conceito ilustrativo</span>
-    <p style="font-size:24px;font-family:var(--font-heading);font-weight:800;line-height:1.35;margin-top:14px">"A Emrys representa exatamente o que sempre imaginei. Um sistema que finalmente entende meu negócio."</p>
-    <p class="text-muted" style="font-size:12px">Espaço reservado para depoimentos de clientes reais.</p>
-  </div>
-</section>
-
-<section style="background:var(--accent);color:var(--bg)" data-reveal>
-  <div class="container" style="max-width:800px">
-    <h2 style="color:var(--bg)">Sua empresa precisa de mais um sistema ou de uma inteligência trabalhando por ela?</h2>
-    <p style="color:var(--bg);opacity:.85;max-width:600px">Conte como sua empresa funciona. A Emrys analisa suas necessidades e apresenta uma solução personalizada para seus principais desafios.</p>
-    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:18px">
-      <a class="btn" href="contato.html" style="background:var(--bg);color:var(--accent-700)">Solicitar diagnóstico</a>
-      <a class="btn btn-secondary" style="border-color:var(--bg);color:var(--bg)" data-wa-link>Falar com um especialista</a>
-    </div>
-    <p style="color:var(--bg);opacity:.7;font-size:13px;margin-top:12px">Sem compromisso. Sem soluções genéricas.</p>
-  </div>
-</section>
-
-<section id="contato" data-reveal>
-  <div class="container" style="max-width:760px">
-    <h6>Fale com a gente</h6>
-    <h2 style="margin-bottom:24px">Quero conhecer a Emrys.</h2>
-    <div id="form-success" class="card elev-md" hidden>
-      <div class="card-title">Recebemos seu contato.</div>
-      <p class="card-body">Nossa equipe vai analisar o seu negócio e retornar em breve.</p>
-    </div>
-    <form id="contact-form" class="grid grid-2">
-      <div class="field"><label for="nome">Nome</label><input class="input" id="nome" name="nome" autocomplete="name"><span data-error-for="nome" style="color:var(--accent-700);font-size:12px"></span></div>
-      <div class="field"><label for="empresa">Empresa</label><input class="input" id="empresa" name="empresa" autocomplete="organization"><span data-error-for="empresa" style="color:var(--accent-700);font-size:12px"></span></div>
-      <div class="field"><label for="segmento">Segmento</label><input class="input" id="segmento" name="segmento" placeholder="Ex: comércio, indústria, serviços"></div>
-      <div class="field"><label for="telefone">Telefone</label><input class="input" id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel"><span data-error-for="telefone" style="color:var(--accent-700);font-size:12px"></span></div>
-      <div class="field"><label for="email">E-mail</label><input class="input" id="email" name="email" type="email" inputmode="email" autocomplete="email"><span data-error-for="email" style="color:var(--accent-700);font-size:12px"></span></div>
-      <div class="field"><label for="funcionarios">Número de funcionários</label>
-        <select class="input" id="funcionarios" name="funcionarios">
-          <option value="">Selecione</option><option value="1-5">1 a 5</option><option value="6-20">6 a 20</option><option value="21-50">21 a 50</option><option value="51+">Mais de 50</option>
-        </select>
-      </div>
-      <div class="field" style="grid-column:1/-1"><label for="faturamento">Faturamento aproximado</label>
-        <select class="input" id="faturamento" name="faturamento">
-          <option value="">Selecione</option><option value="ate-50k">Até R$ 50 mil/mês</option><option value="50-200k">R$ 50 mil a R$ 200 mil/mês</option><option value="200k+">Acima de R$ 200 mil/mês</option>
-        </select>
-      </div>
-      <div class="field" style="grid-column:1/-1">
-        <label>Quais áreas deseja melhorar</label>
-        <div style="display:flex;flex-wrap:wrap;gap:8px">
-          <label class="tag" style="border:1px solid var(--divider);cursor:pointer"><input type="checkbox" name="areas" value="Financeiro" style="margin-right:6px">Financeiro</label>
-          <label class="tag" style="border:1px solid var(--divider);cursor:pointer"><input type="checkbox" name="areas" value="Administrativo" style="margin-right:6px">Administrativo</label>
-          <label class="tag" style="border:1px solid var(--divider);cursor:pointer"><input type="checkbox" name="areas" value="Estoque" style="margin-right:6px">Estoque</label>
-          <label class="tag" style="border:1px solid var(--divider);cursor:pointer"><input type="checkbox" name="areas" value="Vendas" style="margin-right:6px">Vendas</label>
-          <label class="tag" style="border:1px solid var(--divider);cursor:pointer"><input type="checkbox" name="areas" value="Fiscal" style="margin-right:6px">Fiscal</label>
-          <label class="tag" style="border:1px solid var(--divider);cursor:pointer"><input type="checkbox" name="areas" value="RH" style="margin-right:6px">RH</label>
+    <!-- PAINEL INTERATIVO DO AGENTE SELECIONADO -->
+    <div class="card-glass" style="max-width:860px;margin:0 auto;padding:40px">
+      <div data-agent-panel="financeiro" style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center">
+        <div class="icon-circle is-active"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9"></path><path d="M9 21V13"></path><path d="M15 21V6"></path><path d="M21 21V3"></path></svg></div>
+        <div>
+          <div class="card-kicker">AGENTE EXECUTIVO 01</div>
+          <div class="card-title">Diretor Financeiro IA</div>
+          <p class="card-body" style="font-size:18px">Monitora continuamente receitas, despesas, fluxo de caixa futuro e margem de lucro por produto ou serviço. Identifica vazamentos financeiros e oportunidades de liquidez.</p>
         </div>
       </div>
-      <div class="field" style="grid-column:1/-1"><label for="mensagem">Conte um pouco sobre sua empresa</label><textarea class="input" id="mensagem" name="mensagem"></textarea></div>
+
+      <div data-agent-panel="contador" style="display:none;grid-template-columns:auto 1fr;gap:24px;align-items:center">
+        <div class="icon-circle is-active"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"></path><path d="M9 7h6M9 11h6"></path></svg></div>
+        <div>
+          <div class="card-kicker">AGENTE EXECUTIVO 02</div>
+          <div class="card-title">Contador IA</div>
+          <p class="card-body" style="font-size:18px">Organiza informações tributárias, audita emissão de notas fiscais e sugere reduções legais de impostos em alinhamento com a contabilidade.</p>
+        </div>
+      </div>
+
+      <div data-agent-panel="admin" style="display:none;grid-template-columns:auto 1fr;gap:24px;align-items:center">
+        <div class="icon-circle is-active"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path></svg></div>
+        <div>
+          <div class="card-kicker">AGENTE EXECUTIVO 03</div>
+          <div class="card-title">Administrador IA</div>
+          <p class="card-body" style="font-size:18px">Avalia produtividade da equipe, acompanha gargalos operacionais e otimiza tarefas diárias para reduzir retrabalho.</p>
+        </div>
+      </div>
+
+      <div data-agent-panel="risco" style="display:none;grid-template-columns:auto 1fr;gap:24px;align-items:center">
+        <div class="icon-circle is-active"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"></path></svg></div>
+        <div>
+          <div class="card-kicker">AGENTE EXECUTIVO 04</div>
+          <div class="card-title">Gestor de Risco IA</div>
+          <p class="card-body" style="font-size:18px">Antecipa riscos de inadimplência de clientes, sinaliza estoque parado há mais de 30 dias e alerta sobre rombos de caixa previstos.</p>
+        </div>
+      </div>
+
+      <div data-agent-panel="crescimento" style="display:none;grid-template-columns:auto 1fr;gap:24px;align-items:center">
+        <div class="icon-circle is-active"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-9"></path><path d="M15 5h6v6"></path></svg></div>
+        <div>
+          <div class="card-kicker">AGENTE EXECUTIVO 05</div>
+          <div class="card-title">Consultor de Crescimento IA</div>
+          <p class="card-body" style="font-size:18px">Calcula oportunidades de aumento de ticket médio, campanhas de retenção de clientes e expansão de faturamento mensal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE INFINITO DE INTEGRAÇÕES (VISUAL HIGH-TECH) -->
+<section style="padding:40px 0;background:#000" aria-label="Fontes de dados integradas">
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12"></rect></svg> Bancos integrados</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> Pagamentos via Pix</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path></svg> Emissão fiscal automática</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg> WhatsApp Business</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path></svg> Notificações por E-mail</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"></path></svg> Plataformas de venda</div>
+      
+      <!-- Duplicate item list for infinite loop -->
+      <div class="marquee-item" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12"></rect></svg> Bancos integrados</div>
+      <div class="marquee-item" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> Pagamentos via Pix</div>
+      <div class="marquee-item" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path></svg> Emissão fiscal automática</div>
+      <div class="marquee-item" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg> WhatsApp Business</div>
+      <div class="marquee-item" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path></svg> Notificações por E-mail</div>
+      <div class="marquee-item" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"></path></svg> Plataformas de venda</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE VERTICAL SINCRONIZADA ("COMO FUNCIONA") -->
+<section id="como-funciona" data-reveal>
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="eyebrow">Jornada de implantação</div>
+      <h2>
+        <span class="t-sans">Do primeiro contato</span>
+        <em class="t-serif">à sua IA em produção.</em>
+      </h2>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-line">
+        <div class="timeline-line-fill"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot icon-circle">1</div>
+        <div class="card timeline-card">
+          <div class="card-title">1. Diagnóstico do negócio</div>
+          <p class="card-body">Mapeamos a rotina, gargalos operacionais e metas da sua empresa.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot icon-circle">2</div>
+        <div class="card timeline-card">
+          <div class="card-title">2. Modelagem sob medida</div>
+          <p class="card-body">Construímos a estrutura de módulos personalizada para seu segmento.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot icon-circle">3</div>
+        <div class="card timeline-card">
+          <div class="card-title">3. Conexão de dados</div>
+          <p class="card-body">Integramos bancos, notas fiscais e sistemas existentes em um só lugar.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot icon-circle">4</div>
+        <div class="card timeline-card">
+          <div class="card-title">4. Treinamento autônomo</div>
+          <p class="card-body">A Emrys AI absorve o histórico de informações e identifica padrões de margem.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot icon-circle">5</div>
+        <div class="card timeline-card">
+          <div class="card-title">5. Recomendações contínuas</div>
+          <p class="card-body">Sua empresa passa a receber recomendações automáticas 24/7 para otimizar lucros.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANTES E DEPOIS (GRID IMPACTANTE 2x2) -->
+<section id="antes-depois" class="section-surface" data-reveal>
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="eyebrow">Resultados reais</div>
+      <h2>
+        <span class="t-sans">Da planilha</span>
+        <em class="t-serif">à inteligência contínua.</em>
+      </h2>
+    </div>
+
+    <div class="before-after-grid">
+      <div class="ba-card">
+        <div class="ba-header">Dados centralizados</div>
+        <div class="ba-comparison">
+          <div class="ba-state">
+            <span class="ba-state-label">Antes</span>
+            <span class="ba-before">20% [EXEMPLO]</span>
+          </div>
+          <span class="ba-arrow">→</span>
+          <div class="ba-state">
+            <span class="ba-state-label">Com Emrys</span>
+            <span class="ba-after">100%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-header">Tempo em relatórios manuais</div>
+        <div class="ba-comparison">
+          <div class="ba-state">
+            <span class="ba-state-label">Antes</span>
+            <span class="ba-before">8h/sem [EXEMPLO]</span>
+          </div>
+          <span class="ba-arrow">→</span>
+          <div class="ba-state">
+            <span class="ba-state-label">Com Emrys</span>
+            <span class="ba-after">30min</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-header">Decisões com previsão contínua</div>
+        <div class="ba-comparison">
+          <div class="ba-state">
+            <span class="ba-state-label">Antes</span>
+            <span class="ba-before">0% [EXEMPLO]</span>
+          </div>
+          <span class="ba-arrow">→</span>
+          <div class="ba-state">
+            <span class="ba-state-label">Com Emrys</span>
+            <span class="ba-after">Contínua</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-header">Nível de retrabalho operacional</div>
+        <div class="ba-comparison">
+          <div class="ba-state">
+            <span class="ba-state-label">Antes</span>
+            <span class="ba-before">Alto</span>
+          </div>
+          <span class="ba-arrow">→</span>
+          <div class="ba-state">
+            <span class="ba-state-label">Com Emrys</span>
+            <span class="ba-after">Mínimo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO INTERATIVA DE NAVEGAÇÃO RÁPIDA (ACESSO A DETALHES) -->
+<section data-reveal style="padding:80px 24px">
+  <div class="container text-center">
+    <div class="section-header">
+      <div class="eyebrow">Explore mais detalhes</div>
+      <h2>
+        <span class="t-sans">Quer aprofundar nas funcionalidades</span>
+        <em class="t-serif">do seu setor?</em>
+      </h2>
+    </div>
+    <div class="grid grid-3" style="max-width:960px;margin:0 auto">
+      <div class="card-glass">
+        <div class="card-title">Módulos da Plataforma</div>
+        <p class="card-body" style="font-size:15px;margin-bottom:20px">Veja como funcionam os módulos de financeiro, fiscal, vendas e estoque.</p>
+        <a class="btn btn-secondary" href="plataforma.html">Conhecer Módulos →</a>
+      </div>
+
+      <div class="card-glass">
+        <div class="card-title">Soluções por Desafio</div>
+        <p class="card-body" style="font-size:15px;margin-bottom:20px">Entenda como tratamos falta de margem, inadimplência e perda de tempo.</p>
+        <a class="btn btn-secondary" href="solucoes.html">Ver Soluções →</a>
+      </div>
+
+      <div class="card-glass">
+        <div class="card-title">Soluções por Segmento</div>
+        <p class="card-body" style="font-size:15px;margin-bottom:20px">Veja a Emrys adaptada para oficinas, clínicas, restaurantes e lojas.</p>
+        <a class="btn btn-secondary" href="segmentos.html">Ver Segmentos →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ COMPACTO E COMPREENSÍVEL -->
+<section id="faq" data-reveal>
+  <div class="container" style="max-width:860px">
+    <div class="section-header text-center">
+      <div class="eyebrow">Dúvidas rápidas</div>
+      <h2>
+        <span class="t-sans">Perguntas</span>
+        <em class="t-serif">frequentes.</em>
+      </h2>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          A Emrys é um ERP tradicional?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a-wrapper">
+          <div class="faq-a">
+            <div class="faq-a-content">
+              Não. A Emrys é uma plataforma de Inteligência Artificial que se conecta às suas fontes de dados e recomenda ações estratégicas em tempo real, em vez de apenas registrar passadamente informações.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          A plataforma é engessada ou personalizada?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a-wrapper">
+          <div class="faq-a">
+            <div class="faq-a-content">
+              100% personalizada. Cada cliente utiliza apenas os módulos que fazem sentido para o seu setor e para o momento da sua empresa.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Como meus dados são protegidos?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a-wrapper">
+          <div class="faq-a">
+            <div class="faq-a-content">
+              Construída com princípios estritos da LGPD, controle de permissões por usuário e criptografia de ponta a ponta.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL & FORMULÁRIO -->
+<section id="contato" class="glow-top" style="padding:100px 24px">
+  <div class="container" style="max-width:800px">
+    <div class="section-header text-center">
+      <div class="eyebrow">Diagnóstico gratuito</div>
+      <h2>
+        <span class="t-sans">Quero conhecer</span>
+        <em class="t-serif">a Emrys.</em>
+      </h2>
+      <p class="lead">Conte um pouco sobre sua empresa para recebermos um diagnóstico comercial sob medida.</p>
+    </div>
+
+    <div id="form-success" class="card-glass text-center" hidden>
+      <div class="card-title" style="color:var(--accent)">Recebemos seu contato!</div>
+      <p class="card-body">Nossa equipe analisará as informações do seu negócio e retornará em breve.</p>
+    </div>
+
+    <div id="form-fallback-notice" class="card-glass text-center" hidden>
+      <div class="card-title">Obrigado pelo interesse!</div>
+      <p class="card-body" style="margin-bottom:20px">Entre em contato diretamente pelos canais oficiais:</p>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
+        <a class="btn btn-primary" data-wa-link>Conversar via WhatsApp</a>
+        <a class="btn btn-secondary" href="mailto:contato@emrys.ai">Enviar E-mail</a>
+      </div>
+    </div>
+
+    <form id="contact-form" class="grid grid-2">
+      <!-- Honeypot Bot Field -->
+      <input type="text" name="hp_check" class="hp-field" tabindex="-1" aria-hidden="true" autocomplete="off">
+
+      <div class="field">
+        <label for="nome">Nome completo</label>
+        <input class="input" id="nome" name="nome" autocomplete="name" required>
+        <span data-error-for="nome" style="color:var(--accent);font-size:13px"></span>
+      </div>
+
+      <div class="field">
+        <label for="empresa">Nome da empresa</label>
+        <input class="input" id="empresa" name="empresa" autocomplete="organization" required>
+        <span data-error-for="empresa" style="color:var(--accent);font-size:13px"></span>
+      </div>
+
+      <div class="field">
+        <label for="telefone">Telefone / WhatsApp</label>
+        <input class="input" id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" required>
+        <span data-error-for="telefone" style="color:var(--accent);font-size:13px"></span>
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail corporativo</label>
+        <input class="input" id="email" name="email" type="email" inputmode="email" autocomplete="email" required>
+        <span data-error-for="email" style="color:var(--accent);font-size:13px"></span>
+      </div>
+
       <div class="checkbox-row" style="grid-column:1/-1">
-        <input type="checkbox" id="consent" name="consent">
+        <input type="checkbox" id="consent" name="consent" required>
         <label for="consent">Concordo com o uso dos meus dados para retorno comercial, conforme a <a href="politica-de-privacidade.html">Política de Privacidade</a>.</label>
       </div>
-      <span data-error-for="consent" style="grid-column:1/-1;color:var(--accent-700);font-size:12px"></span>
-      <button class="btn btn-primary btn-block" type="submit" style="grid-column:1/-1">Quero conhecer a Emrys</button>
-      <a class="btn btn-secondary btn-block" data-wa-link="Olá! Conheci a Emrys pelo site e gostaria de solicitar um diagnóstico." style="grid-column:1/-1">Falar no WhatsApp</a>
+      <span data-error-for="consent" style="grid-column:1/-1;color:var(--accent);font-size:13px"></span>
+
+      <button class="btn btn-primary btn-block" type="submit" style="grid-column:1/-1;margin-top:12px">Solicitar diagnóstico gratuito</button>
+      <a class="btn btn-secondary btn-block" data-wa-link="Olá! Gostaria de agendar um diagnóstico comercial da Emrys." style="grid-column:1/-1">Falar no WhatsApp</a>
     </form>
   </div>
 </section>
 
 </main>
 
-<a class="wa-float" data-wa-link aria-label="Falar no WhatsApp" title="Falar no WhatsApp">💬</a>
+<a class="wa-float" data-wa-link aria-label="Falar no WhatsApp" title="Falar no WhatsApp">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
+</a>
 
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <div class="nav-brand" style="margin-bottom:10px">
-          <svg width="24" height="24" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="currentColor" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="#B08D57"></polygon></svg>
+      <div class="footer-brand">
+        <div class="nav-brand">
+          <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="currentColor" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="#FFA260"></polygon></svg>
           EMRYS
         </div>
-        <p class="text-muted" style="max-width:320px;font-size:14px">Sistemas inteligentes para pequenas e médias empresas que querem decisões, não apenas relatórios.</p>
+        <p class="text-dim" style="font-size:15px;line-height:24px">Plataformas de Inteligência Artificial personalizadas para PMEs que buscam decisões estratégicas em tempo real.</p>
       </div>
+
       <div>
-        <h6>Contato</h6>
-        <p style="font-size:14px">WhatsApp <span data-wa-display></span><br>contato@emrys.ai<br>Rio das Ostras, RJ</p>
+        <div class="footer-title">Navegação</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="plataforma.html">Plataforma</a></li>
+          <li><a href="solucoes.html">Soluções</a></li>
+          <li><a href="segmentos.html">Segmentos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
       </div>
+
       <div>
-        <h6>Links rápidos</h6>
-        <p style="font-size:14px"><a href="politica-de-privacidade.html">Política de Privacidade</a><br><a href="politica-de-privacidade.html#lgpd">LGPD</a></p>
+        <div class="footer-title">Políticas & LGPD</div>
+        <ul class="footer-links">
+          <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="politica-de-privacidade.html#lgpd">Termos & Consentimento</a></li>
+          <li><a href="politica-de-privacidade.html#seguranca">Segurança dos Dados</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">Contato & Novidades</div>
+        <p class="text-dim" style="font-size:14px;margin-bottom:16px">Receba novidades sobre gestão com IA para PMEs.</p>
+        <form id="footer-newsletter" style="display:flex;gap:8px">
+          <input class="input" type="email" placeholder="Seu e-mail..." style="font-size:14px;min-height:40px;padding:8px 12px" required>
+          <button class="btn btn-primary" type="submit" style="padding:8px 16px;min-height:40px;font-size:14px">OK</button>
+        </form>
       </div>
     </div>
-    <hr class="hr">
-    <p class="text-muted" style="font-size:12px;margin-top:20px">© 2026 Emrys. Todos os direitos reservados.</p>
+
+    <div class="footer-bottom">
+      <div>© 2026 Emrys. Todos os direitos reservados. · Rio das Ostras / RJ</div>
+      <div>E-mail: contato@emrys.ai</div>
+    </div>
   </div>
 </footer>
 

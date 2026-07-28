@@ -3,91 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline'; img-src 'self' https: data:; style-src 'self' https: 'unsafe-inline'; font-src 'self' https: data:;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Política de Privacidade — Emrys</title>
 <meta name="description" content="Como a Emrys trata dados pessoais, em conformidade com a LGPD.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://gustavoverli32.github.io/emyrs2/politica-de-privacidade.html">
+<meta property="og:title" content="Política de Privacidade — Emrys">
+<meta property="og:description" content="Saiba como protegemos seus dados e garantimos a conformidade com a LGPD.">
+<meta property="og:type" content="website">
+
+<!-- Preload Fonts -->
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap" as="style">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
 <header>
-<nav class="nav" aria-label="Navegação principal">
-  <a class="nav-brand" href="index.html">
-    <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="currentColor" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="#B08D57"></polygon></svg>
-    EMRYS
-  </a>
-  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <nav class="nav" aria-label="Navegação principal">
+    <a class="nav-brand" href="index.html">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="currentColor" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="#FFA260"></polygon></svg>
+      EMRYS
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Início</a>
+      <a href="plataforma.html">Plataforma</a>
+      <a href="solucoes.html">Soluções</a>
+      <a href="segmentos.html">Segmentos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        Menu
+      </button>
+    </div>
+  </nav>
   <div class="nav-backdrop" id="nav-backdrop"></div>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html">Início</a>
-    <a href="plataforma.html">Plataforma</a>
-    <a href="solucoes.html">Soluções</a>
-    <a href="segmentos.html">Segmentos</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="contato.html">Contato</a>
-    <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico</a>
-  </div>
-</nav>
 </header>
 
 <main id="main">
-<section>
-  <div class="container" style="max-width:760px">
-    <h6>Legal</h6>
-    <h1>Política de Privacidade</h1>
-    <p class="text-muted">Última atualização: [INSERIR DATA]</p>
+
+<section class="glow-top grid-bg" style="padding-top:100px">
+  <div class="container" style="max-width:860px">
+    <div class="eyebrow">Segurança & Conformidade</div>
+    <h1>
+      <span class="t-sans">Política de Privacidade</span>
+      <em class="t-serif">e Proteção de Dados (LGPD).</em>
+    </h1>
+    <p class="text-dim" style="font-size:15px">Última atualização: 2026</p>
   </div>
 </section>
 
-<section style="padding-top:0">
-  <div class="container" style="max-width:760px">
-    <h2>1. Quem somos</h2>
-    <p>Razão social: [INSERIR RAZÃO SOCIAL] · CNPJ: [INSERIR CNPJ] · Endereço: Rio das Ostras, RJ.</p>
+<hr class="hr-glow">
 
-    <h2>2. Dados coletados</h2>
-    <p>Coletamos os dados que você fornece voluntariamente pelo formulário de contato: nome, empresa, e-mail, telefone e informações sobre o seu negócio.</p>
+<section style="padding:60px 24px">
+  <div class="container" style="max-width:860px">
+    <div class="card-glass" style="display:flex;flex-direction:column;gap:32px">
+      <div>
+        <h3 style="color:var(--accent)">1. Quem somos</h3>
+        <p class="card-body">Razão social: [INSERIR RAZÃO SOCIAL] · CNPJ: [INSERIR CNPJ] · Sede: Rio das Ostras, RJ. A Emrys opera plataformas de Inteligência Artificial para gestão empresarial de PMEs.</p>
+      </div>
 
-    <h2 id="lgpd">3. Base legal e LGPD</h2>
-    <p>O tratamento dos dados ocorre com base no seu consentimento, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), exclusivamente para retorno comercial sobre a solicitação enviada.</p>
+      <div>
+        <h3 style="color:var(--accent)">2. Dados coletados</h3>
+        <p class="card-body">Coletamos exclusivamente os dados fornecidos por você nos formulários do site: nome completo, nome da empresa, e-mail corporativo, telefone/WhatsApp e área de interesse comercial.</p>
+      </div>
 
-    <h2>4. Cookies</h2>
-    <p>Este site utiliza apenas cookies técnicos essenciais ao funcionamento. Nenhum cookie de rastreamento não essencial é utilizado no momento.</p>
+      <div id="lgpd">
+        <h3 style="color:var(--accent)">3. Base legal e LGPD</h3>
+        <p class="card-body">O tratamento dos seus dados ocorre fundamentado no seu consentimento explícito, nos termos da Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 - LGPD), com a finalidade estrita de apresentar propostas e diagnósticos da plataforma Emrys.</p>
+      </div>
 
-    <h2>5. Compartilhamento</h2>
-    <p>Não vendemos nem compartilhamos seus dados com terceiros para fins de marketing.</p>
+      <div id="seguranca">
+        <h3 style="color:var(--accent)">4. Segurança e Armazenamento</h3>
+        <p class="card-body">Adotamos criptografia SSL/TLS no tráfego de dados, privilégios mínimos de acesso e infraestrutura segura em nuvem. Seus dados são mantidos pelo período necessário para o atendimento comercial ou até a solicitação de exclusão.</p>
+      </div>
 
-    <h2>6. Seus direitos</h2>
-    <p>Você pode solicitar acesso, correção ou exclusão dos seus dados a qualquer momento pelo e-mail [INSERIR E-MAIL DE PRIVACIDADE].</p>
+      <div>
+        <h3 style="color:var(--accent)">5. Compartilhamento</h3>
+        <p class="card-body">Não comercializamos nem compartilhamos seus dados com terceiros para fins publicitários. Os dados podem ser processados por provedores de infraestrutura estritamente para viabilizar a comunicação.</p>
+      </div>
 
-    <h2>7. Encarregado de dados (DPO)</h2>
-    <p>[INSERIR NOME/CONTATO DO ENCARREGADO]</p>
+      <div>
+        <h3 style="color:var(--accent)">6. Seus direitos</h3>
+        <p class="card-body">Como titular dos dados, você pode exercer seus direitos de confirmação, acesso, correção, eliminação ou revogação de consentimento enviando um e-mail para <a href="mailto:contato@emrys.ai">contato@emrys.ai</a>.</p>
+      </div>
 
-    <h2>8. Contato</h2>
-    <p>Dúvidas sobre esta política podem ser enviadas para contato@emrys.ai.</p>
+      <div>
+        <h3 style="color:var(--accent)">7. Encarregado de Dados (DPO)</h3>
+        <p class="card-body">Para questões técnicas ou exercício de direitos referentes à privacidade, entre em contato pelo e-mail: <a href="mailto:contato@emrys.ai">contato@emrys.ai</a>.</p>
+      </div>
+    </div>
   </div>
 </section>
+
 </main>
 
-<a class="wa-float" data-wa-link aria-label="Falar no WhatsApp" title="Falar no WhatsApp">💬</a>
+<a class="wa-float" data-wa-link aria-label="Falar no WhatsApp" title="Falar no WhatsApp">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
+</a>
 
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <div class="nav-brand" style="margin-bottom:10px">
-          <svg width="24" height="24" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="currentColor" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="#B08D57"></polygon></svg>
+      <div class="footer-brand">
+        <div class="nav-brand">
+          <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="currentColor" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="#FFA260"></polygon></svg>
           EMRYS
         </div>
-        <p class="text-muted" style="max-width:320px;font-size:14px">Sistemas inteligentes para pequenas e médias empresas que querem decisões, não apenas relatórios.</p>
+        <p class="text-dim" style="font-size:15px;line-height:24px">Plataformas de Inteligência Artificial personalizadas para PMEs que buscam decisões estratégicas em tempo real.</p>
       </div>
-      <div><h6>Contato</h6><p style="font-size:14px">WhatsApp <span data-wa-display></span><br>contato@emrys.ai<br>Rio das Ostras, RJ</p></div>
-      <div><h6>Links rápidos</h6><p style="font-size:14px"><a href="politica-de-privacidade.html">Política de Privacidade</a><br><a href="politica-de-privacidade.html#lgpd">LGPD</a></p></div>
+
+      <div>
+        <div class="footer-title">Navegação</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="plataforma.html">Plataforma</a></li>
+          <li><a href="solucoes.html">Soluções</a></li>
+          <li><a href="segmentos.html">Segmentos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">Políticas & LGPD</div>
+        <ul class="footer-links">
+          <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="politica-de-privacidade.html#lgpd">Termos & Consentimento</a></li>
+          <li><a href="politica-de-privacidade.html#seguranca">Segurança dos Dados</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">Contato & Novidades</div>
+        <p class="text-dim" style="font-size:14px;margin-bottom:16px">Receba novidades sobre gestão com IA para PMEs.</p>
+        <form id="footer-newsletter" style="display:flex;gap:8px">
+          <input class="input" type="email" placeholder="Seu e-mail..." style="font-size:14px;min-height:40px;padding:8px 12px" required>
+          <button class="btn btn-primary" type="submit" style="padding:8px 16px;min-height:40px;font-size:14px">OK</button>
+        </form>
+      </div>
     </div>
-    <hr class="hr">
-    <p class="text-muted" style="font-size:12px;margin-top:20px">© 2026 Emrys. Todos os direitos reservados.</p>
+
+    <div class="footer-bottom">
+      <div>© 2026 Emrys. Todos os direitos reservados. · Rio das Ostras / RJ</div>
+      <div>E-mail: contato@emrys.ai</div>
+    </div>
   </div>
 </footer>
+
 <script src="js/main.js"></script>
 </body>
 </html>

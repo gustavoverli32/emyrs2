@@ -3,97 +3,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline'; img-src 'self' https: data:; style-src 'self' https: 'unsafe-inline'; font-src 'self' https: data:;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Sobre — Emrys</title>
 <meta name="description" content="Missão, visão e propósito da Emrys: democratizar o acesso à inteligência empresarial para pequenas e médias empresas.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://gustavoverli32.github.io/emyrs2/sobre.html">
+<meta property="og:title" content="Sobre — Emrys">
+<meta property="og:description" content="Não criamos ERPs. Criamos empresas mais inteligentes.">
+<meta property="og:type" content="website">
+
+<!-- Preload Fonts -->
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap" as="style">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
 <header>
-<nav class="nav" aria-label="Navegação principal">
-  <a class="nav-brand" href="index.html">
-    <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="currentColor" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="#B08D57"></polygon></svg>
-    EMRYS
-  </a>
-  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <nav class="nav" aria-label="Navegação principal">
+    <a class="nav-brand" href="index.html">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="currentColor" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="#FFA260"></polygon></svg>
+      EMRYS
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Início</a>
+      <a href="plataforma.html">Plataforma</a>
+      <a href="solucoes.html">Soluções</a>
+      <a href="segmentos.html">Segmentos</a>
+      <a href="sobre.html" aria-current="page">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        Menu
+      </button>
+    </div>
+  </nav>
   <div class="nav-backdrop" id="nav-backdrop"></div>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html">Início</a>
-    <a href="plataforma.html">Plataforma</a>
-    <a href="solucoes.html">Soluções</a>
-    <a href="segmentos.html">Segmentos</a>
-    <a href="sobre.html" aria-current="page">Sobre</a>
-    <a href="contato.html">Contato</a>
-    <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico</a>
-  </div>
-</nav>
 </header>
 
 <main id="main">
-<section>
-  <div class="container" style="max-width:760px">
-    <h6>Sobre a Emrys</h6>
-    <h1>Nascemos de um problema simples: empresas administradas com dados espalhados demais.</h1>
-    <p class="text-muted" style="font-size:17px">A Emrys existe para que pequenas e médias empresas tenham acesso ao mesmo nível de inteligência de dados que hoje só as grandes companhias conseguem construir.</p>
+
+<section class="glow-top grid-bg" style="padding-top:100px">
+  <div class="container text-center" style="max-width:960px">
+    <div class="eyebrow">Nossa História & Propósito</div>
+    <h1>
+      <span class="t-sans">Não criamos ERPs.</span>
+      <em class="t-serif">Criamos empresas mais inteligentes.</em>
+    </h1>
+    <p class="lead" style="max-width:760px;margin:0 auto 32px">Nascemos de um problema simples: empresas administradas com dados fragmentados e decisões tomadas apenas com base em intuição. A Emrys democratiza o acesso à Inteligência Artificial para PMEs.</p>
   </div>
 </section>
 
-<hr class="hr">
+<hr class="hr-glow">
 
-<section class="section-surface">
-  <div class="container grid grid-auto">
-    <div><h6>Missão</h6><p>Democratizar o acesso à inteligência empresarial para pequenas e médias empresas.</p></div>
-    <div><h6>Visão</h6><p>Fazer com que toda empresa possa contar com uma equipe executiva de Inteligência Artificial.</p></div>
-    <div><h6>Propósito</h6><p>Transformar dados em decisões que fortaleçam negócios.</p></div>
-  </div>
-</section>
-
-<section>
+<section class="section-surface" data-reveal>
   <div class="container">
-    <h6>Valores</h6>
-    <h2 style="margin-bottom:24px">O que guia como construímos a Emrys.</h2>
-    <div class="grid grid-auto">
-      <div class="icon-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M4 12l6 6L20 6"></path></svg> Clareza</div>
-      <div class="icon-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M4 12l6 6L20 6"></path></svg> Responsabilidade</div>
-      <div class="icon-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M4 12l6 6L20 6"></path></svg> Proximidade</div>
-      <div class="icon-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M4 12l6 6L20 6"></path></svg> Inovação útil</div>
-      <div class="icon-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M4 12l6 6L20 6"></path></svg> Segurança</div>
-      <div class="icon-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M4 12l6 6L20 6"></path></svg> Personalização</div>
-      <div class="icon-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M4 12l6 6L20 6"></path></svg> Foco em resultado</div>
-      <div class="icon-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M4 12l6 6L20 6"></path></svg> Evolução contínua</div>
+    <div class="grid grid-3" data-reveal-group>
+      <div class="card-glass" data-reveal>
+        <div class="eyebrow">Missão</div>
+        <div class="card-title">Democratizar a IA</div>
+        <p class="card-body">Democratizar o acesso à inteligência empresarial de alto nível para pequenas e médias empresas.</p>
+      </div>
+
+      <div class="card-glass" data-reveal>
+        <div class="eyebrow">Visão</div>
+        <div class="card-title">Equipe Executiva de IA</div>
+        <p class="card-body">Fazer com que toda PME possa contar com uma equipe executiva de Inteligência Artificial trabalhando por ela 24/7.</p>
+      </div>
+
+      <div class="card-glass" data-reveal>
+        <div class="eyebrow">Propósito</div>
+        <div class="card-title">Decisões Fortes</div>
+        <p class="card-body">Transformar dados dispersos em decisões estratégicas que fortaleçam e expandam negócios reais.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="background:var(--accent);color:var(--bg)">
-  <div class="container" style="max-width:700px">
-    <h2 style="color:var(--bg)">Quer fazer parte dessa história?</h2>
-    <a class="btn" href="contato.html" style="background:var(--bg);color:var(--accent-700)">Falar com a Emrys</a>
+<section data-reveal>
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Nossos Valores</div>
+      <h2>
+        <span class="t-sans">O que guia a forma como</span>
+        <em class="t-serif">construímos a Emrys.</em>
+      </h2>
+    </div>
+
+    <div class="grid grid-auto" data-reveal-group>
+      <div class="card" data-reveal><div class="icon-circle" style="margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div><div class="card-title">Clareza</div><p class="card-body">Informações diretas, sem jargões desnecessários.</p></div>
+      <div class="card" data-reveal><div class="icon-circle" style="margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div><div class="card-title">Responsabilidade</div><p class="card-body">Cuidado ético com dados e regras de negócio.</p></div>
+      <div class="card" data-reveal><div class="icon-circle" style="margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></div><div class="card-title">Proximidade</div><p class="card-body">Atendimento humano acompanhando a evolução tecnológica.</p></div>
+      <div class="card" data-reveal><div class="icon-circle" style="margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"></path></svg></div><div class="card-title">Inovação Útil</div><p class="card-body">Tecnologia aplicada para resolver problemas reais.</p></div>
+    </div>
   </div>
 </section>
+
+<section class="glow-top" style="padding:100px 24px;text-align:center">
+  <div class="container" style="max-width:760px">
+    <h2>
+      <span class="t-sans">Quer fazer parte dessa história</span>
+      <em class="t-serif">e transformar sua empresa?</em>
+    </h2>
+    <p class="lead" style="margin-bottom:32px">Converse com nossos especialistas e receba um diagnóstico da sua gestão.</p>
+    <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico</a>
+  </div>
+</section>
+
 </main>
 
-<a class="wa-float" data-wa-link aria-label="Falar no WhatsApp" title="Falar no WhatsApp">💬</a>
+<a class="wa-float" data-wa-link aria-label="Falar no WhatsApp" title="Falar no WhatsApp">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
+</a>
 
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <div class="nav-brand" style="margin-bottom:10px">
-          <svg width="24" height="24" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="currentColor" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="#B08D57"></polygon></svg>
+      <div class="footer-brand">
+        <div class="nav-brand">
+          <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="currentColor" stroke-width="7"></polygon><polygon points="50,32 71,44 71,68 50,80" fill="#FFA260"></polygon></svg>
           EMRYS
         </div>
-        <p class="text-muted" style="max-width:320px;font-size:14px">Sistemas inteligentes para pequenas e médias empresas que querem decisões, não apenas relatórios.</p>
+        <p class="text-dim" style="font-size:15px;line-height:24px">Plataformas de Inteligência Artificial personalizadas para PMEs que buscam decisões estratégicas em tempo real.</p>
       </div>
-      <div><h6>Contato</h6><p style="font-size:14px">WhatsApp <span data-wa-display></span><br>contato@emrys.ai<br>Rio das Ostras, RJ</p></div>
-      <div><h6>Links rápidos</h6><p style="font-size:14px"><a href="politica-de-privacidade.html">Política de Privacidade</a><br><a href="politica-de-privacidade.html#lgpd">LGPD</a></p></div>
+
+      <div>
+        <div class="footer-title">Navegação</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="plataforma.html">Plataforma</a></li>
+          <li><a href="solucoes.html">Soluções</a></li>
+          <li><a href="segmentos.html">Segmentos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">Políticas & LGPD</div>
+        <ul class="footer-links">
+          <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="politica-de-privacidade.html#lgpd">Termos & Consentimento</a></li>
+          <li><a href="politica-de-privacidade.html#seguranca">Segurança dos Dados</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">Contato & Novidades</div>
+        <p class="text-dim" style="font-size:14px;margin-bottom:16px">Receba novidades sobre gestão com IA para PMEs.</p>
+        <form id="footer-newsletter" style="display:flex;gap:8px">
+          <input class="input" type="email" placeholder="Seu e-mail..." style="font-size:14px;min-height:40px;padding:8px 12px" required>
+          <button class="btn btn-primary" type="submit" style="padding:8px 16px;min-height:40px;font-size:14px">OK</button>
+        </form>
+      </div>
     </div>
-    <hr class="hr">
-    <p class="text-muted" style="font-size:12px;margin-top:20px">© 2026 Emrys. Todos os direitos reservados.</p>
+
+    <div class="footer-bottom">
+      <div>© 2026 Emrys. Todos os direitos reservados. · Rio das Ostras / RJ</div>
+      <div>E-mail: contato@emrys.ai</div>
+    </div>
   </div>
 </footer>
+
 <script src="js/main.js"></script>
 </body>
 </html>

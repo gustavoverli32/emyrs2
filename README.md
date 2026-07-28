@@ -1,71 +1,75 @@
-# Emrys — site institucional
+# Emrys — Site Institucional (Redesign Visual Completo)
 
-Site estático (HTML + CSS + JS puro, sem build step) para a Emrys, plataforma de Inteligência Artificial para gestão de pequenas e médias empresas.
+Site estático institucional (HTML + CSS + JS vanilla puro, sem build step/dependências) para a **Emrys**, plataforma de Inteligência Artificial para gestão de pequenas e médias empresas.
 
-## Estrutura
+---
+
+## 🎨 Sistema de Design & Tokens (`css/styles.css`)
+
+- **Superfície Principal**: `#000000` (preto absoluto) com cartões em vidro `rgba(255,255,255,.05)` + `backdrop-filter: blur(12px)`.
+- **Acento Laranja**: `#FFA260` (quente) e glow `#FF6A00`.
+- **Glow Azul Frio**: `#398FFF` (aplicado em sombras e radial gradients).
+- **Tipografia Signature**:
+  - Títulos em 2 linhas: `Satoshi` (branca, peso 500) + `Instrument Serif` (itálica laranja, peso 400).
+  - Corpo & rótulos: `Satoshi` (400 / 500 / 700).
+  - Preloaded via Fontshare e Google Fonts.
+- **Raios**: `8px` (`--r-sm`), `12px` (`--r-md`), `16px` (`--r-lg`), `30px` (`--r-xl`), `99px` (`--r-pill`).
+
+---
+
+## 📁 Estrutura de Arquivos
 
 ```
-index.html                   Home
-plataforma.html               Página da plataforma/módulos
-solucoes.html                 Soluções por problema
-segmentos.html                Segmentos atendidos
-sobre.html                    Missão, visão, valores
-contato.html                  Formulário de contato
-politica-de-privacidade.html  Política de privacidade / LGPD
-css/styles.css                Todo o estilo (tokens + componentes + seções + animações + responsivo)
-js/main.js                    Navegação, scroll reveal, contadores, FAQ, abas, formulário
-assets/                       Coloque aqui logo, ícones e imagens reais quando disponíveis
+index.html                    Home (Hero, Métricas, Agentes IA, Marquee, Timeline, Comparativo, FAQ)
+plataforma.html               Módulos e implantação personalizada
+solucoes.html                 Soluções por desafio empresarial
+segmentos.html                Segmentos atendidos (Clínicas, Oficinas, Restaurantes, Lojas, etc.)
+sobre.html                    História, Missão, Visão e Valores
+contato.html                  Formulário de diagnóstico com validação e atalhos
+politica-de-privacidade.html  Política de privacidade e LGPD
+css/styles.css                ÚNICO arquivo de estilos (Tokens em :root, componentes, animações, responsivo)
+js/main.js                    Comportamentos vanilla (Scroll reveal stagger, timeline fill, count-up, FAQ accordion, carousel)
+_headers                      Cabeçalhos de segurança HTTP para hospedagem (Cloudflare Pages / Netlify)
+assets/                       Diretório de mídias e assets estáticos
 ```
 
-## Como executar
+---
 
-Abra `index.html` diretamente no navegador, ou publique a pasta inteira.
+## 🔒 Segurança, LGPD & Limitação do GitHub Pages
 
-## Publicar no GitHub Pages
+> [!NOTE]
+> **Cabeçalhos de Segurança HTTP:**
+> O GitHub Pages **não suporta customização de cabeçalhos HTTP** (`Strict-Transport-Security`, `X-Frame-Options`, `Permissions-Policy`, `Content-Security-Policy`).
+> 
+> - **Situação Atual**: Implementado fallback via `<meta http-equiv="Content-Security-Policy">` e `<meta name="referrer">` no `<head>` de cada página HTML.
+> - **Recomendação de Migração**: Para ativação completa dos cabeçalhos de segurança de nível de servidor, recomenda-se publicar via **Cloudflare Pages** ou **Netlify** (ambos gratuitos), utilizando o arquivo `_headers` já incluso no repositório.
 
-1. Suba todos os arquivos para a branch `main` do repositório.
-2. Em Settings → Pages, selecione a branch `main` e a pasta raiz (`/`).
-3. O site ficará disponível em `https://<usuario>.github.io/<repositorio>/`.
+---
 
-## Configuração (js/main.js)
+## ⚙️ Configuração (`js/main.js`)
 
-No topo do arquivo há o objeto `EMRYS_CONFIG`:
+No topo de `js/main.js` encontra-se o objeto central de configuração `EMRYS_CONFIG`:
 
 ```js
 const EMRYS_CONFIG = {
   companyName: "Emrys",
-  whatsappNumber: "",     // ex: "5522999999999" — sem isso os botões de WhatsApp ficam desativados
+  whatsappNumber: "5522XXXXXXXXX", // Digitar número completo com DDD
   contactEmail: "contato@emrys.ai",
   instagramUrl: "",
   linkedinUrl: "",
-  formEndpoint: "",       // URL do Formspree, Web3Forms ou similar, para o formulário funcionar de verdade
+  formEndpoint: "",     // URL do Formspree, Web3Forms ou similar
   analyticsId: "",
+  webhookUrl: "",        // n8n / Make / Zapier — recebe o lead e distribui
+  calendarUrl: "",       // Cal.com ou Google Calendar
+  analyticsProvider: "", // "ga4" | "plausible" | ""
 };
 ```
 
-- **WhatsApp**: preencha `whatsappNumber` com o número em formato internacional (só dígitos).
-- **Formulário**: como GitHub Pages não tem backend, configure `formEndpoint` com um serviço como [Formspree](https://formspree.io) ou [Web3Forms](https://web3forms.com). Sem isso, o formulário valida os campos mas apenas simula o envio (mostra a mensagem de sucesso sem enviar a nenhum lugar).
-- **Analytics**: adicione o script do seu provedor (GA4, Plausible etc.) em cada página, e preencha `analyticsId` se for usá-lo no seu próprio script.
+### Comportamento do Formulário sem Backend Configurado:
+Caso `formEndpoint` não esteja preenchido, o formulário exibirá uma mensagem transparente com atalhos diretos para WhatsApp e E-mail, evitando falso envio de sucesso.
 
-## Trocar identidade visual
+---
 
-Todas as cores, fontes e espaçamentos ficam em `:root` no topo de `css/styles.css` (`--bg`, `--surface`, `--text`, `--accent`, etc.) — altere ali para propagar em todo o site.
+## 🚀 Como Executar Localmente
 
-## Trocar logo
-
-O logo atual é um SVG inline (losango + triângulo) repetido no `<header>` e no `<footer>` de cada página. Para usar uma logo real, substitua o `<svg>...</svg>` por `<img src="assets/logo.svg" alt="Emrys">` em cada arquivo.
-
-## Dados fictícios
-
-As seções "Painel Emrys", "Enquanto você trabalha" e o dashboard demonstrativo usam dados de exemplo, claramente identificados como demonstração/simulação. Substitua por integrações reais quando disponíveis.
-
-## Pendências / placeholders
-
-Busque por `[INSERIR` no projeto para encontrar campos que precisam de dados reais (CNPJ, e-mail de privacidade, encarregado de dados, WhatsApp).
-
-## Próximos passos sugeridos
-
-- Adicionar imagens/ilustrações reais em `assets/`.
-- Conectar `formEndpoint` a um serviço de formulário.
-- Preencher dados jurídicos da política de privacidade.
-- Configurar analytics.
+Não há etapas de build ou instalação de pacotes npm. Basta abrir o arquivo `index.html` em qualquer navegador moderno.
