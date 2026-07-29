@@ -29,6 +29,83 @@ function waLink(message) {
 document.addEventListener("DOMContentLoaded", () => {
   let formSubmitTimeStart = Date.now();
 
+  // --- GSAP 3 & ScrollTrigger Animations (Estilo Framer / Sparo High-End) ---
+  if (typeof gsap !== "undefined") {
+    if (typeof ScrollTrigger !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
+    // Hero Entry Animation (Staggered fade-up with power3.out)
+    const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    heroTl.from(".hero .eyebrow", { y: 30, opacity: 0, duration: 0.8 })
+          .from(".hero h1 .t-sans", { y: 40, opacity: 0, duration: 0.9 }, "-=0.6")
+          .from(".hero h1 .t-serif", { y: 40, opacity: 0, duration: 0.9 }, "-=0.7")
+          .from(".hero .lead", { y: 30, opacity: 0, duration: 0.8 }, "-=0.6")
+          .from(".hero .hero-ctas", { y: 25, opacity: 0, duration: 0.8 }, "-=0.6")
+          .from(".hero .hero-illustration", { scale: 0.92, opacity: 0, duration: 1 }, "-=0.8");
+
+    // Continuous Floating Levitation for Hero Brain & Panel
+    gsap.to(".hero-brain", {
+      y: -10,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+
+    gsap.to(".hero-panel", {
+      y: -6,
+      duration: 4,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: 0.5
+    });
+
+    // ScrollTrigger Animations for Process Cards
+    if (typeof ScrollTrigger !== "undefined") {
+      gsap.from(".process-card", {
+        scrollTrigger: {
+          trigger: "#processo",
+          start: "top 75%",
+          toggleActions: "play none none none"
+        },
+        y: 45,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: "power3.out"
+      });
+
+      // ScrollTrigger Animations for Case Cards
+      gsap.from(".case-card-box", {
+        scrollTrigger: {
+          trigger: "#cases",
+          start: "top 75%",
+          toggleActions: "play none none none"
+        },
+        y: 50,
+        opacity: 0,
+        duration: 0.85,
+        stagger: 0.15,
+        ease: "power3.out"
+      });
+    }
+
+    // Magnetic Button Effect on Hover
+    document.querySelectorAll(".btn").forEach((btn) => {
+      btn.addEventListener("mousemove", (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        gsap.to(btn, { x: x * 0.15, y: y * 0.15, duration: 0.3, ease: "power2.out" });
+      });
+      btn.addEventListener("mouseleave", () => {
+        gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: "power2.out" });
+      });
+    });
+  }
+
   // Wire up whatsapp links & displays
   document.querySelectorAll("[data-wa-link]").forEach((el) => {
     const defaultMsg = "Olá! Conheci a Emrys pelo site e gostaria de entender como uma plataforma personalizada pode ajudar minha empresa.";
@@ -63,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelector(".nav-links");
   const navBackdrop = document.querySelector("#nav-backdrop");
   if (navToggle && navLinks) {
-    const focusables = () => navLinks.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    const focusables = () => navLinks.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([-1])');
     const openMenu = () => {
       navLinks.classList.add("open");
       navBackdrop && navBackdrop.classList.add("open");
@@ -215,58 +292,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTimeline();
   }
 
-  // Testimonials Carousel Logic (Internal Track Scroll Only)
-  const carouselTrack = document.querySelector(".carousel-track");
-  const dotsContainer = document.querySelector(".carousel-dots");
-  if (carouselTrack && dotsContainer) {
-    const slides = carouselTrack.querySelectorAll(".carousel-slide");
-    dotsContainer.innerHTML = "";
-
-    const scrollToSlide = (idx) => {
-      const targetSlide = slides[idx];
-      if (!targetSlide) return;
-      const trackRect = carouselTrack.getBoundingClientRect();
-      const slideRect = targetSlide.getBoundingClientRect();
-      const targetLeft = carouselTrack.scrollLeft + (slideRect.left - trackRect.left);
-      carouselTrack.scrollTo({ left: targetLeft, behavior: "smooth" });
-    };
-
-    slides.forEach((_, idx) => {
-      const dot = document.createElement("button");
-      dot.className = `dot ${idx === 0 ? "active" : ""}`;
-      dot.setAttribute("aria-label", `Depoimento ${idx + 1}`);
-      dot.addEventListener("click", () => scrollToSlide(idx));
-      dotsContainer.appendChild(dot);
-    });
-
-    const updateActiveDot = () => {
-      const trackRect = carouselTrack.getBoundingClientRect();
-      slides.forEach((slide, idx) => {
-        const slideRect = slide.getBoundingClientRect();
-        const slideCenter = slideRect.left + slideRect.width / 2;
-        const trackCenter = trackRect.left + trackRect.width / 2;
-        if (Math.abs(slideCenter - trackCenter) < slideRect.width / 2) {
-          dotsContainer.querySelectorAll(".dot").forEach((d, dIdx) => {
-            d.classList.toggle("active", dIdx === idx);
-          });
-        }
-      });
-    };
-
-    carouselTrack.addEventListener("scroll", () => requestAnimationFrame(updateActiveDot), { passive: true });
-
-    // Autoplay (Internal horizontal scroll ONLY)
-    let autoplayTimer = setInterval(() => {
-      const dots = Array.from(dotsContainer.querySelectorAll(".dot"));
-      const currentIdx = dots.findIndex((d) => d.classList.contains("active"));
-      const nextIdx = (currentIdx + 1) % slides.length;
-      scrollToSlide(nextIdx);
-    }, 6000);
-
-    carouselTrack.addEventListener("mouseenter", () => clearInterval(autoplayTimer));
-    carouselTrack.addEventListener("touchstart", () => clearInterval(autoplayTimer), { passive: true });
-  }
-
   // FAQ Accordion
   document.querySelectorAll(".faq-item").forEach((item) => {
     const btn = item.querySelector(".faq-q");
@@ -287,64 +312,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Business Segment Tabs (Platform section)
-  const tabs = document.querySelectorAll("[data-biz-tab]");
-  const panels = document.querySelectorAll("[data-biz-panel]");
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.setAttribute("aria-pressed", "false"));
-      tab.setAttribute("aria-pressed", "true");
-      const key = tab.dataset.bizTab;
-      panels.forEach((p) => {
-        p.style.display = p.dataset.bizPanel === key ? "grid" : "none";
-      });
-    });
-  });
-
-  // AI Executive Agent Tabs Handler
-  const agentTabs = document.querySelectorAll("[data-agent-tab]");
-  const agentPanels = document.querySelectorAll("[data-agent-panel]");
-  agentTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      agentTabs.forEach((t) => {
-        t.setAttribute("aria-pressed", "false");
-        t.classList.remove("active");
-      });
-      tab.setAttribute("aria-pressed", "true");
-      tab.classList.add("active");
-      const key = tab.dataset.agentTab;
-      agentPanels.forEach((p) => {
-        p.style.display = p.dataset.agentPanel === key ? "grid" : "none";
-      });
-      track("switch_agent_tab", { agent: key });
-    });
-  });
-
   // Contact Form with Honeypot, Rate Limit & Fallback
   const form = document.querySelector("#contact-form");
   if (form) {
     const successBox = document.querySelector("#form-success");
     const fallbackNotice = document.querySelector("#form-fallback-notice");
 
-    // Input sanitization helper
     const sanitize = (str) => str.replace(/[<>]/g, "");
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      // Check Honeypot field
       const hp = form.querySelector('input[name="hp_check"]');
-      if (hp && hp.value) {
-        // Silent block bot
-        return;
-      }
+      if (hp && hp.value) return;
 
-      // Check minimum completion time (< 3s bot flag)
-      if (Date.now() - formSubmitTimeStart < 3000) {
-        return;
-      }
+      if (Date.now() - formSubmitTimeStart < 3000) return;
 
-      // Check client-side rate limit (30s cooldown)
       const lastSubmit = localStorage.getItem("emrys_last_submit");
       if (lastSubmit && Date.now() - parseInt(lastSubmit, 10) < 30000) {
         alert("Aguarde alguns segundos antes de enviar uma nova mensagem.");
@@ -375,16 +358,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new FormData(form);
       formData.append("origem", "contato_principal");
 
-      // Save submission timestamp
       localStorage.setItem("emrys_last_submit", Date.now().toString());
       track("submit_form_contato", { empresa, email });
 
-      // Secondary Webhook dispatch if configured
       if (EMRYS_CONFIG.webhookUrl) {
         fetch(EMRYS_CONFIG.webhookUrl, { method: "POST", body: formData }).catch(() => {});
       }
 
-      // Main Form Endpoint submission
       if (EMRYS_CONFIG.formEndpoint) {
         fetch(EMRYS_CONFIG.formEndpoint, {
           method: "POST",
@@ -394,7 +374,6 @@ document.addEventListener("DOMContentLoaded", () => {
           .then(() => showSuccess())
           .catch(() => showError("nome", "Não foi possível enviar agora. Tente novamente ou use o WhatsApp."));
       } else {
-        // No endpoint configured yet: show clear alternative options instead of false success
         if (fallbackNotice) {
           form.hidden = true;
           fallbackNotice.hidden = false;
@@ -439,7 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { passive: true });
 
-  // --- Banner de Consentimento de Cookies LGPD ---
+  // Banner de Consentimento de Cookies LGPD
   const cookieConsent = localStorage.getItem("emrys_cookie_consent");
   if (!cookieConsent) {
     const banner = document.createElement("div");
