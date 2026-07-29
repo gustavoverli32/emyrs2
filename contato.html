@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline'; img-src 'self' https: data:; style-src 'self' https: 'unsafe-inline'; font-src 'self' https: data:;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' https: 'unsafe-inline'; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data: blob:; font-src 'self' https: data:; connect-src 'self' https:;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Contato — Emrys</title>
 <meta name="description" content="Solicite um diagnóstico gratuito ou fale com a Emrys pelo WhatsApp.">
 <link rel="canonical" href="https://gustavoverli32.github.io/emyrs2/contato.html">
 <meta property="og:title" content="Contato — Emrys">
-<meta property="og:description" content="Quero conhecer a Emrys. Solicite seu diagnóstico gratuito.">
+<meta property="og:description" content="Fale com a Emrys e descubra como aplicar IA na sua empresa.">
 <meta property="og:type" content="website">
 
 <!-- Preload Fonts -->
@@ -37,7 +37,7 @@
       <a href="solucoes.html">Soluções</a>
       <a href="segmentos.html">Segmentos</a>
       <a href="sobre.html">Sobre</a>
-      <a href="contato.html" aria-current="page">Contato</a>
+      <a href="contato.html" class="active">Contato</a>
     </div>
     <div class="nav-actions">
       <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico</a>
@@ -52,135 +52,74 @@
 
 <main id="main">
 
-<section class="glow-top grid-bg" style="padding-top:100px">
-  <div class="container text-center" style="max-width:840px">
-    <div class="eyebrow">Fale com a gente</div>
+<section class="glow-top grid-bg" style="padding-top:120px;padding-bottom:60px">
+  <div class="container" style="max-width:700px">
+    <div class="eyebrow">Diagnóstico Gratuito</div>
     <h1>
-      <span class="t-sans">Quero conhecer</span>
-      <em class="t-serif">a Emrys.</em>
+      <span class="t-sans">Fale com os nossos</span>
+      <em class="t-serif">especialistas em IA.</em>
     </h1>
-    <p class="lead" style="max-width:720px;margin:0 auto 32px">Conte como sua empresa funciona. A Emrys analisa suas necessidades e apresenta uma solução personalizada para seus principais desafios de gestão.</p>
+    <p class="text-dim" style="font-size:17px;margin-top:16px">
+      Preencha os dados abaixo para entender como uma estrutura inteligente de dados pode alavancar os resultados da sua empresa.
+    </p>
   </div>
 </section>
 
 <hr class="hr-glow">
 
-<section class="section-surface">
-  <div class="container" style="max-width:800px">
-    <div id="form-success" class="card-glass text-center" hidden>
-      <div class="card-title" style="color:var(--accent)">Recebemos seu contato!</div>
-      <p class="card-body">Nossa equipe analisará as informações do seu negócio e retornará em breve.</p>
-    </div>
-
-    <div id="form-fallback-notice" class="card-glass text-center" hidden>
-      <div class="card-title">Obrigado pelo seu interesse!</div>
-      <p class="card-body" style="margin-bottom:20px">Para um atendimento imediato enquanto nosso servidor de formulário finaliza a configuração, acesse diretamente:</p>
-      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
-        <a class="btn btn-primary" data-wa-link>Conversar no WhatsApp</a>
-        <a class="btn btn-secondary" href="mailto:contato@emrys.ai">Enviar E-mail Direto</a>
-      </div>
-    </div>
-
-    <form id="contact-form" class="grid grid-2">
-      <!-- Honeypot Bot Field -->
-      <input type="text" name="hp_check" class="hp-field" tabindex="-1" aria-hidden="true" autocomplete="off">
-
-      <div class="field">
-        <label for="nome">Nome completo</label>
-        <input class="input" id="nome" name="nome" autocomplete="name" required>
-        <span data-error-for="nome" style="color:var(--accent);font-size:13px"></span>
-      </div>
-
-      <div class="field">
-        <label for="empresa">Nome da empresa</label>
-        <input class="input" id="empresa" name="empresa" autocomplete="organization" required>
-        <span data-error-for="empresa" style="color:var(--accent);font-size:13px"></span>
-      </div>
-
-      <div class="field">
-        <label for="segmento">Segmento de atuação</label>
-        <input class="input" id="segmento" name="segmento" placeholder="Ex: Comércio, Indústria, Serviços">
-      </div>
-
-      <div class="field">
-        <label for="telefone">Telefone / WhatsApp</label>
-        <input class="input" id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" required>
-        <span data-error-for="telefone" style="color:var(--accent);font-size:13px"></span>
-      </div>
-
-      <div class="field" style="grid-column:1/-1">
-        <label for="email">E-mail corporativo</label>
-        <input class="input" id="email" name="email" type="email" inputmode="email" autocomplete="email" required>
-        <span data-error-for="email" style="color:var(--accent);font-size:13px"></span>
-      </div>
-
-      <div class="field">
-        <label for="funcionarios">Número de funcionários</label>
-        <select class="input" id="funcionarios" name="funcionarios">
-          <option value="">Selecione</option>
-          <option value="1-5">1 a 5</option>
-          <option value="6-20">6 a 20</option>
-          <option value="21-50">21 a 50</option>
-          <option value="51+">Mais de 50</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="faturamento">Faturamento aproximado</label>
-        <select class="input" id="faturamento" name="faturamento">
-          <option value="">Selecione</option>
-          <option value="ate-50k">Até R$ 50 mil/mês</option>
-          <option value="50-200k">R$ 50 mil a R$ 200 mil/mês</option>
-          <option value="200k+">Acima de R$ 200 mil/mês</option>
-        </select>
-      </div>
-
-      <div class="field" style="grid-column:1/-1">
-        <label>Quais áreas deseja melhorar na gestão?</label>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px">
-          <label class="chip" style="cursor:pointer"><input type="checkbox" name="areas" value="Financeiro" style="margin-right:6px">Financeiro</label>
-          <label class="chip" style="cursor:pointer"><input type="checkbox" name="areas" value="Administrativo" style="margin-right:6px">Administrativo</label>
-          <label class="chip" style="cursor:pointer"><input type="checkbox" name="areas" value="Estoque" style="margin-right:6px">Estoque</label>
-          <label class="chip" style="cursor:pointer"><input type="checkbox" name="areas" value="Vendas" style="margin-right:6px">Vendas</label>
-          <label class="chip" style="cursor:pointer"><input type="checkbox" name="areas" value="Fiscal" style="margin-right:6px">Fiscal</label>
-          <label class="chip" style="cursor:pointer"><input type="checkbox" name="areas" value="RH" style="margin-right:6px">RH</label>
+<section style="padding:60px 24px">
+  <div class="container" style="max-width:640px">
+    <div class="card-glass">
+      <form id="contact-form" style="display:flex;flex-direction:column;gap:20px">
+        <input type="text" name="hp_check" style="display:none" tabindex="-1" autocomplete="off">
+        
+        <div>
+          <label style="display:block;font-size:14px;font-weight:600;margin-bottom:8px">Seu nome *</label>
+          <input class="input" type="text" name="nome" placeholder="Ex: Carlos Silva" required>
+          <span style="color:var(--accent);font-size:12px" data-error-for="nome"></span>
         </div>
+
+        <div>
+          <label style="display:block;font-size:14px;font-weight:600;margin-bottom:8px">Nome da empresa *</label>
+          <input class="input" type="text" name="empresa" placeholder="Ex: Grupo Silva Comércio" required>
+          <span style="color:var(--accent);font-size:12px" data-error-for="empresa"></span>
+        </div>
+
+        <div>
+          <label style="display:block;font-size:14px;font-weight:600;margin-bottom:8px">E-mail corporativo *</label>
+          <input class="input" type="email" name="email" placeholder="carlos@suaempresa.com.br" required>
+          <span style="color:var(--accent);font-size:12px" data-error-for="email"></span>
+        </div>
+
+        <div>
+          <label style="display:block;font-size:14px;font-weight:600;margin-bottom:8px">Telefone / WhatsApp *</label>
+          <input class="input" type="tel" name="telefone" placeholder="(21) 99999-9999" required>
+          <span style="color:var(--accent);font-size:12px" data-error-for="telefone"></span>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <input type="checkbox" name="consent" id="consent" checked style="margin-top:4px;accent-color:var(--accent)">
+          <label for="consent" style="font-size:13px;color:var(--text-dim);line-height:1.4">
+            Concordo com os termos da <a href="politica-de-privacidade.html" style="color:var(--accent);text-decoration:underline">Política de Privacidade</a> e autorizo a Emrys a entrar em contato.
+          </label>
+        </div>
+        <span style="color:var(--accent);font-size:12px" data-error-for="consent"></span>
+
+        <button class="btn btn-primary" type="submit" style="width:100%;margin-top:10px">Enviar solicitação</button>
+      </form>
+
+      <div id="form-success" hidden style="text-align:center;padding:40px 20px">
+        <div style="font-size:48px;margin-bottom:16px">✅</div>
+        <h2>Solicitação Recebida!</h2>
+        <p style="margin-top:12px">Nossa equipe entrará em contato em breve para agendar seu diagnóstico estratégico.</p>
       </div>
 
-      <div class="field" style="grid-column:1/-1">
-        <label for="mensagem">Conte um pouco sobre sua empresa</label>
-        <textarea class="input" id="mensagem" name="mensagem" placeholder="Descreva os principais desafios atuais da sua empresa..."></textarea>
+      <div id="form-fallback-notice" hidden style="text-align:center;padding:40px 20px">
+        <div style="font-size:48px;margin-bottom:16px">💬</div>
+        <h2>Atendimento Direto pelo WhatsApp</h2>
+        <p style="margin-top:12px;margin-bottom:24px">Para um atendimento imediato, fale agora mesmo com o nosso time técnico no WhatsApp.</p>
+        <a class="btn btn-primary" data-wa-link>Conversar no WhatsApp</a>
       </div>
-
-      <div class="checkbox-row" style="grid-column:1/-1">
-        <input type="checkbox" id="consent" name="consent" required>
-        <label for="consent">Concordo com o uso dos meus dados para retorno comercial, conforme a <a href="politica-de-privacidade.html">Política de Privacidade</a>.</label>
-      </div>
-      <span data-error-for="consent" style="grid-column:1/-1;color:var(--accent);font-size:13px"></span>
-
-      <button class="btn btn-primary btn-block" type="submit" style="grid-column:1/-1;margin-top:12px">Solicitar diagnóstico gratuito</button>
-      <a class="btn btn-secondary btn-block" data-wa-link="Olá! Gostaria de agendar um diagnóstico comercial da Emrys." style="grid-column:1/-1">Falar no WhatsApp</a>
-    </form>
-  </div>
-</section>
-
-<section>
-  <div class="container grid grid-4">
-    <div class="card-glass">
-      <div class="eyebrow">WhatsApp</div>
-      <div style="font-weight:700;font-size:16px" data-wa-display>[a confirmar]</div>
-    </div>
-    <div class="card-glass">
-      <div class="eyebrow">E-mail</div>
-      <div style="font-weight:700;font-size:16px">contato@emrys.ai</div>
-    </div>
-    <div class="card-glass">
-      <div class="eyebrow">Localização</div>
-      <div style="font-weight:700;font-size:16px">Rio das Ostras, RJ</div>
-    </div>
-    <div class="card-glass">
-      <div class="eyebrow">Horário</div>
-      <div style="font-weight:700;font-size:16px">Seg. a sex., 9h às 18h</div>
     </div>
   </div>
 </section>

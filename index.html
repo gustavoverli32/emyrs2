@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline'; img-src 'self' https: data:; style-src 'self' https: 'unsafe-inline'; font-src 'self' https: data:;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' https: 'unsafe-inline'; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data: blob:; font-src 'self' https: data:; connect-src 'self' https:;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Emrys — Inteligência Artificial para Gestão Empresarial</title>
 <meta name="description" content="Plataforma de Inteligência Artificial para PMEs: conecte dados, antecipe cenários e receba recomendações automáticas em tempo real.">
-<link rel="canonical" href="https://gustavoverli32.github.io/emyrs2/index.html">
+<link rel="canonical" href="https://gustavoverli32.github.io/emyrs2/">
 <meta property="og:title" content="Emrys — Inteligência Artificial para Gestão Empresarial">
-<meta property="og:description" content="Sua empresa não precisa de mais um sistema. Precisa de uma Inteligência Artificial trabalhando por ela.">
+<meta property="og:description" content="Plataforma de Inteligência Artificial para PMEs: conecte dados, antecipe cenários e receba recomendações automáticas em tempo real.">
 <meta property="og:type" content="website">
 
 <!-- Preload Fonts -->
@@ -21,22 +21,6 @@
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap">
 <link rel="stylesheet" href="css/styles.css">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Emrys",
-  "url": "https://gustavoverli32.github.io/emyrs2/",
-  "description": "Plataformas personalizadas de gestão com Inteligência Artificial para pequenas e médias empresas.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Rio das Ostras",
-    "addressRegion": "RJ",
-    "addressCountry": "BR"
-  }
-}
-</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -48,7 +32,7 @@
       EMRYS
     </a>
     <div class="nav-links" id="nav-links">
-      <a href="index.html" aria-current="page">Início</a>
+      <a href="index.html" class="active">Início</a>
       <a href="plataforma.html">Plataforma</a>
       <a href="solucoes.html">Soluções</a>
       <a href="segmentos.html">Segmentos</a>
@@ -68,457 +52,53 @@
 
 <main id="main">
 
-<!-- HERO SECTION: IMPACTANTE E DIRETA -->
-<section class="hero glow-top grid-bg">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-        IA para Gestão de PMEs
-      </div>
-      <h1>
-        <span class="t-sans">Sua empresa não precisa de mais um sistema.</span>
-        <em class="t-serif">Precisa de uma Inteligência Artificial trabalhando por ela.</em>
-      </h1>
-      <p class="lead">A Emrys conecta todas as áreas do seu negócio, aprende com seus dados e recomenda decisões automáticas para aumentar o lucro e reduzir custos.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico gratuito</a>
-        <a class="btn btn-secondary" href="plataforma.html">Ver plataforma →</a>
-      </div>
-    </div>
-
-    <!-- DEMO INTERATIVA DE PAINEL -->
-    <div class="hero-illustration">
-      <div class="hero-brain" aria-hidden="true">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><path d="M9 3a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 003 3M15 3a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-3 3M9 3v16M15 3v16"></path></svg>
-      </div>
-      <div class="card-glass hero-panel">
-        <div class="card-kicker">EMRYS AI · OPERAÇÃO EM TEMPO REAL</div>
-        <div class="card-title" style="font-size:20px;margin-bottom:8px">Bom dia, Gustavo.</div>
-        <p class="card-body" style="font-size:14px;margin-bottom:16px">Encontramos 8 oportunidades de melhoria hoje.</p>
-        <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:10px">
-          <span class="text-dim">Economia potencial</span>
-          <span style="color:var(--accent);font-weight:700">R$ 3.240</span>
-        </div>
-        <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:10px">
-          <span class="text-dim">Estoque sem giro</span>
-          <span style="color:var(--accent);font-weight:700">R$ 27.800</span>
-        </div>
-        <div style="display:flex;justify-content:space-between;font-size:14px">
-          <span class="text-dim">Fluxo de caixa (90 dias)</span>
-          <span style="color:var(--blue);font-weight:700">Saudável</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAIXA DE MÉTRICAS (STRIP OBJETIVA) -->
-<section class="metrics-banner" data-count-group>
-  <div class="container">
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-num" data-count="5">0</div>
-        <div class="metric-label">Agentes de IA executivos</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-num" data-count="9">0</div>
-        <div class="metric-label">Fontes de dados integradas</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-num">24<span>/7</span></div>
-        <div class="metric-label">Análise contínua e autônoma</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-num" data-count="100" data-suffix="%">0%</div>
-        <div class="metric-label">Plataforma sob medida</div>
-      </div>
+<!-- HERO SECTION -->
+<section class="glow-top grid-bg" style="padding-top:120px;padding-bottom:80px">
+  <div class="container" style="text-align:center;max-width:900px">
+    <div class="eyebrow" data-reveal>Ecossistema Corporativo de IA</div>
+    <h1 data-reveal style="margin-bottom:24px">
+      <span class="t-sans">Sua empresa rodando com</span>
+      <em class="t-serif">Inteligência Artificial Nativa.</em>
+    </h1>
+    <p class="text-dim" data-reveal style="font-size:18px;max-width:700px;margin:0 auto 36px">
+      Conecte seus dados financeiros, vendas e operação em uma plataforma inteligente que antecipa gargalos, otimiza processos e orienta decisões em tempo real.
+    </p>
+    <div data-reveal style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico da minha empresa</a>
+      <a class="btn btn-secondary" href="plataforma.html">Conhecer a plataforma</a>
     </div>
   </div>
 </section>
 
 <hr class="hr-glow">
 
-<!-- SEÇÃO INTERATIVA: EQUIPE EXECUTIVA DE IA (TABS HIGH-TECH) -->
-<section id="agentes" class="section-surface" data-reveal>
+<!-- SEÇÃO SOLUÇÕES DE DESTAQUE -->
+<section style="padding:80px 24px">
   <div class="container">
-    <div class="section-header text-center">
-      <div class="eyebrow">Inteligência Autônoma</div>
-      <h2>
-        <span class="t-sans">Uma equipe executiva de IA,</span>
-        <em class="t-serif">trabalhando por você.</em>
-      </h2>
-      <p class="lead">Selecione um agente abaixo para ver como ele analisa sua empresa em tempo real:</p>
-    </div>
-
-    <!-- TABS DOS AGENTES -->
-    <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:36px" role="tablist">
-      <button class="chip active" data-agent-tab="financeiro" aria-pressed="true">Diretor Financeiro IA</button>
-      <button class="chip" data-agent-tab="contador" aria-pressed="false">Contador IA</button>
-      <button class="chip" data-agent-tab="admin" aria-pressed="false">Administrador IA</button>
-      <button class="chip" data-agent-tab="risco" aria-pressed="false">Gestor de Risco IA</button>
-      <button class="chip" data-agent-tab="crescimento" aria-pressed="false">Consultor de Crescimento IA</button>
-    </div>
-
-    <!-- PAINEL INTERATIVO DO AGENTE SELECIONADO -->
-    <div class="card-glass" style="max-width:860px;margin:0 auto;padding:40px">
-      <div data-agent-panel="financeiro" style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center">
-        <div class="icon-circle is-active"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9"></path><path d="M9 21V13"></path><path d="M15 21V6"></path><path d="M21 21V3"></path></svg></div>
-        <div>
-          <div class="card-kicker">AGENTE EXECUTIVO 01</div>
-          <div class="card-title">Diretor Financeiro IA</div>
-          <p class="card-body" style="font-size:18px">Monitora continuamente receitas, despesas, fluxo de caixa futuro e margem de lucro por produto ou serviço. Identifica vazamentos financeiros e oportunidades de liquidez.</p>
-        </div>
-      </div>
-
-      <div data-agent-panel="contador" style="display:none;grid-template-columns:auto 1fr;gap:24px;align-items:center">
-        <div class="icon-circle is-active"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"></path><path d="M9 7h6M9 11h6"></path></svg></div>
-        <div>
-          <div class="card-kicker">AGENTE EXECUTIVO 02</div>
-          <div class="card-title">Contador IA</div>
-          <p class="card-body" style="font-size:18px">Organiza informações tributárias, audita emissão de notas fiscais e sugere reduções legais de impostos em alinhamento com a contabilidade.</p>
-        </div>
-      </div>
-
-      <div data-agent-panel="admin" style="display:none;grid-template-columns:auto 1fr;gap:24px;align-items:center">
-        <div class="icon-circle is-active"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path></svg></div>
-        <div>
-          <div class="card-kicker">AGENTE EXECUTIVO 03</div>
-          <div class="card-title">Administrador IA</div>
-          <p class="card-body" style="font-size:18px">Avalia produtividade da equipe, acompanha gargalos operacionais e otimiza tarefas diárias para reduzir retrabalho.</p>
-        </div>
-      </div>
-
-      <div data-agent-panel="risco" style="display:none;grid-template-columns:auto 1fr;gap:24px;align-items:center">
-        <div class="icon-circle is-active"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"></path></svg></div>
-        <div>
-          <div class="card-kicker">AGENTE EXECUTIVO 04</div>
-          <div class="card-title">Gestor de Risco IA</div>
-          <p class="card-body" style="font-size:18px">Antecipa riscos de inadimplência de clientes, sinaliza estoque parado há mais de 30 dias e alerta sobre rombos de caixa previstos.</p>
-        </div>
-      </div>
-
-      <div data-agent-panel="crescimento" style="display:none;grid-template-columns:auto 1fr;gap:24px;align-items:center">
-        <div class="icon-circle is-active"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-9"></path><path d="M15 5h6v6"></path></svg></div>
-        <div>
-          <div class="card-kicker">AGENTE EXECUTIVO 05</div>
-          <div class="card-title">Consultor de Crescimento IA</div>
-          <p class="card-body" style="font-size:18px">Calcula oportunidades de aumento de ticket médio, campanhas de retenção de clientes e expansão de faturamento mensal.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MARQUEE INFINITO DE INTEGRAÇÕES (VISUAL HIGH-TECH) -->
-<section style="padding:40px 0;background:#000" aria-label="Fontes de dados integradas">
-  <div class="marquee-container">
-    <div class="marquee-track">
-      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12"></rect></svg> Bancos integrados</div>
-      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> Pagamentos via Pix</div>
-      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path></svg> Emissão fiscal automática</div>
-      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg> WhatsApp Business</div>
-      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path></svg> Notificações por E-mail</div>
-      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"></path></svg> Plataformas de venda</div>
-      
-      <!-- Duplicate item list for infinite loop -->
-      <div class="marquee-item" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12"></rect></svg> Bancos integrados</div>
-      <div class="marquee-item" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> Pagamentos via Pix</div>
-      <div class="marquee-item" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path></svg> Emissão fiscal automática</div>
-      <div class="marquee-item" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg> WhatsApp Business</div>
-      <div class="marquee-item" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path></svg> Notificações por E-mail</div>
-      <div class="marquee-item" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"></path></svg> Plataformas de venda</div>
-    </div>
-  </div>
-</section>
-
-<!-- TIMELINE VERTICAL SINCRONIZADA ("COMO FUNCIONA") -->
-<section id="como-funciona" data-reveal>
-  <div class="container">
-    <div class="section-header text-center">
-      <div class="eyebrow">Jornada de implantação</div>
-      <h2>
-        <span class="t-sans">Do primeiro contato</span>
-        <em class="t-serif">à sua IA em produção.</em>
-      </h2>
+    <div style="text-align:center;margin-bottom:60px">
+      <div class="eyebrow">Soluções Inteligentes</div>
+      <h2>Transforme dados em resultados previsíveis</h2>
     </div>
     
-    <div class="timeline">
-      <div class="timeline-line">
-        <div class="timeline-line-fill"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:24px" data-reveal-group>
+      <div class="card-glass" data-reveal>
+        <div style="color:var(--accent);font-size:28px;margin-bottom:16px">📊</div>
+        <h3 style="margin-bottom:12px">Diagnóstico Financeiro</h3>
+        <p>Previsibilidade de caixa, identificação automática de desperdícios e alertas de inadimplência.</p>
+      </div>
+      
+      <div class="card-glass" data-reveal>
+        <div style="color:var(--accent);font-size:28px;margin-bottom:16px">⚡</div>
+        <h3 style="margin-bottom:12px">Agentes de Execução</h3>
+        <p>Automação inteligente para comunicação com clientes, cobranças e tarefas operacionais.</p>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot icon-circle">1</div>
-        <div class="card timeline-card">
-          <div class="card-title">1. Diagnóstico do negócio</div>
-          <p class="card-body">Mapeamos a rotina, gargalos operacionais e metas da sua empresa.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot icon-circle">2</div>
-        <div class="card timeline-card">
-          <div class="card-title">2. Modelagem sob medida</div>
-          <p class="card-body">Construímos a estrutura de módulos personalizada para seu segmento.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot icon-circle">3</div>
-        <div class="card timeline-card">
-          <div class="card-title">3. Conexão de dados</div>
-          <p class="card-body">Integramos bancos, notas fiscais e sistemas existentes em um só lugar.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot icon-circle">4</div>
-        <div class="card timeline-card">
-          <div class="card-title">4. Treinamento autônomo</div>
-          <p class="card-body">A Emrys AI absorve o histórico de informações e identifica padrões de margem.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot icon-circle">5</div>
-        <div class="card timeline-card">
-          <div class="card-title">5. Recomendações contínuas</div>
-          <p class="card-body">Sua empresa passa a receber recomendações automáticas 24/7 para otimizar lucros.</p>
-        </div>
+      <div class="card-glass" data-reveal>
+        <div style="color:var(--accent);font-size:28px;margin-bottom:16px">🎯</div>
+        <h3 style="margin-bottom:12px">Recomendações Estratégicas</h3>
+        <p>Insights em tempo real para ajustar preços, estoque e investimentos com base em modelos de IA.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ANTES E DEPOIS (GRID IMPACTANTE 2x2) -->
-<section id="antes-depois" class="section-surface" data-reveal>
-  <div class="container">
-    <div class="section-header text-center">
-      <div class="eyebrow">Resultados reais</div>
-      <h2>
-        <span class="t-sans">Da planilha</span>
-        <em class="t-serif">à inteligência contínua.</em>
-      </h2>
-    </div>
-
-    <div class="before-after-grid">
-      <div class="ba-card">
-        <div class="ba-header">Dados centralizados</div>
-        <div class="ba-comparison">
-          <div class="ba-state">
-            <span class="ba-state-label">Antes</span>
-            <span class="ba-before">20% [EXEMPLO]</span>
-          </div>
-          <span class="ba-arrow">→</span>
-          <div class="ba-state">
-            <span class="ba-state-label">Com Emrys</span>
-            <span class="ba-after">100%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ba-card">
-        <div class="ba-header">Tempo em relatórios manuais</div>
-        <div class="ba-comparison">
-          <div class="ba-state">
-            <span class="ba-state-label">Antes</span>
-            <span class="ba-before">8h/sem [EXEMPLO]</span>
-          </div>
-          <span class="ba-arrow">→</span>
-          <div class="ba-state">
-            <span class="ba-state-label">Com Emrys</span>
-            <span class="ba-after">30min</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ba-card">
-        <div class="ba-header">Decisões com previsão contínua</div>
-        <div class="ba-comparison">
-          <div class="ba-state">
-            <span class="ba-state-label">Antes</span>
-            <span class="ba-before">0% [EXEMPLO]</span>
-          </div>
-          <span class="ba-arrow">→</span>
-          <div class="ba-state">
-            <span class="ba-state-label">Com Emrys</span>
-            <span class="ba-after">Contínua</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ba-card">
-        <div class="ba-header">Nível de retrabalho operacional</div>
-        <div class="ba-comparison">
-          <div class="ba-state">
-            <span class="ba-state-label">Antes</span>
-            <span class="ba-before">Alto</span>
-          </div>
-          <span class="ba-arrow">→</span>
-          <div class="ba-state">
-            <span class="ba-state-label">Com Emrys</span>
-            <span class="ba-after">Mínimo</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SEÇÃO INTERATIVA DE NAVEGAÇÃO RÁPIDA (ACESSO A DETALHES) -->
-<section data-reveal style="padding:80px 24px">
-  <div class="container text-center">
-    <div class="section-header">
-      <div class="eyebrow">Explore mais detalhes</div>
-      <h2>
-        <span class="t-sans">Quer aprofundar nas funcionalidades</span>
-        <em class="t-serif">do seu setor?</em>
-      </h2>
-    </div>
-    <div class="grid grid-3" style="max-width:960px;margin:0 auto">
-      <div class="card-glass">
-        <div class="card-title">Módulos da Plataforma</div>
-        <p class="card-body" style="font-size:15px;margin-bottom:20px">Veja como funcionam os módulos de financeiro, fiscal, vendas e estoque.</p>
-        <a class="btn btn-secondary" href="plataforma.html">Conhecer Módulos →</a>
-      </div>
-
-      <div class="card-glass">
-        <div class="card-title">Soluções por Desafio</div>
-        <p class="card-body" style="font-size:15px;margin-bottom:20px">Entenda como tratamos falta de margem, inadimplência e perda de tempo.</p>
-        <a class="btn btn-secondary" href="solucoes.html">Ver Soluções →</a>
-      </div>
-
-      <div class="card-glass">
-        <div class="card-title">Soluções por Segmento</div>
-        <p class="card-body" style="font-size:15px;margin-bottom:20px">Veja a Emrys adaptada para oficinas, clínicas, restaurantes e lojas.</p>
-        <a class="btn btn-secondary" href="segmentos.html">Ver Segmentos →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- FAQ COMPACTO E COMPREENSÍVEL -->
-<section id="faq" data-reveal>
-  <div class="container" style="max-width:860px">
-    <div class="section-header text-center">
-      <div class="eyebrow">Dúvidas rápidas</div>
-      <h2>
-        <span class="t-sans">Perguntas</span>
-        <em class="t-serif">frequentes.</em>
-      </h2>
-    </div>
-
-    <div class="faq-container">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          A Emrys é um ERP tradicional?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a-wrapper">
-          <div class="faq-a">
-            <div class="faq-a-content">
-              Não. A Emrys é uma plataforma de Inteligência Artificial que se conecta às suas fontes de dados e recomenda ações estratégicas em tempo real, em vez de apenas registrar passadamente informações.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          A plataforma é engessada ou personalizada?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a-wrapper">
-          <div class="faq-a">
-            <div class="faq-a-content">
-              100% personalizada. Cada cliente utiliza apenas os módulos que fazem sentido para o seu setor e para o momento da sua empresa.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Como meus dados são protegidos?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a-wrapper">
-          <div class="faq-a">
-            <div class="faq-a-content">
-              Construída com princípios estritos da LGPD, controle de permissões por usuário e criptografia de ponta a ponta.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL & FORMULÁRIO -->
-<section id="contato" class="glow-top" style="padding:100px 24px">
-  <div class="container" style="max-width:800px">
-    <div class="section-header text-center">
-      <div class="eyebrow">Diagnóstico gratuito</div>
-      <h2>
-        <span class="t-sans">Quero conhecer</span>
-        <em class="t-serif">a Emrys.</em>
-      </h2>
-      <p class="lead">Conte um pouco sobre sua empresa para recebermos um diagnóstico comercial sob medida.</p>
-    </div>
-
-    <div id="form-success" class="card-glass text-center" hidden>
-      <div class="card-title" style="color:var(--accent)">Recebemos seu contato!</div>
-      <p class="card-body">Nossa equipe analisará as informações do seu negócio e retornará em breve.</p>
-    </div>
-
-    <div id="form-fallback-notice" class="card-glass text-center" hidden>
-      <div class="card-title">Obrigado pelo interesse!</div>
-      <p class="card-body" style="margin-bottom:20px">Entre em contato diretamente pelos canais oficiais:</p>
-      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
-        <a class="btn btn-primary" data-wa-link>Conversar via WhatsApp</a>
-        <a class="btn btn-secondary" href="mailto:contato@emrys.ai">Enviar E-mail</a>
-      </div>
-    </div>
-
-    <form id="contact-form" class="grid grid-2">
-      <!-- Honeypot Bot Field -->
-      <input type="text" name="hp_check" class="hp-field" tabindex="-1" aria-hidden="true" autocomplete="off">
-
-      <div class="field">
-        <label for="nome">Nome completo</label>
-        <input class="input" id="nome" name="nome" autocomplete="name" required>
-        <span data-error-for="nome" style="color:var(--accent);font-size:13px"></span>
-      </div>
-
-      <div class="field">
-        <label for="empresa">Nome da empresa</label>
-        <input class="input" id="empresa" name="empresa" autocomplete="organization" required>
-        <span data-error-for="empresa" style="color:var(--accent);font-size:13px"></span>
-      </div>
-
-      <div class="field">
-        <label for="telefone">Telefone / WhatsApp</label>
-        <input class="input" id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" required>
-        <span data-error-for="telefone" style="color:var(--accent);font-size:13px"></span>
-      </div>
-
-      <div class="field">
-        <label for="email">E-mail corporativo</label>
-        <input class="input" id="email" name="email" type="email" inputmode="email" autocomplete="email" required>
-        <span data-error-for="email" style="color:var(--accent);font-size:13px"></span>
-      </div>
-
-      <div class="checkbox-row" style="grid-column:1/-1">
-        <input type="checkbox" id="consent" name="consent" required>
-        <label for="consent">Concordo com o uso dos meus dados para retorno comercial, conforme a <a href="politica-de-privacidade.html">Política de Privacidade</a>.</label>
-      </div>
-      <span data-error-for="consent" style="grid-column:1/-1;color:var(--accent);font-size:13px"></span>
-
-      <button class="btn btn-primary btn-block" type="submit" style="grid-column:1/-1;margin-top:12px">Solicitar diagnóstico gratuito</button>
-      <a class="btn btn-secondary btn-block" data-wa-link="Olá! Gostaria de agendar um diagnóstico comercial da Emrys." style="grid-column:1/-1">Falar no WhatsApp</a>
-    </form>
   </div>
 </section>
 
