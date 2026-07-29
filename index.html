@@ -52,20 +52,106 @@
 
 <main id="main">
 
-<!-- HERO SECTION -->
-<section class="glow-top grid-bg" style="padding-top:120px;padding-bottom:80px">
-  <div class="container" style="text-align:center;max-width:900px">
-    <div class="eyebrow" data-reveal>Ecossistema Corporativo de IA</div>
-    <h1 data-reveal style="margin-bottom:24px">
-      <span class="t-sans">Sua empresa rodando com</span>
-      <em class="t-serif">Inteligência Artificial Nativa.</em>
-    </h1>
-    <p class="text-dim" data-reveal style="font-size:18px;max-width:700px;margin:0 auto 36px">
-      Conecte seus dados financeiros, vendas e operação em uma plataforma inteligente que antecipa gargalos, otimiza processos e orienta decisões em tempo real.
-    </p>
-    <div data-reveal style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-      <a class="btn btn-primary" href="contato.html">Solicitar diagnóstico da minha empresa</a>
-      <a class="btn btn-secondary" href="plataforma.html">Conhecer a plataforma</a>
+<!-- HERO SECTION REFORMULADA (LETRAS HARMONIOSAS & DASHBOARD CARD ALINHADO) -->
+<section class="glow-top grid-bg hero-section">
+  <div class="container">
+    <div class="hero-grid">
+      
+      <!-- Coluna Esquerda: Texto & Chamadas -->
+      <div class="hero-content" data-reveal>
+        <div class="eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          Ecossistema Corporativo de IA
+        </div>
+        
+        <h1 class="hero-title">
+          <span>Sua empresa não precisa de mais um sistema.</span>
+          <span class="hero-accent">Precisa de Inteligência Artificial trabalhando por ela.</span>
+        </h1>
+        
+        <p class="hero-desc">
+          Conecte finanças, vendas e operação em uma plataforma autônoma que antecipa cenários, reduz desperdícios e orienta decisões em tempo real.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="contato.html">
+            <span>Solicitar diagnóstico gratuito</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a class="btn btn-secondary" href="plataforma.html">Conhecer a plataforma</a>
+        </div>
+
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg>
+            <span>Implementação rápida</span>
+          </div>
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>Dados 100% protegidos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna Direita: Card Dashboard Emrys AI -->
+      <div data-reveal="scale">
+        <div class="hero-widget-card">
+          <div class="widget-header">
+            <span class="widget-tag">Emrys AI · Operação em Tempo Real</span>
+            <div class="widget-status">
+              <span class="pulse-dot"></span>
+              <span>Ao Vivo</span>
+            </div>
+          </div>
+
+          <div class="widget-user-box">
+            <h3 class="widget-user">Bom dia, Gestor. 👋</h3>
+            <p class="widget-sub">Encontramos <strong>8 oportunidades de otimização</strong> hoje.</p>
+          </div>
+
+          <div class="widget-grid">
+            <div class="widget-metric">
+              <span class="wm-lbl">Economia Potencial</span>
+              <div class="wm-val">
+                <span>R$ 3.240/mês</span>
+                <span class="pill-badge pos">+12.4%</span>
+              </div>
+            </div>
+
+            <div class="widget-metric">
+              <span class="wm-lbl">Estoque sem Giro</span>
+              <div class="wm-val">
+                <span>R$ 27.800</span>
+                <span class="pill-badge warn">Ação Recom.</span>
+              </div>
+            </div>
+
+            <div class="widget-metric">
+              <span class="wm-lbl">Fluxo de Caixa (90d)</span>
+              <div class="wm-val">
+                <span>Saudável</span>
+                <span class="pill-badge ok">Previsível</span>
+              </div>
+            </div>
+
+            <div class="widget-metric">
+              <span class="wm-lbl">Gargalos Detectados</span>
+              <div class="wm-val">
+                <span>03 Resolvidos</span>
+                <span class="pill-badge pos">Auto-corrigido</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-ai-feed">
+            <span class="ai-spark">✨</span>
+            <div>
+              <strong>Recomendação Ativa:</strong> Renegociação com 2 fornecedores de insumos gera <strong>R$ 1.850/mês</strong> de economia imediata.
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
