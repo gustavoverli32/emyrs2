@@ -12,8 +12,10 @@ const EMRYS_CONFIG = {
   analyticsProvider: "", // "ga4" | "plausible" | ""
 };
 
-// Global event tracking helper
+// Global event tracking helper (Respeita o consentimento LGPD)
 function track(eventName, data = {}) {
+  const consent = localStorage.getItem("emrys_cookie_consent");
+  if (consent === "essential_only") return;
   if (!EMRYS_CONFIG.analyticsId && !window.dataLayer) return;
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: eventName, ...data });
@@ -436,4 +438,40 @@ document.addEventListener("DOMContentLoaded", () => {
       track("scroll_depth_75");
     }
   }, { passive: true });
+
+  // --- Banner de Consentimento de Cookies LGPD ---
+  const cookieConsent = localStorage.getItem("emrys_cookie_consent");
+  if (!cookieConsent) {
+    const banner = document.createElement("div");
+    banner.className = "cookie-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", "Aviso de Privacidade e Cookies");
+    banner.innerHTML = `
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <strong style="color:var(--text);font-size:15px;display:flex;align-items:center;gap:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5M8.5 8.5v.01M16 15.5v.01M12 12v.01M11 17v.01"/></svg>
+          Privacidade e Cookies (LGPD)
+        </strong>
+        <p style="color:var(--text-dim);font-size:13px;line-height:1.5;margin:0;">
+          Utilizamos cookies essenciais e análise de navegação para aprimorar sua experiência. Consulte nossa <a href="politica-de-privacidade.html" style="color:var(--accent);text-decoration:underline;">Política de Privacidade</a>.
+        </p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;">
+        <button id="btn-cookie-accept" class="btn btn-primary" style="padding:8px 16px;font-size:13px;flex:1;min-width:130px;">Aceitar Todos</button>
+        <button id="btn-cookie-essential" class="btn" style="padding:8px 16px;font-size:13px;background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--text-dim);flex:1;min-width:130px;">Apenas Essenciais</button>
+      </div>
+    `;
+    document.body.appendChild(banner);
+
+    document.getElementById("btn-cookie-accept")?.addEventListener("click", () => {
+      localStorage.setItem("emrys_cookie_consent", "accepted");
+      banner.remove();
+      track("cookie_consent_accepted");
+    });
+
+    document.getElementById("btn-cookie-essential")?.addEventListener("click", () => {
+      localStorage.setItem("emrys_cookie_consent", "essential_only");
+      banner.remove();
+    });
+  }
 });
