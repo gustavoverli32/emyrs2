@@ -2,6 +2,8 @@
 
 Site estático (HTML, CSS e JavaScript puro, sem dependências) da **Velo Solutions**, empresa de automação de processos financeiros e administrativos com inteligência artificial.
 
+Visual editorial inspirado em mechanical-orchard.com: papel quente, tinta quase preta, acento laranja (#ff5b1f), seções escuras com campo de brasas animado em canvas (`.atmos`), tipografia Inter Tight + Inter + JetBrains Mono.
+
 Publicado pelo GitHub Pages a partir da branch `main`.
 
 ## Estrutura

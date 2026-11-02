@@ -39,7 +39,18 @@ def icon(name):
 
 ARROW = '<svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 
-LOGO = '''<svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#1f5eff"/><path d="M8.5 9.5l7.5 13 7.5-13" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="miter"/><path d="M18.5 9.5h5" stroke="#9fb9ff" stroke-width="2.6"/></svg>'''
+NEW_MARK_SVG = '<rect width="32" height="32" rx="16" fill="#ff5b1f"/><path d="M9 10l7 12.5L23 10" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>'
+ARROW_SM = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+ATMOS = '<canvas class="atmos" data-mode="fire" aria-hidden="true"></canvas><div class="atmos-glow" aria-hidden="true"></div>'
+
+
+def split(text):
+    """Quebra um título em linhas (separadas por '|') para a animação linha a linha."""
+    parts = [x.strip() for x in text.split("|")]
+    return "".join(f'<span class="line"><span style="--i:{i}">{x}</span></span>' for i, x in enumerate(parts))
+
+
+LOGO = '''<svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#ff5b1f"/><path d="M9 10l7 12.5L23 10" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'''
 
 NAV = [
     ("solucoes.html", "Soluções"),
@@ -83,7 +94,7 @@ def head(title, desc, path, extra_ld=None):
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<meta name="theme-color" content="#070c18">
+<meta name="theme-color" content="#0d0e0c">
 <link rel="canonical" href="{url}">
 <link rel="icon" href="assets/velo-logo.svg" type="image/svg+xml">
 <meta property="og:site_name" content="Velo Solutions">
@@ -95,7 +106,7 @@ def head(title, desc, path, extra_ld=None):
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="css/styles.css">
 <script>document.documentElement.classList.add("js")</script>
 {ld}
@@ -109,6 +120,12 @@ def header(active):
     )
     return f'''<body>
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
+<div class="utility-bar">
+  <div class="container">
+    <span class="mono">Novo</span>
+    <a href="solucoes.html#conciliacao-bancaria">Conciliação bancária com IA: veja como funciona {ARROW_SM}</a>
+  </div>
+</div>
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="index.html" aria-label="Velo Solutions, página inicial">
@@ -167,6 +184,7 @@ FOOTER = f'''
         </ul>
       </div>
     </div>
+    <div class="footer-word" aria-hidden="true">Velo</div>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> Velo Solutions. Todos os direitos reservados.</span>
       <span>Tratamento de dados conforme a LGPD (Lei nº 13.709/2018).</span>
@@ -180,12 +198,13 @@ FOOTER = f'''
 
 
 def page_hero(crumb, eyebrow, h1, lead, extra=""):
-    return f'''<section class="page-hero">
+    return f'''<section class="page-hero grain">
+  {ATMOS}
   <div class="container">
     <nav class="breadcrumb" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>{crumb}</span></nav>
     <div data-reveal>
       <p class="eyebrow">{eyebrow}</p>
-      <h1 class="display">{h1}</h1>
+      <h1 class="display" data-split>{split(h1)}</h1>
       <p class="lead">{lead}</p>
     </div>
     {extra}
@@ -193,16 +212,20 @@ def page_hero(crumb, eyebrow, h1, lead, extra=""):
 </section>'''
 
 
-CTA = f'''<section class="cta-band" aria-labelledby="cta-title">
-  <div class="container cta-inner" data-reveal>
+CTA = f'''<section class="cta-band grain" aria-labelledby="cta-title">
+  <canvas class="atmos" data-mode="forest" aria-hidden="true"></canvas>
+  <div class="atmos-glow atmos-glow--forest" aria-hidden="true"></div>
+  <div class="container cta-inner">
     <div>
-      <p class="eyebrow">Diagnóstico sem custo</p>
-      <h2 class="h2" id="cta-title">Descubra quanto da sua operação pode ser automatizado.</h2>
-      <p class="lead">Mapeamos seus processos recorrentes e mostramos onde a automação com IA gera mais retorno, com escopo e indicadores definidos antes de qualquer investimento.</p>
+      <p class="eyebrow" data-reveal>Diagnóstico sem custo</p>
+      <h2 id="cta-title" data-split><span class="line"><span style="--i:0">Sua nova operação</span></span><span class="line"><span style="--i:1">começa aqui.</span></span></h2>
     </div>
-    <div class="cta-actions">
+    <div data-reveal>
+      <p class="lead">Mapeamos seus processos recorrentes e mostramos onde a automação com IA gera mais retorno, com escopo e indicadores definidos antes de qualquer investimento.</p>
+      <div class="cta-actions">
       <a class="btn btn-primary" href="contato.html">Agendar diagnóstico {ARROW}</a>
-      <a class="btn btn-ghost-dark" href="solucoes.html">Ver soluções</a>
+        <a class="btn btn-ghost-dark" href="solucoes.html">Ver soluções</a>
+      </div>
     </div>
   </div>
 </section>'''
@@ -339,69 +362,89 @@ def index():
         f'''          <div class="console-row" role="row" data-result="{r}"><span role="cell" class="mono">{d}</span><span role="cell" class="desc">{t}</span><span role="cell" class="num">{v}</span><span role="cell"><span class="status status--pending">Na fila</span></span></div>'''
         for d, t, v, r in rows
     )
-    sol_cards = "\n".join(
-        f'''      <article class="card" data-reveal>
-        <div class="card-icon">{icon(s["icon"])}</div>
-        <span class="card-kicker">{s["tag"]}</span>
-        <h3 class="card-title">{s["title"]}</h3>
-        <p class="card-body">{s["short"]}</p>
-        <ul class="card-list">{"".join(f"<li>{b}</li>" for b in s["bullets"])}</ul>
-        <div class="card-foot"><a class="link-arrow" href="solucoes.html#{s["id"]}">Saiba mais {icon("arrow").replace('viewBox', 'width="16" height="16" viewBox')}</a></div>
-      </article>'''
-        for s in SOLUTIONS
-    )
     audit = [
         ("08:00:02", "info", "INÍCIO", "Lote diário · 4 contas · 1.312 lançamentos"),
-        ("08:00:41", "ok", "OK", "1.284 lançamentos conciliados automaticamente"),
-        ("08:00:43", "info", "IA", "22 casos ambíguos resolvidos por similaridade de histórico"),
-        ("08:00:44", "warn", "EXCEÇÃO", "6 lançamentos sem correspondência no ERP"),
-        ("08:00:44", "human", "HUMANO", "Exceções enviadas para Financeiro · Ana R."),
-        ("09:12:10", "human", "DECISÃO", "Depósito R$ 1.750,00 vinculado ao pedido 88213"),
+        ("08:00:41", "ok", "OK", "1.284 conciliados automaticamente"),
+        ("08:00:43", "info", "IA", "22 casos ambíguos resolvidos por histórico"),
+        ("08:00:44", "warn", "EXCEÇÃO", "6 lançamentos sem correspondência"),
+        ("08:00:44", "human", "HUMANO", "Exceções enviadas ao Financeiro"),
+        ("09:12:10", "human", "DECISÃO", "R$ 1.750,00 vinculado ao pedido 88213"),
         ("09:12:11", "ok", "OK", "Baixa registrada no ERP · trilha arquivada"),
     ]
     audit_html = "\n".join(
         f'        <div class="audit-line"><time>{t}</time><span class="tag tag--{k}">{l}</span><span>{m}</span></div>'
         for t, k, l, m in audit
     )
+    arrow_svg = icon("arrow").replace("viewBox", 'width="18" height="18" viewBox')
+    sol_rows = "\n".join(
+        f'''      <article class="sol-row" data-reveal>
+        <span class="sol-num">{i+1:02d}</span>
+        <h3><a href="solucoes.html#{s["id"]}">{s["title"]}</a></h3>
+        <p>{s["short"]}</p>
+        <span class="sol-go" aria-hidden="true">{arrow_svg}</span>
+      </article>'''
+        for i, s in enumerate(SOLUTIONS)
+    )
     kpis = [
-        ("Produtividade", "Horas recuperadas", "Horas de trabalho manual liberadas por mês, por processo automatizado.", "78%", ""),
-        ("Qualidade", "Taxa de erro", "Divergências, retrabalho e correções antes e depois da automação.", "22%", " kpi-bar--down"),
-        ("Velocidade", "Tempo de ciclo", "Do recebimento do documento ao lançamento concluído no sistema.", "35%", " kpi-bar--down"),
-        ("Eficiência", "Custo por transação", "Custo operacional de cada conciliação, lançamento ou documento.", "40%", " kpi-bar--down"),
+        ("Produtividade", "Horas recuperadas", "Horas de trabalho manual liberadas por mês, em cada processo automatizado.", "78%"),
+        ("Qualidade", "Taxa de erro", "Divergências, retrabalho e correções antes e depois da automação.", "62%"),
+        ("Velocidade", "Tempo de ciclo", "Do recebimento do documento ao lançamento concluído no sistema.", "70%"),
+        ("Eficiência", "Custo por transação", "Custo operacional de cada conciliação, lançamento ou documento.", "55%"),
     ]
     kpi_html = "\n".join(
-        f'''      <div class="kpi" data-reveal><span class="kpi-label">{a}</span><h3 class="kpi-title">{b}</h3><p>{c}</p><div class="kpi-bar{e}" aria-hidden="true"><i style="--to:{d}"></i></div></div>'''
-        for a, b, c, d, e in kpis
+        f'''      <div class="kpi" data-reveal><span class="kpi-label">{a}</span><h3 class="kpi-title">{b}</h3><p>{c}</p><div class="kpi-bar" aria-hidden="true"><i style="--to:{d}"></i></div></div>'''
+        for a, b, c, d in kpis
     )
 
     body = f'''
 <main id="main">
 
-<section class="hero" aria-labelledby="hero-title">
-  <canvas class="hero-canvas" aria-hidden="true"></canvas>
-  <div class="container hero-grid">
-    <div>
-      <p class="eyebrow" data-hero style="--i:0">Automação de processos com inteligência artificial</p>
-      <h1 class="display" id="hero-title">
-        <span class="line"><span style="--i:1">Inteligência artificial</span></span>
-        <span class="line"><span style="--i:2">aplicada à rotina</span></span>
-        <span class="line"><span style="--i:3" class="accent">da sua empresa.</span></span>
-      </h1>
-      <p class="lead" data-hero style="--i:4">A Velo Solutions automatiza processos financeiros e administrativos recorrentes, como conciliação bancária, contas a pagar e a receber, lançamentos e conferências. Tudo integrado aos sistemas que você já usa, com menos erro humano e mais controle.</p>
-      <div class="hero-ctas" data-hero style="--i:5">
-        <a class="btn btn-primary" href="contato.html">Agendar diagnóstico {ARROW}</a>
-        <a class="btn btn-ghost-dark" href="solucoes.html">Conhecer as soluções</a>
+<section class="hero grain" aria-labelledby="hero-title">
+  {ATMOS}
+  <span class="hero-scroll" aria-hidden="true">Role</span>
+  <div class="container">
+    <p class="eyebrow" data-hero style="--i:0">Velo Solutions · Automação de processos com IA</p>
+    <h1 class="display" id="hero-title">
+      <span class="line"><span style="--i:1">Automação financeira,</span></span>
+      <span class="line"><span style="--i:2">feita do jeito certo.</span></span>
+    </h1>
+    <div class="hero-bottom" data-hero style="--i:4">
+      <p class="lead">A Velo implementa inteligência artificial nas rotinas financeiras e administrativas da sua empresa, como conciliação bancária, contas a pagar e a receber e lançamentos, sem trocar os sistemas que você já usa e sem perder o controle.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="contato.html">Agendar diagnóstico gratuito {ARROW}</a>
+        <a class="btn btn-ghost-dark" href="solucoes.html">Ver soluções</a>
       </div>
-      <ul class="hero-meta" data-hero style="--i:6">
-        <li>{icon("check").replace('viewBox', 'width="16" height="16" viewBox')}Integração com ERPs e bancos</li>
-        <li>{icon("check").replace('viewBox', 'width="16" height="16" viewBox')}Revisão humana nas exceções</li>
-        <li>{icon("check").replace('viewBox', 'width="16" height="16" viewBox')}Conformidade com a LGPD</li>
-      </ul>
     </div>
-    <div data-hero style="--i:4">
-      <div class="console" data-console role="img" aria-label="Demonstração de uma conciliação bancária automatizada: lançamentos sendo conciliados e uma exceção enviada para revisão humana.">
+  </div>
+</section>
+
+<section class="section" aria-labelledby="persp-title">
+  <div class="container perspective">
+    <div>
+      <p class="eyebrow" data-reveal>Perspectiva</p>
+      <h2 id="persp-title" data-split><span class="line"><span style="--i:0">A IA sozinha resolve</span></span><span class="line"><span style="--i:1">a automação do</span></span><span class="line"><span style="--i:2" class="muted">seu financeiro?</span></span></h2>
+    </div>
+    <div class="perspective-body" data-reveal>
+      <p>Não. Modelos de IA genéricos erram com confiança, e no financeiro um erro silencioso custa caro. Automação que funciona em uma empresa real precisa de três coisas: regras de negócio claras, verificação de cada resultado e pessoas no controle das exceções.</p>
+      <p>É assim que a Velo trabalha. Usamos IA onde ela agrega, regras onde elas bastam, e registramos tudo para que sua equipe saiba exatamente o que foi feito.</p>
+      <a class="link-arrow" href="plataforma.html">Conheça nosso método {arrow_svg.replace('width="18" height="18"', 'width="16" height="16"')}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark" aria-labelledby="proof-title">
+  <div class="container">
+    <div class="section-head section-head--row">
+      <div>
+        <p class="eyebrow" data-reveal>Na prática</p>
+        <h2 class="h2" id="proof-title" data-split><span class="line"><span style="--i:0">Automação é um problema</span></span><span class="line"><span style="--i:1">de verificação.</span></span></h2>
+      </div>
+      <p class="lead" data-reveal style="max-width:44ch">Cada lançamento é conferido. Cada exceção chega explicada para quem decide. Veja uma conciliação bancária rodando.</p>
+    </div>
+    <div class="proof">
+      <div class="console" data-console data-reveal="scale" role="img" aria-label="Demonstração de uma conciliação bancária automatizada: lançamentos sendo conciliados e uma exceção enviada para revisão humana.">
         <div class="console-bar">
-          <span class="console-title"><span class="console-dot"></span>velo · conciliação bancária · lote diário</span>
+          <span class="console-title"><span class="console-dot"></span>Conciliação bancária · lote diário</span>
           <span class="console-chip">Demonstração</span>
         </div>
         <div class="console-progress"><i></i></div>
@@ -415,101 +458,71 @@ def index():
           <div class="console-stat"><dt>Tempo</dt><dd data-stat="time">0,0 s</dd></div>
         </dl>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="integrations" aria-label="Integrações">
-  <div class="container integrations-inner">
-    <span class="integrations-label">Integra com o que você já usa</span>
-    <ul class="integrations-list">
-      <li>ERPs e sistemas de gestão</li>
-      <li>Bancos, OFX e CNAB</li>
-      <li>Open Finance</li>
-      <li>Excel e Google Sheets</li>
-      <li>NF-e e documentos fiscais</li>
-      <li>E-mail e caixas compartilhadas</li>
-      <li>CRMs</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="oque-title">
-  <div class="container">
-    <div class="split">
-      <div data-reveal>
-        <p class="eyebrow">O que fazemos</p>
-        <h2 class="h2" id="oque-title">Transformamos tarefas repetitivas em processos automatizados, auditáveis e escaláveis.</h2>
-      </div>
-      <div data-reveal>
-        <p class="lead">Boa parte do tempo das equipes financeiras e administrativas é gasto copiando, conferindo e lançando informações. É nesse trabalho que nascem os erros. A Velo combina automação de processos (RPA), inteligência artificial e integrações para executar essas rotinas com precisão, todos os dias, e deixar para as pessoas apenas o que exige julgamento.</p>
+      <div class="audit" data-audit data-reveal="scale" role="img" aria-label="Exemplo de trilha de auditoria de uma conciliação automatizada">
+        <div class="audit-bar"><span>Trilha de auditoria</span><span>Exemplo</span></div>
+        <div class="audit-body" aria-hidden="true">
+{audit_html}
+          <div class="audit-line is-in"><time></time><span></span><span><span class="audit-cursor"></span></span></div>
+        </div>
       </div>
     </div>
-    <div class="grid grid-3 mt-7" data-reveal-group>
-      <div class="pillar" data-reveal><span class="pillar-num">01</span><h3>Automação financeira</h3><p>Conciliação bancária, contas a pagar e a receber, fluxo de caixa e fechamento, com regras de negócio e IA para os casos ambíguos.</p></div>
-      <div class="pillar" data-reveal><span class="pillar-num">02</span><h3>Processos administrativos</h3><p>Cadastros, conferências, leitura de documentos e relatórios recorrentes executados sem digitação manual.</p></div>
-      <div class="pillar" data-reveal><span class="pillar-num">03</span><h3>Agentes de IA para operações</h3><p>Agentes que leem, classificam, cruzam dados entre sistemas e encaminham exceções para a pessoa certa.</p></div>
+    <div class="proof-notes" data-reveal-group>
+      <div data-reveal><h3>Trilha de auditoria</h3><p>Quem fez, o que foi feito, quando e com base em qual regra.</p></div>
+      <div data-reveal><h3>Pessoas nas exceções</h3><p>Casos fora do padrão vão para o responsável, com contexto para decidir.</p></div>
+      <div data-reveal><h3>Sem trocar de sistema</h3><p>Integração com ERP, bancos e planilhas por API ou robôs de software.</p></div>
+      <div data-reveal><h3>Dados protegidos</h3><p>Acesso mínimo, comunicação criptografada e conformidade com a LGPD.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="solucoes" aria-labelledby="sol-title">
+<section class="section" id="solucoes" aria-labelledby="sol-title">
   <div class="container">
     <div class="section-head section-head--row">
-      <div data-reveal>
-        <p class="eyebrow">Soluções</p>
-        <h2 class="h2" id="sol-title">Soluções para as rotinas que mais consomem o tempo da sua equipe.</h2>
+      <div>
+        <p class="eyebrow" data-reveal>Soluções</p>
+        <h2 class="h2" id="sol-title" data-split><span class="line"><span style="--i:0">O que automatizamos</span></span><span class="line"><span style="--i:1" class="muted">na sua operação.</span></span></h2>
       </div>
-      <a class="btn btn-secondary" href="solucoes.html" data-reveal>Ver todas as soluções {ARROW}</a>
+      <a class="btn btn-secondary" href="solucoes.html" data-reveal>Todas as soluções {ARROW}</a>
     </div>
-    <div class="grid grid-3" data-reveal-group>
-{sol_cards}
+    <div class="sol-list" data-reveal-group>
+{sol_rows}
     </div>
   </div>
 </section>
 
-<section class="section section--dark" aria-labelledby="metodo-title">
+<section class="quote-band" aria-label="Princípio">
+  <span class="quote-mark" aria-hidden="true">&ldquo;</span>
   <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">Como trabalhamos</p>
-      <h2 class="h2" id="metodo-title">Um método claro, do diagnóstico à operação.</h2>
-      <p class="lead">Cada projeto começa entendendo o processo como ele é hoje. Só depois definimos o que automatizar, como medir e quando entregar.</p>
+    <figure data-reveal>
+      <blockquote>Tarefas recorrentes não deveriam depender de atenção humana para dar certo. <span class="dim">Atenção humana deveria ir para o que exige julgamento.</span></blockquote>
+      <figcaption>O princípio por trás de cada projeto da Velo</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="metodo-title">
+  <div class="container">
+    <div class="section-head section-head--row">
+      <div>
+        <p class="eyebrow" data-reveal>Como trabalhamos</p>
+        <h2 class="h2" id="metodo-title" data-split><span class="line"><span style="--i:0">Do diagnóstico</span></span><span class="line"><span style="--i:1" class="muted">à operação.</span></span></h2>
+      </div>
+      <p class="lead" data-reveal style="max-width:44ch">Cada projeto começa entendendo o processo como ele é hoje. Só depois definimos o que automatizar, como medir e quando entregar.</p>
     </div>
     {steps_html()}
   </div>
 </section>
 
-<section class="section" aria-labelledby="gov-title">
-  <div class="container split split--even">
-    <div data-reveal>
-      <p class="eyebrow">Controle e segurança</p>
-      <h2 class="h2" id="gov-title">Automação que a sua auditoria aprova.</h2>
-      <p class="lead mt-4">Cada ação executada pelas automações fica registrada. Quando a IA não tem certeza, uma pessoa decide.</p>
-      <div class="feature-list">
-        <div class="feature"><div class="feature-icon">{icon("log")}</div><div><h3>Trilha de auditoria completa</h3><p>Quem fez, o que foi feito, quando e com base em qual regra. Tudo consultável.</p></div></div>
-        <div class="feature"><div class="feature-icon">{icon("human")}</div><div><h3>Revisão humana nas exceções</h3><p>Casos fora do padrão vão para a pessoa responsável, com contexto para decidir rápido.</p></div></div>
-        <div class="feature"><div class="feature-icon">{icon("plug")}</div><div><h3>Sem trocar de sistema</h3><p>Integração com ERP, bancos e planilhas existentes, por API ou robôs de software.</p></div></div>
-        <div class="feature"><div class="feature-icon">{icon("shield")}</div><div><h3>Dados protegidos</h3><p>Acesso mínimo necessário, comunicação criptografada e tratamento conforme a LGPD.</p></div></div>
-      </div>
-    </div>
-    <div class="audit" data-audit data-reveal="scale" aria-label="Exemplo de trilha de auditoria de uma conciliação automatizada" role="img">
-      <div class="audit-bar"><span>Trilha de auditoria</span><span>Exemplo</span></div>
-      <div class="audit-body" aria-hidden="true">
-{audit_html}
-        <div class="audit-line is-in"><time></time><span></span><span><span class="audit-cursor"></span></span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section section--alt" id="resultados" aria-labelledby="res-title">
   <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">Resultados</p>
-      <h2 class="h2" id="res-title">Resultados medidos, não prometidos.</h2>
-      <p class="lead">Antes de começar, definimos com a sua equipe os indicadores de sucesso de cada processo. Eles são acompanhados desde a primeira semana de operação.</p>
+    <div class="section-head section-head--row">
+      <div>
+        <p class="eyebrow" data-reveal>Resultados</p>
+        <h2 class="h2" id="res-title" data-split><span class="line"><span style="--i:0">Medidos,</span></span><span class="line"><span style="--i:1" class="muted">não prometidos.</span></span></h2>
+      </div>
+      <p class="lead" data-reveal style="max-width:44ch">Antes de começar, definimos com a sua equipe os indicadores de sucesso de cada processo e os acompanhamos desde a primeira semana.</p>
     </div>
-    <div class="grid grid-4 grid--ruled" style="background:var(--paper)" data-reveal-group data-observe>
+    <div class="grid grid-4 grid--ruled" data-reveal-group data-observe>
 {kpi_html}
     </div>
   </div>
@@ -517,10 +530,10 @@ def index():
 
 <section class="section" aria-labelledby="faq-title">
   <div class="container split">
-    <div data-reveal>
-      <p class="eyebrow">Perguntas frequentes</p>
-      <h2 class="h2" id="faq-title">O que as empresas perguntam antes de automatizar.</h2>
-      <p class="lead mt-4">Não encontrou sua dúvida? <a class="link-arrow" href="contato.html">Fale com um especialista</a></p>
+    <div>
+      <p class="eyebrow" data-reveal>Perguntas frequentes</p>
+      <h2 class="h2" id="faq-title" data-split><span class="line"><span style="--i:0">Antes de</span></span><span class="line"><span style="--i:1">automatizar.</span></span></h2>
+      <p class="lead mt-5" data-reveal>Não encontrou sua dúvida? <a class="link-arrow" href="contato.html">Fale com um especialista</a></p>
     </div>
     <div class="faq" data-reveal>
 {faq_html()}
@@ -559,7 +572,7 @@ def solucoes():
     </article>''')
     body = f'''
 <main id="main">
-{page_hero("Soluções", "Soluções", "Automação com IA para o financeiro e o administrativo.",
+{page_hero("Soluções", "Soluções", "Automação com IA para o | financeiro e o administrativo.",
            "Seis frentes de automação para as rotinas que mais consomem tempo e mais geram erros. Cada uma pode ser implantada sozinha ou combinada com as outras.",
            f'<nav class="anchor-nav" aria-label="Soluções nesta página" data-reveal>{anchors}</nav>')}
 <section class="section">
@@ -598,7 +611,7 @@ def segmentos():
       </article>''' for ic, t, d, l in segs)
     body = f'''
 <main id="main">
-{page_hero("Segmentos", "Segmentos", "Processos diferentes. O mesmo problema de fundo.",
+{page_hero("Segmentos", "Segmentos", "Processos diferentes. | O mesmo problema de fundo.",
            "Em todo setor existe trabalho manual, repetitivo e sujeito a erro. Adaptamos as automações à realidade de cada operação, aos seus sistemas e às suas regras.")}
 <section class="section">
   <div class="container">
@@ -639,7 +652,7 @@ def plataforma():
     cells = "\n".join(f'''      <div class="cell" data-reveal><div class="card-icon">{icon(ic)}</div><h3>{t}</h3><p>{d}</p></div>''' for ic, t, d in tech)
     body = f'''
 <main id="main">
-{page_hero("Como trabalhamos", "Como trabalhamos", "Do processo manual à operação automatizada, com método.",
+{page_hero("Como trabalhamos", "Como trabalhamos", "Do processo manual | à operação automatizada.",
            "Não vendemos uma ferramenta pronta. Entendemos como sua empresa trabalha, desenhamos a automação certa para cada processo e acompanhamos os resultados depois da entrega.")}
 <section class="section section--dark">
   <div class="container">
@@ -687,7 +700,7 @@ def plataforma():
 def sobre():
     body = f'''
 <main id="main">
-{page_hero("Sobre", "Sobre a Velo Solutions", "Tecnologia a serviço de operações mais precisas.",
+{page_hero("Sobre", "Sobre a Velo Solutions", "Tecnologia a serviço de | operações mais precisas.",
            "A Velo Solutions nasceu para resolver um problema comum a quase toda empresa: pessoas qualificadas presas a tarefas repetitivas, e erros que custam caro surgindo justamente nessas tarefas.")}
 <section class="section">
   <div class="container split">
@@ -700,7 +713,7 @@ def sobre():
 </section>
 <section class="section section--alt">
   <div class="container">
-    <div class="grid grid-3 grid--ruled" style="background:var(--paper)" data-reveal-group>
+    <div class="grid grid-3 grid--ruled" data-reveal-group>
       <div class="cell" data-reveal><span class="cell-index">Missão</span><h3>Eliminar o trabalho manual repetitivo das empresas brasileiras.</h3><p>Devolver tempo às equipes e reduzir erros operacionais com automação confiável e acessível.</p></div>
       <div class="cell" data-reveal><span class="cell-index">Visão</span><h3>Ser referência em automação de processos com IA no Brasil.</h3><p>Reconhecida pela qualidade técnica, pela transparência e pelos resultados mensuráveis que entrega.</p></div>
       <div class="cell" data-reveal><span class="cell-index">Valores</span><h3>Precisão, transparência e responsabilidade.</h3><p>Fazemos o que dissemos que faríamos, medimos o que entregamos e tratamos os dados dos clientes como se fossem nossos.</p></div>
@@ -735,7 +748,7 @@ def contato():
     opts = "\n".join(f'                <option>{o}</option>' for o in options)
     body = f'''
 <main id="main">
-{page_hero("Contato", "Diagnóstico sem custo", "Converse com um especialista em automação.",
+{page_hero("Contato", "Diagnóstico sem custo", "Converse com um | especialista em automação.",
            "Conte um pouco sobre a sua operação. Retornamos para agendar uma conversa de diagnóstico e entender quais processos podem ser automatizados.")}
 <section class="section">
   <div class="container split">
@@ -877,9 +890,7 @@ for name, fn in PAGES.items():
     (OUT / name).write_text(fn(), encoding="utf-8")
 
 (OUT / "assets" / "velo-logo.svg").write_text(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#1f5eff"/>'
-    '<path d="M8.5 9.5l7.5 13 7.5-13" fill="none" stroke="#fff" stroke-width="2.6"/><path d="M18.5 9.5h5" stroke="#9fb9ff" stroke-width="2.6"/></svg>\n',
-    encoding="utf-8")
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">' + NEW_MARK_SVG + '</svg>\n', encoding="utf-8")
 (OUT / "sitemap.xml").write_text(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     + "".join(f'  <url><loc>{BASE}{"" if p == "index.html" else p}</loc></url>\n' for p in PAGES)

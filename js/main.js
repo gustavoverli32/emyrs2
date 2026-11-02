@@ -46,15 +46,18 @@ document.addEventListener("DOMContentLoaded", () => {
 function initHeader() {
   const header = document.querySelector(".site-header");
   if (!header) return;
-  const forceLight = document.body.classList.contains("header-light");
+  const bar = document.querySelector(".utility-bar");
   let lastY = window.scrollY;
   let ticking = false;
   const update = () => {
     const y = window.scrollY;
-    header.classList.toggle("is-scrolled", forceLight || y > 24);
+    const offset = bar ? bar.offsetHeight : 0;
+    const past = y > offset;
+    header.classList.toggle("is-fixed", past);
+    header.classList.toggle("is-scrolled", y > offset + 8);
     const navOpen = document.body.classList.contains("nav-open");
-    header.classList.toggle("is-hidden", !navOpen && y > 480 && y > lastY + 4);
-    if (y < lastY - 4 || y < 480) header.classList.remove("is-hidden");
+    if (!navOpen && y > 600 && y > lastY + 4) header.classList.add("is-hidden");
+    else if (y < lastY - 4 || y < 600) header.classList.remove("is-hidden");
     lastY = y;
     ticking = false;
   };
@@ -89,7 +92,7 @@ function initReveal() {
   document.querySelectorAll("[data-reveal-group]").forEach((group) => {
     group.querySelectorAll(":scope > [data-reveal]").forEach((el, i) => el.style.setProperty("--i", i));
   });
-  const targets = document.querySelectorAll("[data-reveal], [data-observe]");
+  const targets = document.querySelectorAll("[data-reveal], [data-observe], [data-split]");
   if (!("IntersectionObserver" in window) || prefersReducedMotion) {
     targets.forEach((el) => el.classList.add("is-visible"));
     return;
@@ -109,92 +112,97 @@ function initReveal() {
 /* Hero: fluxos de dados em canvas (linhas e pulsos que convergem)        */
 /* ---------------------------------------------------------------------- */
 function initHeroCanvas() {
-  const canvas = document.querySelector(".hero-canvas");
-  if (!canvas || !canvas.getContext) return;
+  document.querySelectorAll("canvas.atmos").forEach((canvas) => initAtmos(canvas));
+}
+
+/* Campo atmosférico: partículas que sobem como brasas ("fire") ou
+   derivam devagar ("forest"), com linhas finas de dados cruzando a cena. */
+function initAtmos(canvas) {
+  if (!canvas.getContext) return;
   const ctx = canvas.getContext("2d");
+  const mode = canvas.dataset.mode || "fire";
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  let w = 0, h = 0, lanes = [], pulses = [], running = true, raf = null;
+  const palette = mode === "forest"
+    ? ["111, 211, 165", "243, 240, 234", "255, 140, 90"]
+    : ["255, 91, 31", "255, 166, 77", "255, 214, 170"];
+  let w = 0, h = 0, parts = [], streams = [], running = true, raf = null, t = 0;
+
+  const rand = (a, b) => a + Math.random() * (b - a);
+  const spawn = (initial) => ({
+    x: rand(0, w),
+    y: initial ? rand(0, h) : h + rand(0, 40),
+    r: Math.random() < 0.08 ? rand(1.8, 3) : rand(0.5, 1.6),
+    vy: mode === "forest" ? rand(0.08, 0.3) : rand(0.25, 1.1),
+    sway: rand(0.2, 1.2),
+    phase: rand(0, Math.PI * 2),
+    c: palette[Math.floor(Math.random() * palette.length)],
+    life: rand(0.5, 1),
+  });
+  const spawnStream = () => ({ y: rand(h * 0.15, h * 0.95), x: -200, len: rand(80, 260), v: rand(2, 5), a: rand(0.15, 0.4) });
 
   const resize = () => {
     const rect = canvas.getBoundingClientRect();
     w = rect.width; h = rect.height;
     canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    buildLanes();
+    const count = Math.round(Math.min(160, (w * h) / 9000));
+    parts = Array.from({ length: count }, () => spawn(true));
+    streams = [];
   };
 
-  // Cada "lane" é uma curva que nasce à esquerda e converge para um ponto à direita
-  const buildLanes = () => {
-    const count = w < 700 ? 9 : 16;
-    const tx = w * 0.78, ty = h * 0.46;
-    lanes = Array.from({ length: count }, (_, i) => {
-      const t = count === 1 ? 0.5 : i / (count - 1);
-      const sy = h * (0.08 + t * 0.84);
-      return { sx: -40, sy, c1x: w * 0.32, c1y: sy, c2x: w * 0.55, c2y: ty + (sy - ty) * 0.25, tx, ty };
-    });
-    pulses = [];
-  };
-
-  const point = (l, t) => {
-    const u = 1 - t;
-    return {
-      x: u * u * u * l.sx + 3 * u * u * t * l.c1x + 3 * u * t * t * l.c2x + t * t * t * l.tx,
-      y: u * u * u * l.sy + 3 * u * u * t * l.c1y + 3 * u * t * t * l.c2y + t * t * t * l.ty,
-    };
-  };
-
-  const draw = () => {
+  const frame = () => {
+    t += 1;
     ctx.clearRect(0, 0, w, h);
-    ctx.lineWidth = 1;
-    lanes.forEach((l) => {
-      ctx.beginPath();
-      ctx.moveTo(l.sx, l.sy);
-      ctx.bezierCurveTo(l.c1x, l.c1y, l.c2x, l.c2y, l.tx, l.ty);
-      ctx.strokeStyle = "rgba(126, 162, 255, 0.09)";
-      ctx.stroke();
+    // linhas de dados
+    if (!prefersReducedMotion && Math.random() < 0.025 && streams.length < 5) streams.push(spawnStream());
+    streams = streams.filter((s) => s.x - s.len < w);
+    streams.forEach((s) => {
+      s.x += s.v;
+      const g = ctx.createLinearGradient(s.x - s.len, s.y, s.x, s.y);
+      g.addColorStop(0, `rgba(${palette[1]}, 0)`);
+      g.addColorStop(1, `rgba(${palette[1]}, ${s.a})`);
+      ctx.strokeStyle = g; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(s.x - s.len, s.y); ctx.lineTo(s.x, s.y); ctx.stroke();
     });
-    if (!prefersReducedMotion && Math.random() < 0.09 && pulses.length < 26) {
-      pulses.push({ lane: lanes[Math.floor(Math.random() * lanes.length)], t: 0, speed: 0.0028 + Math.random() * 0.0035, warn: Math.random() < 0.08 });
-    }
-    pulses = pulses.filter((p) => p.t <= 1);
-    pulses.forEach((p) => {
-      p.t += p.speed;
-      const head = point(p.lane, Math.min(p.t, 1));
-      const tail = point(p.lane, Math.max(p.t - 0.08, 0));
-      const grad = ctx.createLinearGradient(tail.x, tail.y, head.x, head.y);
-      const color = p.warn ? "242, 193, 78" : "126, 162, 255";
-      grad.addColorStop(0, `rgba(${color}, 0)`);
-      grad.addColorStop(1, `rgba(${color}, 0.85)`);
-      ctx.beginPath();
-      ctx.strokeStyle = grad;
-      ctx.lineWidth = 1.5;
-      const steps = 10;
-      for (let s = 0; s <= steps; s++) {
-        const pt = point(p.lane, Math.max(p.t - 0.08, 0) + (Math.min(p.t, 1) - Math.max(p.t - 0.08, 0)) * (s / steps));
-        s === 0 ? ctx.moveTo(pt.x, pt.y) : ctx.lineTo(pt.x, pt.y);
+    // partículas
+    ctx.globalCompositeOperation = "lighter";
+    parts.forEach((p, i) => {
+      if (!prefersReducedMotion) {
+        p.y -= p.vy;
+        p.x += Math.sin(t * 0.01 * p.sway + p.phase) * 0.35;
       }
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.fillStyle = `rgba(${color}, 0.95)`;
-      ctx.arc(head.x, head.y, 1.6, 0, Math.PI * 2);
-      ctx.fill();
+      const fade = Math.max(0, Math.min(1, p.y / h)) * p.life; // apaga ao subir
+      const flicker = 0.75 + Math.sin(t * 0.05 + p.phase) * 0.25;
+      const a = fade * flicker;
+      if (p.r > 1.7) {
+        const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 6);
+        glow.addColorStop(0, `rgba(${p.c}, ${0.5 * a})`);
+        glow.addColorStop(1, `rgba(${p.c}, 0)`);
+        ctx.fillStyle = glow;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 6, 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.fillStyle = `rgba(${p.c}, ${a})`;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+      if (p.y < -10) parts[i] = spawn(false);
     });
-    if (running && !prefersReducedMotion) raf = requestAnimationFrame(draw);
+    ctx.globalCompositeOperation = "source-over";
+    if (running && !prefersReducedMotion) raf = requestAnimationFrame(frame);
   };
 
   resize();
-  draw();
-  let resizeTimer;
-  window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { resize(); if (prefersReducedMotion) draw(); }, 150); });
-
-  // Pausa quando o hero sai da tela ou a aba fica oculta
+  frame();
+  let timer;
+  window.addEventListener("resize", () => { clearTimeout(timer); timer = setTimeout(() => { resize(); if (prefersReducedMotion) frame(); }, 150); });
   if ("IntersectionObserver" in window && !prefersReducedMotion) {
     new IntersectionObserver(([entry]) => {
-      const visible = entry.isIntersecting;
-      if (visible && !running) { running = true; raf = requestAnimationFrame(draw); }
-      if (!visible) { running = false; cancelAnimationFrame(raf); }
+      if (entry.isIntersecting && !running) { running = true; raf = requestAnimationFrame(frame); }
+      if (!entry.isIntersecting) { running = false; cancelAnimationFrame(raf); }
     }).observe(canvas);
   }
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) { running = false; cancelAnimationFrame(raf); }
+    else if (!running && !prefersReducedMotion) { running = true; raf = requestAnimationFrame(frame); }
+  });
 }
 
 /* ---------------------------------------------------------------------- */
