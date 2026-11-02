@@ -46,4 +46,4 @@ Links de e-mail, WhatsApp e LinkedIn ficam ocultos até serem configurados.
 
 ## Endereço
 
-O site é servido no domínio próprio `velosolutions.com.br` (arquivo `CNAME`). Os links canônicos e o `sitemap.xml` usam esse domínio; para mudar, ajuste `BASE` em `tools/build_pages.py` e gere as páginas de novo.
+O site é servido no domínio próprio `vellosolutions.com.br` (arquivo `CNAME`). Os links canônicos e o `sitemap.xml` usam esse domínio; para mudar, ajuste `BASE` em `tools/build_pages.py` e gere as páginas de novo.

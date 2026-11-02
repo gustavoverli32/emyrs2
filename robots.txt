@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://velosolutions.com.br/sitemap.xml
+Sitemap: https://vellosolutions.com.br/sitemap.xml
