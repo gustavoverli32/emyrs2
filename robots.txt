@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gustavoverli32.github.io/emyrs2/sitemap.xml
+Sitemap: https://gustavoverli32.github.io/velo-site/sitemap.xml
