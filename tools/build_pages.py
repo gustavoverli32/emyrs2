@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parent.parent
-BASE = "https://gustavoverli32.github.io/vello-site/"
+BASE = "https://velosolutions.com.br/"
 
 # --------------------------------------------------------------------------
 # Ícones (traço 1.6, 24x24)
