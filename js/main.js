@@ -1,8 +1,8 @@
-/* Velo Solutions — comportamento do site (JavaScript puro, sem dependências). */
+/* Vello Solutions — comportamento do site (JavaScript puro, sem dependências). */
 
-const VELO_CONFIG = {
-  companyName: "Velo Solutions",
-  contactEmail: "",      // ex.: "contato@velosolutions.com.br" — vazio esconde os links de e-mail
+const VELLO_CONFIG = {
+  companyName: "Vello Solutions",
+  contactEmail: "",      // ex.: "contato@vellosolutions.com.br" — vazio esconde os links de e-mail
   whatsappNumber: "",    // ex.: "5522999999999" — vazio desativa os links de WhatsApp
   linkedinUrl: "",
   formEndpoint: "",      // ex.: endpoint do Formspree / Web3Forms que recebe o formulário
@@ -13,17 +13,17 @@ const VELO_CONFIG = {
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function track(eventName, data = {}) {
-  if (!VELO_CONFIG.analyticsId) return;
+  if (!VELLO_CONFIG.analyticsId) return;
   let consent = null;
-  try { consent = localStorage.getItem("velo_cookie_consent"); } catch (e) { /* storage indisponível */ }
+  try { consent = localStorage.getItem("vello_cookie_consent"); } catch (e) { /* storage indisponível */ }
   if (consent !== "accepted") return;
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: eventName, ...data });
 }
 
 function waLink(message) {
-  if (!VELO_CONFIG.whatsappNumber) return null;
-  return "https://wa.me/" + VELO_CONFIG.whatsappNumber + "?text=" + encodeURIComponent(message);
+  if (!VELLO_CONFIG.whatsappNumber) return null;
+  return "https://wa.me/" + VELLO_CONFIG.whatsappNumber + "?text=" + encodeURIComponent(message);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -343,12 +343,12 @@ function initForm() {
     data.append("origem", "site_contato");
     track("submit_contact_form");
 
-    if (VELO_CONFIG.webhookUrl) fetch(VELO_CONFIG.webhookUrl, { method: "POST", body: data }).catch(() => {});
+    if (VELLO_CONFIG.webhookUrl) fetch(VELLO_CONFIG.webhookUrl, { method: "POST", body: data }).catch(() => {});
 
-    if (VELO_CONFIG.formEndpoint) {
+    if (VELLO_CONFIG.formEndpoint) {
       submitBtn.disabled = true;
       submitBtn.textContent = "Enviando…";
-      fetch(VELO_CONFIG.formEndpoint, { method: "POST", headers: { Accept: "application/json" }, body: data })
+      fetch(VELLO_CONFIG.formEndpoint, { method: "POST", headers: { Accept: "application/json" }, body: data })
         .then((r) => { if (!r.ok) throw new Error(r.status); show(success); })
         .catch(() => {
           submitBtn.disabled = false;
@@ -359,15 +359,15 @@ function initForm() {
     }
 
     // Sem endpoint configurado: encaminha pelo WhatsApp ou e-mail, se existirem.
-    const resumo = `Olá, Velo Solutions. Sou ${clean(data.get("nome"))}, da ${clean(data.get("empresa"))}. ` +
+    const resumo = `Olá, Vello Solutions. Sou ${clean(data.get("nome"))}, da ${clean(data.get("empresa"))}. ` +
       `Gostaria de um diagnóstico${data.get("interesse") ? " sobre " + clean(data.get("interesse")) : ""}. ` +
       `Contato: ${clean(data.get("email"))} / ${clean(data.get("telefone"))}.` +
       (clean(data.get("mensagem")) ? ` Detalhes: ${clean(data.get("mensagem"))}` : "");
     const wa = waLink(resumo);
     const action = fallback && fallback.querySelector("[data-fallback-action]");
     if (action && wa) { action.href = wa; action.hidden = false; action.textContent = "Enviar pelo WhatsApp"; }
-    else if (action && VELO_CONFIG.contactEmail) {
-      action.href = `mailto:${VELO_CONFIG.contactEmail}?subject=${encodeURIComponent("Diagnóstico — " + clean(data.get("empresa")))}&body=${encodeURIComponent(resumo)}`;
+    else if (action && VELLO_CONFIG.contactEmail) {
+      action.href = `mailto:${VELLO_CONFIG.contactEmail}?subject=${encodeURIComponent("Diagnóstico — " + clean(data.get("empresa")))}&body=${encodeURIComponent(resumo)}`;
       action.hidden = false; action.textContent = "Enviar por e-mail";
     }
     show(fallback);
@@ -378,18 +378,18 @@ function initForm() {
 function initContactLinks() {
   const hide = (el) => { const li = el.closest("li"); (li || el).hidden = true; };
   document.querySelectorAll("[data-email]").forEach((el) => {
-    if (!VELO_CONFIG.contactEmail) { hide(el); return; }
-    el.href = "mailto:" + VELO_CONFIG.contactEmail;
-    if (!el.dataset.keepText) el.textContent = VELO_CONFIG.contactEmail;
+    if (!VELLO_CONFIG.contactEmail) { hide(el); return; }
+    el.href = "mailto:" + VELLO_CONFIG.contactEmail;
+    if (!el.dataset.keepText) el.textContent = VELLO_CONFIG.contactEmail;
   });
   document.querySelectorAll("[data-wa]").forEach((el) => {
-    const link = waLink(el.dataset.wa || "Olá, Velo Solutions. Gostaria de conversar sobre automação de processos.");
+    const link = waLink(el.dataset.wa || "Olá, Vello Solutions. Gostaria de conversar sobre automação de processos.");
     if (!link) { hide(el); return; }
     el.href = link; el.target = "_blank"; el.rel = "noopener";
   });
   document.querySelectorAll("[data-linkedin]").forEach((el) => {
-    if (!VELO_CONFIG.linkedinUrl) { hide(el); return; }
-    el.href = VELO_CONFIG.linkedinUrl; el.target = "_blank"; el.rel = "noopener";
+    if (!VELLO_CONFIG.linkedinUrl) { hide(el); return; }
+    el.href = VELLO_CONFIG.linkedinUrl; el.target = "_blank"; el.rel = "noopener";
   });
 }
 
@@ -397,9 +397,9 @@ function initContactLinks() {
 /* Aviso de cookies (só existe se houver ferramenta de análise)           */
 /* ---------------------------------------------------------------------- */
 function initCookies() {
-  if (!VELO_CONFIG.analyticsId) return;
+  if (!VELLO_CONFIG.analyticsId) return;
   let stored = null;
-  try { stored = localStorage.getItem("velo_cookie_consent"); } catch (e) { return; }
+  try { stored = localStorage.getItem("vello_cookie_consent"); } catch (e) { return; }
   if (stored) return;
   const banner = document.createElement("div");
   banner.className = "cookie-banner";
@@ -413,7 +413,7 @@ function initCookies() {
   banner.addEventListener("click", (e) => {
     const b = e.target.closest("[data-c]");
     if (!b) return;
-    try { localStorage.setItem("velo_cookie_consent", b.dataset.c); } catch (err) { /* ignora */ }
+    try { localStorage.setItem("vello_cookie_consent", b.dataset.c); } catch (err) { /* ignora */ }
     banner.remove();
   });
   document.body.appendChild(banner);

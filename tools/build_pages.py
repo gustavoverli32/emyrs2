@@ -1,4 +1,4 @@
-"""Gera as páginas estáticas do site Velo Solutions.
+"""Gera as páginas estáticas do site Vello Solutions.
 Uso: python3 tools/build_pages.py  (gera os .html na raiz do repositório)
 O repositório recebe apenas HTML pronto; não há build no deploy."""
 import json
@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parent.parent
-BASE = "https://gustavoverli32.github.io/velo-site/"
+BASE = "https://gustavoverli32.github.io/vello-site/"
 
 # --------------------------------------------------------------------------
 # Ícones (traço 1.6, 24x24)
@@ -63,20 +63,21 @@ NAV = [
 ORG = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Velo Solutions",
+    "name": "Vello Solutions",
     "url": BASE,
-    "logo": BASE + "assets/velo-logo.svg",
-    "description": "Automação de processos financeiros e administrativos com inteligência artificial para empresas: conciliação bancária, contas a pagar e receber, processamento de documentos e rotinas recorrentes.",
+    "logo": BASE + "assets/vello-logo.svg",
+    "description": "Otimização e automação de processos empresariais: rotinas administrativas, financeiras e operacionais recorrentes, conciliação bancária, contas a pagar e receber e processamento de documentos, com menos erro humano.",
     "areaServed": {"@type": "Country", "name": "Brasil"},
     "address": {"@type": "PostalAddress", "addressLocality": "Rio das Ostras", "addressRegion": "RJ", "addressCountry": "BR"},
     "knowsAbout": [
-        "Automação de processos com inteligência artificial",
+        "Otimização de processos",
+        "Automação de processos empresariais",
         "Conciliação bancária automatizada",
         "Automação financeira",
         "Contas a pagar e a receber",
         "RPA",
         "Processamento inteligente de documentos",
-        "Agentes de IA",
+        "Integração de sistemas",
     ],
 }
 
@@ -96,8 +97,8 @@ def head(title, desc, path, extra_ld=None):
 <meta name="description" content="{desc}">
 <meta name="theme-color" content="#0d0e0c">
 <link rel="canonical" href="{url}">
-<link rel="icon" href="assets/velo-logo.svg" type="image/svg+xml">
-<meta property="og:site_name" content="Velo Solutions">
+<link rel="icon" href="assets/vello-logo.svg" type="image/svg+xml">
+<meta property="og:site_name" content="Vello Solutions">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{title}">
@@ -123,14 +124,14 @@ def header(active):
 <div class="utility-bar">
   <div class="container">
     <span class="mono">Novo</span>
-    <a href="solucoes.html#conciliacao-bancaria">Conciliação bancária com IA: veja como funciona {ARROW_SM}</a>
+    <a href="solucoes.html#conciliacao-bancaria">Conciliação bancária automatizada: veja como funciona {ARROW_SM}</a>
   </div>
 </div>
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="index.html" aria-label="Velo Solutions, página inicial">
+    <a class="brand" href="index.html" aria-label="Vello Solutions, página inicial">
       {LOGO}
-      <span class="brand-name">Velo<small>Solutions</small></span>
+      <span class="brand-name">Vello<small>Solutions</small></span>
     </a>
     <nav aria-label="Navegação principal">
       <div class="nav-links" id="nav-links">
@@ -152,8 +153,8 @@ FOOTER = f'''
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a class="brand footer-brand" href="index.html">{LOGO}<span class="brand-name">Velo<small>Solutions</small></span></a>
-        <p class="footer-about">Automação de processos financeiros e administrativos com inteligência artificial. Menos trabalho manual, menos erro humano, mais controle sobre a operação.</p>
+        <a class="brand footer-brand" href="index.html">{LOGO}<span class="brand-name">Vello<small>Solutions</small></span></a>
+        <p class="footer-about">Otimização e automação de processos para empresas. Menos trabalho manual, menos erro humano, mais controle sobre a operação.</p>
       </div>
       <div class="footer-col">
         <h2>Soluções</h2>
@@ -161,7 +162,7 @@ FOOTER = f'''
           <li><a href="solucoes.html#conciliacao-bancaria">Conciliação bancária</a></li>
           <li><a href="solucoes.html#contas-a-pagar-e-receber">Contas a pagar e receber</a></li>
           <li><a href="solucoes.html#documentos">Processamento de documentos</a></li>
-          <li><a href="solucoes.html#agentes-de-ia">Agentes de IA</a></li>
+          <li><a href="solucoes.html#integracao-de-sistemas">Integração de sistemas</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -169,7 +170,7 @@ FOOTER = f'''
         <ul>
           <li><a href="plataforma.html">Como trabalhamos</a></li>
           <li><a href="segmentos.html">Segmentos</a></li>
-          <li><a href="sobre.html">Sobre a Velo</a></li>
+          <li><a href="sobre.html">Sobre a Vello</a></li>
           <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
         </ul>
       </div>
@@ -184,9 +185,9 @@ FOOTER = f'''
         </ul>
       </div>
     </div>
-    <div class="footer-word" aria-hidden="true">Velo</div>
+    <div class="footer-word" aria-hidden="true">Vello</div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Velo Solutions. Todos os direitos reservados.</span>
+      <span>© <span data-year>2026</span> Vello Solutions. Todos os direitos reservados.</span>
       <span>Tratamento de dados conforme a LGPD (Lei nº 13.709/2018).</span>
     </div>
   </div>
@@ -221,7 +222,7 @@ CTA = f'''<section class="cta-band grain" aria-labelledby="cta-title">
       <h2 id="cta-title" data-split><span class="line"><span style="--i:0">Sua nova operação</span></span><span class="line"><span style="--i:1">começa aqui.</span></span></h2>
     </div>
     <div data-reveal>
-      <p class="lead">Mapeamos seus processos recorrentes e mostramos onde a automação com IA gera mais retorno, com escopo e indicadores definidos antes de qualquer investimento.</p>
+      <p class="lead">Mapeamos seus processos recorrentes e mostramos onde a otimização gera mais retorno, com escopo e indicadores definidos antes de qualquer investimento.</p>
       <div class="cta-actions">
       <a class="btn btn-primary" href="contato.html">Agendar diagnóstico {ARROW}</a>
         <a class="btn btn-ghost-dark" href="solucoes.html">Ver soluções</a>
@@ -238,7 +239,7 @@ SOLUTIONS = [
         "id": "conciliacao-bancaria", "icon": "bank", "tag": "Financeiro",
         "title": "Conciliação bancária automatizada",
         "short": "Cruzamento automático entre extratos, ERP e adquirentes, com divergências identificadas no mesmo dia.",
-        "bullets": ["Múltiplos bancos, contas e adquirentes", "Regras de correspondência com IA para casos ambíguos", "Divergências enviadas para revisão humana"],
+        "bullets": ["Múltiplos bancos, contas e adquirentes", "Regras de correspondência para casos ambíguos", "Divergências enviadas para revisão humana"],
         "long": "A conciliação bancária é uma das rotinas mais repetitivas e sensíveis do financeiro. Automatizamos a leitura dos extratos, a normalização dos lançamentos e o cruzamento com o ERP, as vendas em cartão e os recebíveis. O que bate é conciliado sozinho; o que não bate chega para sua equipe já explicado.",
         "flow": ["Extratos e OFX/CNAB", "Normalização", "Cruzamento com ERP", "Conciliado ou exceção"],
         "do": ["Captura diária de extratos de todas as contas", "Correspondência por valor, data, documento e histórico", "Classificação de tarifas, juros e lançamentos recorrentes", "Relatório de pendências com motivo provável"],
@@ -250,7 +251,7 @@ SOLUTIONS = [
         "short": "Captura de boletos e notas, validação, agendamento, baixa e cobrança com conferências automáticas.",
         "bullets": ["Leitura de boletos, NF-e e faturas", "Validação de fornecedor, valor e vencimento", "Baixas e lembretes de cobrança automáticos"],
         "long": "Do recebimento do documento até a baixa no sistema, cada etapa é executada e validada automaticamente. Pagamentos duplicados, valores divergentes e vencimentos esquecidos passam a ser detectados antes de virar problema.",
-        "flow": ["Boleto, NF-e ou fatura", "Extração com IA", "Validação e aprovação", "Lançamento e baixa no ERP"],
+        "flow": ["Boleto, NF-e ou fatura", "Leitura automática", "Validação e aprovação", "Lançamento e baixa no ERP"],
         "do": ["Leitura de documentos recebidos por e-mail ou portal", "Conferência com pedido de compra e cadastro do fornecedor", "Fluxo de aprovação por alçada", "Régua de cobrança e baixa automática de recebimentos"],
         "gain": ["Prevenção de pagamentos duplicados ou indevidos", "Menos atrasos, multas e juros", "Redução da inadimplência", "Equipe dedicada à análise, não à digitação"],
     },
@@ -259,7 +260,7 @@ SOLUTIONS = [
         "title": "Processamento inteligente de documentos",
         "short": "Extração de dados de notas fiscais, contratos, comprovantes e e-mails, direto para o seu sistema.",
         "bullets": ["Leitura de PDFs, imagens e XML", "Classificação automática por tipo de documento", "Validação cruzada com dados existentes"],
-        "long": "Modelos de IA leem documentos estruturados e não estruturados, identificam o que importa e entregam os dados prontos para uso. Cada campo extraído vem com um nível de confiança; abaixo do limite definido, uma pessoa confirma.",
+        "long": "Nossas automações leem documentos estruturados e não estruturados, identificam o que importa e entregam os dados prontos para uso. Cada campo extraído vem com um nível de confiança; abaixo do limite definido, uma pessoa confirma.",
         "flow": ["E-mail, portal ou pasta", "Classificação", "Extração de campos", "Validação e envio ao sistema"],
         "do": ["Notas fiscais, boletos, recibos e comprovantes", "Contratos, propostas e documentos cadastrais", "Leitura de caixas de e-mail compartilhadas", "Arquivamento organizado e pesquisável"],
         "gain": ["Fim da digitação manual de documentos", "Dados padronizados entre áreas", "Rastreabilidade de cada informação", "Escala sem aumentar a equipe"],
@@ -279,35 +280,37 @@ SOLUTIONS = [
         "title": "Rotinas administrativas e back-office",
         "short": "Cadastros, atualizações, conferências e preenchimento de sistemas executados por robôs de software.",
         "bullets": ["Cadastros e atualizações em sistemas", "Conferências entre bases de dados", "Execução programada, 24 horas por dia"],
-        "long": "Robôs de software (RPA) executam no seu sistema exatamente o que uma pessoa faria: acessar, conferir, preencher e salvar. Combinados com IA, eles lidam com variações e exceções que antes exigiam intervenção manual.",
-        "flow": ["Gatilho ou agenda", "Robô executa a rotina", "IA trata variações", "Registro e notificação"],
+        "long": "Robôs de software (RPA) executam no seu sistema exatamente o que uma pessoa faria: acessar, conferir, preencher e salvar. Com regras bem definidas, eles lidam com variações e exceções que antes exigiam intervenção manual.",
+        "flow": ["Gatilho ou agenda", "Robô executa a rotina", "Regras tratam variações", "Registro e notificação"],
         "do": ["Cadastro de clientes, produtos e fornecedores", "Atualização de preços, estoques e status", "Emissão de documentos e guias recorrentes", "Conferências entre sistemas que não se integram"],
         "gain": ["Tarefas concluídas fora do horário comercial", "Padronização de processos", "Eliminação de erros de digitação", "Equipe realocada para atividades estratégicas"],
     },
     {
-        "id": "agentes-de-ia", "icon": "agent", "tag": "Inteligência artificial",
-        "title": "Agentes de IA sob medida",
-        "short": "Assistentes treinados nos processos da sua empresa para triagem, respostas internas e apoio à decisão.",
-        "bullets": ["Base de conhecimento da própria empresa", "Integração com e-mail, sistemas e mensageria", "Limites e permissões definidos por você"],
-        "long": "Agentes de IA executam tarefas com várias etapas: entendem uma solicitação, consultam sistemas, tomam a ação permitida e registram o que foi feito. Funcionam dentro de regras claras e encaminham para uma pessoa tudo o que estiver fora delas.",
-        "flow": ["Solicitação recebida", "Agente consulta dados", "Executa a ação permitida", "Registra ou escala"],
-        "do": ["Triagem e encaminhamento de solicitações internas", "Respostas sobre políticas, processos e status", "Preparação de análises e resumos para gestores", "Apoio a equipes de atendimento e operações"],
-        "gain": ["Respostas consistentes e imediatas", "Conhecimento da empresa acessível a todos", "Menos interrupções para a equipe sênior", "Operação que escala com controle"],
+        "id": "integracao-de-sistemas", "icon": "plug", "tag": "Integração",
+        "title": "Integração entre sistemas",
+        "short": "Sistemas, bancos e planilhas conversando entre si, sem exportar, copiar e colar informações.",
+        "bullets": ["ERP, CRM, bancos e planilhas conectados", "Dados sincronizados automaticamente", "Fim da digitação dupla entre áreas"],
+        "long": "Boa parte do retrabalho nasce de sistemas que não conversam. Conectamos as ferramentas que sua empresa já usa para que cada informação seja registrada uma única vez e chegue sozinha aonde precisa estar, com regras e verificações em cada etapa.",
+        "flow": ["Sistema de origem", "Validação dos dados", "Transformação", "Sistema de destino"],
+        "do": ["Integração por API quando o sistema oferece", "Robôs de software quando não há integração", "Sincronização de cadastros, pedidos e lançamentos", "Monitoramento e alertas de falha"],
+        "gain": ["Uma única versão das informações", "Fim da digitação em dois sistemas", "Menos erros de transcrição", "Processos que atravessam áreas sem atrito"],
     },
 ]
 
 FAQ = [
-    ("O que exatamente a Velo Solutions automatiza?",
+    ("O que exatamente a Vello Solutions automatiza?",
      "Processos recorrentes, baseados em regras e com grande volume, principalmente nas áreas financeira e administrativa: conciliação bancária, contas a pagar e a receber, leitura de documentos, lançamentos, conferências, cadastros e relatórios. Se uma tarefa é repetida toda semana e segue um padrão, ela é candidata à automação."),
     ("Preciso trocar meu ERP ou meus sistemas atuais?",
      "Não. Integramos as automações aos sistemas que sua empresa já utiliza, por API quando existe e por robôs de software quando não existe. O objetivo é tirar trabalho manual da sua equipe, não criar um novo sistema para ela aprender."),
-    ("Como a IA lida com erros e casos fora do padrão?",
-     "Toda automação tem regras de confiança. Quando um caso não se encaixa no padrão ou a IA não tem certeza suficiente, ele é encaminhado para uma pessoa da sua equipe com o contexto necessário para decidir. Nada é feito às escondidas: cada ação fica registrada."),
+    ("Como as automações lidam com erros e casos fora do padrão?",
+     "Toda automação tem regras de confiança. Quando um caso não se encaixa no padrão ou não há certeza suficiente, ele é encaminhado para uma pessoa da sua equipe com o contexto necessário para decidir. Nada é feito às escondidas: cada ação fica registrada."),
+    ("Vocês usam inteligência artificial?",
+     "Sim, onde ela realmente faz diferença. Não se trata de usar a IA como ferramenta de pesquisa, e sim de implementá-la de forma personalizada nos processos da sua empresa, principalmente nas tarefas repetitivas. Cada solução combina IA, regras de negócio, integrações e revisão humana conforme a necessidade do processo."),
     ("Meus dados ficam seguros?",
      "Sim. Trabalhamos com acesso mínimo necessário, comunicação criptografada, registro de todas as operações e tratamento de dados conforme a LGPD. As regras de acesso são definidas junto com a sua empresa no início do projeto."),
     ("Quanto tempo leva para a primeira automação entrar em operação?",
      "Depende da complexidade do processo e das integrações envolvidas. Processos bem definidos costumam entrar em operação em poucas semanas. O prazo exato, o escopo e os indicadores de sucesso são apresentados ao final do diagnóstico, antes de qualquer contratação."),
-    ("Para qual porte de empresa a Velo trabalha?",
+    ("Para qual porte de empresa a Vello trabalha?",
      "Atendemos empresas que já têm volume suficiente para que o trabalho manual pese: em geral, pequenas, médias e grandes empresas com equipes financeiras ou administrativas dedicadas, além de escritórios de contabilidade e BPO financeiro."),
 ]
 
@@ -365,7 +368,7 @@ def index():
     audit = [
         ("08:00:02", "info", "INÍCIO", "Lote diário · 4 contas · 1.312 lançamentos"),
         ("08:00:41", "ok", "OK", "1.284 conciliados automaticamente"),
-        ("08:00:43", "info", "IA", "22 casos ambíguos resolvidos por histórico"),
+        ("08:00:43", "info", "REGRA", "22 casos resolvidos por histórico"),
         ("08:00:44", "warn", "EXCEÇÃO", "6 lançamentos sem correspondência"),
         ("08:00:44", "human", "HUMANO", "Exceções enviadas ao Financeiro"),
         ("09:12:10", "human", "DECISÃO", "R$ 1.750,00 vinculado ao pedido 88213"),
@@ -403,13 +406,13 @@ def index():
   {ATMOS}
   <span class="hero-scroll" aria-hidden="true">Role</span>
   <div class="container">
-    <p class="eyebrow" data-hero style="--i:0">Velo Solutions · Automação de processos com IA</p>
+    <p class="eyebrow" data-hero style="--i:0">Vello Solutions · Otimização de processos</p>
     <h1 class="display" id="hero-title">
-      <span class="line"><span style="--i:1">Automação financeira,</span></span>
-      <span class="line"><span style="--i:2">feita do jeito certo.</span></span>
+      <span class="line"><span style="--i:1">Menos retrabalho.</span></span>
+      <span class="line"><span style="--i:2">Mais resultado.</span></span>
     </h1>
     <div class="hero-bottom" data-hero style="--i:4">
-      <p class="lead">A Velo implementa inteligência artificial nas rotinas financeiras e administrativas da sua empresa, como conciliação bancária, contas a pagar e a receber e lançamentos, sem trocar os sistemas que você já usa e sem perder o controle.</p>
+      <p class="lead">A Vello otimiza os processos da sua empresa. Rotinas administrativas, financeiras e operacionais que se repetem todos os dias passam a funcionar de forma automática, com menos erros, mais controle e sem trocar os sistemas que você já usa.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="contato.html">Agendar diagnóstico gratuito {ARROW}</a>
         <a class="btn btn-ghost-dark" href="solucoes.html">Ver soluções</a>
@@ -422,11 +425,11 @@ def index():
   <div class="container perspective">
     <div>
       <p class="eyebrow" data-reveal>Perspectiva</p>
-      <h2 id="persp-title" data-split><span class="line"><span style="--i:0">A IA sozinha resolve</span></span><span class="line"><span style="--i:1">a automação do</span></span><span class="line"><span style="--i:2" class="muted">seu financeiro?</span></span></h2>
+      <h2 id="persp-title" data-split><span class="line"><span style="--i:0">Otimizar não é</span></span><span class="line"><span style="--i:1">só automatizar</span></span><span class="line"><span style="--i:2" class="muted">tarefas.</span></span></h2>
     </div>
     <div class="perspective-body" data-reveal>
-      <p>Não. Modelos de IA genéricos erram com confiança, e no financeiro um erro silencioso custa caro. Automação que funciona em uma empresa real precisa de três coisas: regras de negócio claras, verificação de cada resultado e pessoas no controle das exceções.</p>
-      <p>É assim que a Velo trabalha. Usamos IA onde ela agrega, regras onde elas bastam, e registramos tudo para que sua equipe saiba exatamente o que foi feito.</p>
+      <p>Automatizar um processo ruim só faz o erro acontecer mais rápido. Antes de qualquer automação, é preciso entender onde estão os gargalos, onde nascem os erros e o que realmente precisa de uma pessoa.</p>
+      <p>É assim que a Vello trabalha: mapeamos, redesenhamos e só então automatizamos, com regras claras, verificação de cada resultado e pessoas no controle das exceções.</p>
       <a class="link-arrow" href="plataforma.html">Conheça nosso método {arrow_svg.replace('width="18" height="18"', 'width="16" height="16"')}</a>
     </div>
   </div>
@@ -490,12 +493,12 @@ def index():
   </div>
 </section>
 
-<section class="quote-band" aria-label="Princípio">
+<section class="quote-band" aria-label="Como implementamos IA">
   <span class="quote-mark" aria-hidden="true">&ldquo;</span>
   <div class="container">
     <figure data-reveal>
-      <blockquote>Tarefas recorrentes não deveriam depender de atenção humana para dar certo. <span class="dim">Atenção humana deveria ir para o que exige julgamento.</span></blockquote>
-      <figcaption>O princípio por trás de cada projeto da Velo</figcaption>
+      <blockquote>Implementar IA não é usar um chat para pesquisar. <span class="dim">É colocar a inteligência para trabalhar dentro da sua operação, sob medida para a dor do seu negócio.</span></blockquote>
+      <figcaption>A forma certa de implementar IA na sua empresa</figcaption>
     </figure>
   </div>
 </section>
@@ -544,8 +547,8 @@ def index():
 {CTA}
 
 </main>'''
-    return (head("Velo Solutions | Automação de processos com IA para empresas",
-                 "Automação de processos financeiros e administrativos com inteligência artificial: conciliação bancária automatizada, contas a pagar e receber, documentos e rotinas recorrentes, com menos erro humano.",
+    return (head("Vello Solutions | Otimização e automação de processos para empresas",
+                 "Otimização e automação de processos para empresas: rotinas administrativas, financeiras e operacionais, conciliação bancária automatizada, contas a pagar e receber e documentos, com menos erro humano.",
                  "index.html", [FAQ_LD])
             + header("") + body + FOOTER)
 
@@ -572,7 +575,7 @@ def solucoes():
     </article>''')
     body = f'''
 <main id="main">
-{page_hero("Soluções", "Soluções", "Automação com IA para o | financeiro e o administrativo.",
+{page_hero("Soluções", "Soluções", "Processos otimizados, | do financeiro ao administrativo.",
            "Seis frentes de automação para as rotinas que mais consomem tempo e mais geram erros. Cada uma pode ser implantada sozinha ou combinada com as outras.",
            f'<nav class="anchor-nav" aria-label="Soluções nesta página" data-reveal>{anchors}</nav>')}
 <section class="section">
@@ -582,8 +585,8 @@ def solucoes():
 </section>
 {CTA}
 </main>'''
-    return (head("Soluções | Conciliação bancária, automação financeira e RPA | Velo Solutions",
-                 "Conciliação bancária automatizada, contas a pagar e receber, processamento inteligente de documentos, relatórios, rotinas administrativas e agentes de IA para empresas.",
+    return (head("Soluções | Conciliação bancária, automação financeira e RPA | Vello Solutions",
+                 "Conciliação bancária automatizada, contas a pagar e receber, processamento inteligente de documentos, relatórios, rotinas administrativas e integração de sistemas para empresas.",
                  "solucoes.html")
             + header("solucoes.html") + body + FOOTER)
 
@@ -634,7 +637,7 @@ def segmentos():
 </section>
 {CTA}
 </main>'''
-    return (head("Segmentos atendidos | Automação com IA por setor | Velo Solutions",
+    return (head("Segmentos atendidos | Otimização de processos por setor | Vello Solutions",
                  "Automação de processos financeiros e administrativos para contabilidade e BPO, comércio, saúde, indústria, logística e grupos empresariais.",
                  "segmentos.html")
             + header("segmentos.html") + body + FOOTER)
@@ -643,7 +646,7 @@ def segmentos():
 def plataforma():
     tech = [
         ("flow", "Automação robótica de processos (RPA)", "Robôs de software que operam sistemas como uma pessoa faria, inclusive os que não têm integração."),
-        ("spark", "IA generativa e modelos de linguagem", "Interpretação de textos, e-mails e documentos, classificação e tomada de decisão dentro de regras definidas."),
+        ("spark", "IA e agentes de IA como apoio", "Usamos inteligência artificial e agentes de IA para acelerar a análise, a construção e os testes das soluções. A IA apoia o trabalho da equipe; ela não substitui o desenho do processo nem a validação humana."),
         ("doc", "Processamento inteligente de documentos", "Leitura de PDFs, imagens e XML com extração de campos e nível de confiança por informação."),
         ("plug", "Integrações via API", "Conexão direta com ERPs, bancos, Open Finance, CRMs e planilhas, sempre que o sistema permite."),
         ("pulse", "Orquestração e monitoramento", "Agendamento, filas, alertas e painéis que mostram o que cada automação está fazendo."),
@@ -668,7 +671,7 @@ def plataforma():
     <div class="section-head" data-reveal>
       <p class="eyebrow">Tecnologia</p>
       <h2 class="h2">A combinação certa de tecnologias para cada processo.</h2>
-      <p class="lead">Nem tudo precisa de inteligência artificial, e nem tudo se resolve só com regras. Escolhemos a abordagem pelo problema, não pela moda.</p>
+      <p class="lead">Cada processo pede uma combinação diferente de ferramentas. A inteligência artificial entra onde acelera o trabalho e melhora o resultado, ao lado de regras, integrações e robôs de software. Escolhemos a abordagem pelo problema, não pela moda.</p>
     </div>
     <div class="grid grid-3 grid--ruled" data-reveal-group>
 {cells}
@@ -691,8 +694,8 @@ def plataforma():
 </section>
 {CTA}
 </main>'''
-    return (head("Como trabalhamos | Metodologia e tecnologia de automação | Velo Solutions",
-                 "Metodologia da Velo Solutions para automação de processos com IA: diagnóstico, desenho da solução, implementação e operação, com RPA, IA generativa, integrações e governança.",
+    return (head("Como trabalhamos | Metodologia e tecnologia de automação | Vello Solutions",
+                 "Metodologia da Vello Solutions para otimização de processos: diagnóstico, desenho da solução, implementação e operação, com RPA, integrações, IA como apoio e governança.",
                  "plataforma.html")
             + header("plataforma.html") + body + FOOTER)
 
@@ -700,13 +703,13 @@ def plataforma():
 def sobre():
     body = f'''
 <main id="main">
-{page_hero("Sobre", "Sobre a Velo Solutions", "Tecnologia a serviço de | operações mais precisas.",
-           "A Velo Solutions nasceu para resolver um problema comum a quase toda empresa: pessoas qualificadas presas a tarefas repetitivas, e erros que custam caro surgindo justamente nessas tarefas.")}
+{page_hero("Sobre", "Sobre a Vello Solutions", "Tecnologia a serviço de | operações mais precisas.",
+           "A Vello Solutions nasceu para resolver um problema comum a quase toda empresa: pessoas qualificadas presas a tarefas repetitivas, e erros que custam caro surgindo justamente nessas tarefas.")}
 <section class="section">
   <div class="container split">
     <div data-reveal><p class="eyebrow">Posicionamento</p></div>
     <div data-reveal>
-      <p class="statement">Implementamos inteligência artificial e automação nos processos que sustentam a empresa, para que ela <em>opere com mais precisão, mais velocidade e menos esforço manual.</em></p>
+      <p class="statement">Otimizamos e automatizamos os processos que sustentam a empresa, para que ela <em>opere com mais precisão, mais velocidade e menos esforço manual.</em></p>
       <p class="lead mt-6">Atuamos principalmente nas áreas financeira e administrativa, onde o volume é alto, as regras são claras e o custo do erro é real. Nosso trabalho vai do diagnóstico à operação: entendemos o processo, desenhamos a automação, integramos aos sistemas existentes e acompanhamos os resultados.</p>
     </div>
   </div>
@@ -715,7 +718,7 @@ def sobre():
   <div class="container">
     <div class="grid grid-3 grid--ruled" data-reveal-group>
       <div class="cell" data-reveal><span class="cell-index">Missão</span><h3>Eliminar o trabalho manual repetitivo das empresas brasileiras.</h3><p>Devolver tempo às equipes e reduzir erros operacionais com automação confiável e acessível.</p></div>
-      <div class="cell" data-reveal><span class="cell-index">Visão</span><h3>Ser referência em automação de processos com IA no Brasil.</h3><p>Reconhecida pela qualidade técnica, pela transparência e pelos resultados mensuráveis que entrega.</p></div>
+      <div class="cell" data-reveal><span class="cell-index">Visão</span><h3>Ser referência em otimização de processos no Brasil.</h3><p>Reconhecida pela qualidade técnica, pela transparência e pelos resultados mensuráveis que entrega.</p></div>
       <div class="cell" data-reveal><span class="cell-index">Valores</span><h3>Precisão, transparência e responsabilidade.</h3><p>Fazemos o que dissemos que faríamos, medimos o que entregamos e tratamos os dados dos clientes como se fossem nossos.</p></div>
     </div>
   </div>
@@ -723,7 +726,7 @@ def sobre():
 <section class="section">
   <div class="container split">
     <div data-reveal>
-      <p class="eyebrow">Por que a Velo</p>
+      <p class="eyebrow">Por que a Vello</p>
       <h2 class="h2">Uma parceira de operação, não apenas um fornecedor de tecnologia.</h2>
     </div>
     <div class="feature-list" data-reveal style="margin-top:0">
@@ -736,15 +739,15 @@ def sobre():
 </section>
 {CTA}
 </main>'''
-    return (head("Sobre a Velo Solutions | Automação de processos com inteligência artificial",
-                 "Conheça a Velo Solutions: empresa de automação de processos com IA para as áreas financeira e administrativa. Missão, visão, valores e forma de trabalho.",
+    return (head("Sobre a Vello Solutions | Otimização e automação de processos",
+                 "Conheça a Vello Solutions: empresa de otimização e automação de processos para as áreas administrativa, financeira e operacional. Missão, visão, valores e forma de trabalho.",
                  "sobre.html")
             + header("sobre.html") + body + FOOTER)
 
 
 def contato():
     options = ["Conciliação bancária", "Contas a pagar e a receber", "Processamento de documentos", "Fechamento e relatórios",
-               "Rotinas administrativas", "Agentes de IA", "Ainda não sei, quero um diagnóstico"]
+               "Rotinas administrativas", "Integração de sistemas", "Ainda não sei, quero um diagnóstico"]
     opts = "\n".join(f'                <option>{o}</option>' for o in options)
     body = f'''
 <main id="main">
@@ -815,7 +818,7 @@ def contato():
         <div>
           <div class="check">
             <input type="checkbox" id="f-consent" name="consent" required aria-describedby="err-consent">
-            <label for="f-consent">Concordo com a <a href="politica-de-privacidade.html">Política de Privacidade</a> e autorizo a Velo Solutions a entrar em contato sobre esta solicitação.</label>
+            <label for="f-consent">Concordo com a <a href="politica-de-privacidade.html">Política de Privacidade</a> e autorizo a Vello Solutions a entrar em contato sobre esta solicitação.</label>
           </div>
           <span class="field-error" id="err-consent" aria-live="polite"></span>
         </div>
@@ -826,7 +829,7 @@ def contato():
       <div id="form-success" class="form-result" hidden tabindex="-1">
         <div class="form-result-icon">{icon("check").replace('viewBox', 'width="26" height="26" viewBox')}</div>
         <h2>Solicitação recebida.</h2>
-        <p>Obrigado. Um especialista da Velo Solutions entrará em contato em breve para agendar o diagnóstico.</p>
+        <p>Obrigado. Um especialista da Vello Solutions entrará em contato em breve para agendar o diagnóstico.</p>
       </div>
 
       <div id="form-fallback" class="form-result" hidden tabindex="-1">
@@ -839,8 +842,8 @@ def contato():
   </div>
 </section>
 </main>'''
-    return (head("Contato | Agende um diagnóstico de automação | Velo Solutions",
-                 "Agende um diagnóstico sem custo com a Velo Solutions e descubra quais processos financeiros e administrativos da sua empresa podem ser automatizados com IA.",
+    return (head("Contato | Agende um diagnóstico de automação | Vello Solutions",
+                 "Agende um diagnóstico sem custo com a Vello Solutions e descubra quais processos financeiros e administrativos da sua empresa podem ser otimizados e automatizados.",
                  "contato.html")
             + header("contato.html") + body + FOOTER)
 
@@ -849,13 +852,13 @@ def politica():
     body = f'''
 <main id="main">
 {page_hero("Política de Privacidade", "Privacidade e LGPD", "Política de Privacidade.",
-           "Como a Velo Solutions coleta, utiliza e protege os dados pessoais enviados por este site, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).")}
+           "Como a Vello Solutions coleta, utiliza e protege os dados pessoais enviados por este site, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).")}
 <section class="section">
   <div class="container">
     <div class="prose" data-reveal>
       <p class="muted">Última atualização: novembro de 2026.</p>
       <h2>1. Quem somos</h2>
-      <p>A Velo Solutions desenvolve e implementa soluções de automação de processos com inteligência artificial para empresas, com sede em Rio das Ostras/RJ. Para os fins desta política, a Velo Solutions é a controladora dos dados pessoais coletados por este site.</p>
+      <p>A Vello Solutions desenvolve e implementa soluções de otimização e automação de processos para empresas, com sede em Rio das Ostras/RJ. Para os fins desta política, a Vello Solutions é a controladora dos dados pessoais coletados por este site.</p>
       <h2>2. Dados que coletamos</h2>
       <p>Coletamos apenas os dados que você informa voluntariamente no formulário de contato:</p>
       <ul><li>nome, empresa e cargo;</li><li>e-mail corporativo e telefone;</li><li>área de interesse e a descrição que você escrever sobre seus processos.</li></ul>
@@ -876,8 +879,8 @@ def politica():
   </div>
 </section>
 </main>'''
-    return (head("Política de Privacidade | Velo Solutions",
-                 "Política de Privacidade da Velo Solutions: como coletamos, usamos e protegemos dados pessoais, conforme a LGPD.",
+    return (head("Política de Privacidade | Vello Solutions",
+                 "Política de Privacidade da Vello Solutions: como coletamos, usamos e protegemos dados pessoais, conforme a LGPD.",
                  "politica-de-privacidade.html")
             + header("") + body + FOOTER)
 
@@ -889,7 +892,7 @@ PAGES = {
 for name, fn in PAGES.items():
     (OUT / name).write_text(fn(), encoding="utf-8")
 
-(OUT / "assets" / "velo-logo.svg").write_text(
+(OUT / "assets" / "vello-logo.svg").write_text(
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">' + NEW_MARK_SVG + '</svg>\n', encoding="utf-8")
 (OUT / "sitemap.xml").write_text(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

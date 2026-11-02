@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Velo Solutions — Design System (v2, editorial)
+   Vello Solutions — Design System (v2, editorial)
    Linha editorial: papel quente, tinta quase preta, acento laranja,
    seções escuras atmosféricas com campo de partículas em canvas.
    Único arquivo de estilos. Tokens em :root; depois base, layout,
@@ -27,7 +27,7 @@
   --line-night: rgba(243, 240, 234, 0.12);
   --line-night-strong: rgba(243, 240, 234, 0.22);
 
-  --accent: #ff5b1f;         /* laranja Velo */
+  --accent: #ff5b1f;         /* laranja Vello */
   --accent-600: #e04a12;
   --accent-200: #ffb48f;
   --accent-050: #fde9df;
@@ -421,7 +421,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
    ========================================================================== */
 .quote-band { background: var(--accent); color: #fff; padding: var(--section-y) 0; position: relative; overflow: hidden; }
 .quote-band blockquote { margin: 0; font-family: var(--font-display); font-size: var(--fs-statement); line-height: 1.12; letter-spacing: -0.035em; font-weight: var(--fw-medium); max-width: 24ch; }
-.quote-band blockquote .dim { color: rgba(255, 255, 255, 0.6); }
+.quote-band figure { margin: 0; }
+.quote-band blockquote .dim { color: var(--night); }
 .quote-band figcaption { margin-top: var(--space-6); font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: var(--tracking-label); text-transform: uppercase; color: rgba(255, 255, 255, 0.8); }
 .quote-mark { position: absolute; right: var(--gutter); top: 50%; transform: translateY(-50%); font-family: var(--font-display); font-size: clamp(12rem, 30vw, 28rem); line-height: 0.7; color: rgba(255, 255, 255, 0.12); pointer-events: none; }
 
