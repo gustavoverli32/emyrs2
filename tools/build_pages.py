@@ -298,20 +298,24 @@ SOLUTIONS = [
 ]
 
 FAQ = [
-    ("O que exatamente a Vello Solutions automatiza?",
-     "Processos recorrentes, baseados em regras e com grande volume, principalmente nas áreas financeira e administrativa: conciliação bancária, contas a pagar e a receber, leitura de documentos, lançamentos, conferências, cadastros e relatórios. Se uma tarefa é repetida toda semana e segue um padrão, ela é candidata à automação."),
+    ("O que significa implementar IA no meu negócio?",
+     "É colocar a inteligência artificial para trabalhar dentro dos processos da sua empresa, e não apenas usá-la como ferramenta de pesquisa. Identificamos as tarefas que mais consomem tempo ou geram erros e construímos soluções que executam, conferem e organizam esse trabalho no dia a dia da operação."),
+    ("Por que não usar apenas o ChatGPT ou outra ferramenta pronta?",
+     "Ferramentas prontas são genéricas: não conhecem seus processos, seus sistemas nem as regras do seu negócio. Uma implementação personalizada conecta a IA aos seus dados e fluxos de trabalho, com controles e revisão humana, para gerar resultado consistente em vez de respostas avulsas."),
+    ("Como vocês identificam onde a IA pode ajudar a minha empresa?",
+     "Pelo diagnóstico. Conversamos com quem executa os processos, entendemos volumes, sistemas e pontos de erro, e priorizamos as oportunidades com maior retorno. Você recebe um mapa claro do que faz sentido implementar primeiro, e do que não faz."),
+    ("A solução é feita sob medida para a minha empresa?",
+     "Sempre. Partimos da dor do seu negócio, não de um produto pronto. Trabalhamos lado a lado com a sua equipe em todas as etapas, do diagnóstico ao acompanhamento depois da entrega, para que a solução se encaixe na sua rotina e resolva o problema certo."),
     ("Preciso trocar meu ERP ou meus sistemas atuais?",
-     "Não. Integramos as automações aos sistemas que sua empresa já utiliza, por API quando existe e por robôs de software quando não existe. O objetivo é tirar trabalho manual da sua equipe, não criar um novo sistema para ela aprender."),
-    ("Como as automações lidam com erros e casos fora do padrão?",
-     "Toda automação tem regras de confiança. Quando um caso não se encaixa no padrão ou não há certeza suficiente, ele é encaminhado para uma pessoa da sua equipe com o contexto necessário para decidir. Nada é feito às escondidas: cada ação fica registrada."),
-    ("Vocês usam inteligência artificial?",
-     "Sim, onde ela realmente faz diferença. Não se trata de usar a IA como ferramenta de pesquisa, e sim de implementá-la de forma personalizada nos processos da sua empresa, principalmente nas tarefas repetitivas. Cada solução combina IA, regras de negócio, integrações e revisão humana conforme a necessidade do processo."),
+     "Não. A implementação se conecta aos sistemas que sua empresa já utiliza, por API quando existe e por robôs de software quando não existe. O objetivo é melhorar a forma como sua equipe trabalha, não criar um novo sistema para ela aprender."),
+    ("Minha equipe precisa entender de IA?",
+     "Não. Desenhamos as soluções para se encaixarem na rotina que sua equipe já conhece e acompanhamos a adoção de perto. As pessoas continuam no controle das decisões; a IA assume o trabalho repetitivo e de conferência."),
+    ("E se a IA cometer um erro?",
+     "Toda implementação tem regras de verificação. Quando um caso foge do padrão ou não há certeza suficiente, ele é encaminhado para uma pessoa da sua equipe com o contexto necessário para decidir. Cada ação fica registrada e pode ser auditada."),
     ("Meus dados ficam seguros?",
      "Sim. Trabalhamos com acesso mínimo necessário, comunicação criptografada, registro de todas as operações e tratamento de dados conforme a LGPD. As regras de acesso são definidas junto com a sua empresa no início do projeto."),
-    ("Quanto tempo leva para a primeira automação entrar em operação?",
-     "Depende da complexidade do processo e das integrações envolvidas. Processos bem definidos costumam entrar em operação em poucas semanas. O prazo exato, o escopo e os indicadores de sucesso são apresentados ao final do diagnóstico, antes de qualquer contratação."),
-    ("Para qual porte de empresa a Vello trabalha?",
-     "Atendemos empresas que já têm volume suficiente para que o trabalho manual pese: em geral, pequenas, médias e grandes empresas com equipes financeiras ou administrativas dedicadas, além de escritórios de contabilidade e BPO financeiro."),
+    ("Quanto tempo leva para ver resultado?",
+     "Depende da complexidade do processo e das integrações envolvidas. Processos bem definidos costumam entrar em operação em poucas semanas. O prazo, o escopo e os indicadores de sucesso são apresentados ao final do diagnóstico, antes de qualquer contratação."),
 ]
 
 
@@ -406,13 +410,13 @@ def index():
   {ATMOS}
   <span class="hero-scroll" aria-hidden="true">Role</span>
   <div class="container">
-    <p class="eyebrow" data-hero style="--i:0">Vello Solutions · Otimização de processos</p>
+    <p class="eyebrow" data-hero style="--i:0">Vello Solutions · Implementação de IA sob medida</p>
     <h1 class="display" id="hero-title">
-      <span class="line"><span style="--i:1">Menos retrabalho.</span></span>
-      <span class="line"><span style="--i:2">Mais resultado.</span></span>
+      <span class="line"><span style="--i:1">Processos inteligentes.</span></span>
+      <span class="line"><span style="--i:2">Equipes mais estratégicas.</span></span>
     </h1>
     <div class="hero-bottom" data-hero style="--i:4">
-      <p class="lead">A Vello otimiza os processos da sua empresa. Rotinas administrativas, financeiras e operacionais que se repetem todos os dias passam a funcionar de forma automática, com menos erros, mais controle e sem trocar os sistemas que você já usa.</p>
+      <p class="lead">A Vello implementa IA nos processos da sua empresa de forma personalizada. Rotinas administrativas, financeiras e operacionais que se repetem todos os dias passam a funcionar com mais precisão, menos erros e mais controle, sem trocar os sistemas que você já usa.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="contato.html">Agendar diagnóstico gratuito {ARROW}</a>
         <a class="btn btn-ghost-dark" href="solucoes.html">Ver soluções</a>
@@ -503,6 +507,25 @@ def index():
   </div>
 </section>
 
+<section class="section section--alt" id="sob-medida" aria-labelledby="custom-title">
+  <div class="container">
+    <div class="split">
+      <div>
+        <p class="eyebrow" data-reveal>Implementação personalizada</p>
+        <h2 class="h2" id="custom-title" data-split><span class="line"><span style="--i:0">Sob medida para</span></span><span class="line"><span style="--i:1">a dor do</span></span><span class="line"><span style="--i:2" class="muted">seu negócio.</span></span></h2>
+        <p class="lead mt-5" data-reveal>Não vendemos uma ferramenta pronta. Cada implementação nasce do problema real da sua empresa e é construída lado a lado com a sua equipe.</p>
+        <a class="btn btn-primary mt-6" href="contato.html" data-reveal>Conte qual é a sua dor {ARROW}</a>
+      </div>
+      <ol class="custom-list" data-reveal-group>
+        <li data-reveal><span class="custom-num">01</span><div><h3>Partimos do seu problema</h3><p>Ouvimos quem vive o processo no dia a dia para entender onde estão o retrabalho, os gargalos e os erros que mais custam.</p></div></li>
+        <li data-reveal><span class="custom-num">02</span><div><h3>Desenhamos a solução com você</h3><p>Cada regra, exceção e integração é definida junto com a sua equipe. Nada é imposto; tudo é validado antes de ser construído.</p></div></li>
+        <li data-reveal><span class="custom-num">03</span><div><h3>Implementamos lado a lado</h3><p>Construímos, testamos com dados reais e colocamos em operação no seu ritmo, nos seus sistemas e sem interromper a rotina.</p></div></li>
+        <li data-reveal><span class="custom-num">04</span><div><h3>Seguimos juntos depois da entrega</h3><p>Acompanhamos os resultados, ajustamos o que for preciso e evoluímos a solução conforme o negócio cresce.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <section class="section" aria-labelledby="metodo-title">
   <div class="container">
     <div class="section-head section-head--row">
@@ -535,7 +558,7 @@ def index():
   <div class="container split">
     <div>
       <p class="eyebrow" data-reveal>Perguntas frequentes</p>
-      <h2 class="h2" id="faq-title" data-split><span class="line"><span style="--i:0">Antes de</span></span><span class="line"><span style="--i:1">automatizar.</span></span></h2>
+      <h2 class="h2" id="faq-title" data-split><span class="line"><span style="--i:0">Antes de</span></span><span class="line"><span style="--i:1">implementar IA.</span></span></h2>
       <p class="lead mt-5" data-reveal>Não encontrou sua dúvida? <a class="link-arrow" href="contato.html">Fale com um especialista</a></p>
     </div>
     <div class="faq" data-reveal>
